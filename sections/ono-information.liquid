@@ -1,0 +1,163 @@
+<div class = "ono-main-container ono-container container">
+  <div class = "ono-lp-ph">
+    <div class = "ono-header-txt">
+      <h2 class = "ono-main-txt">{{ section.settings.main_txt }}</h2>
+      <p class = "ono-secondary-txt">{{ section.settings.Secondary_txt }}</p>
+    </div>
+    <div class = "ono-details-container">
+    {% for block in section.blocks %}
+    <div class = "ono-main-content">
+      <img src="{{ block.settings.block_image | img_url : "master" }}" alt="" width = "100px" height = "100px">
+      <h3 class="ono-inner-txt">
+        {{ block.settings.inner_txt }}
+      </h3>
+      <a href = "{{ block.settings.button_link }}" class = "ono-inner-button">
+        <button>{{ block.settings.button_txt }}</button>
+      </a>
+      <p class = "ono-last-text">
+        {{ block.settings.aurthor_txt }}
+      </p>
+    </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+.ono-main-container .ono-lp-ph {
+    max-width: 1250px;
+    margin: 50px auto;
+}
+.ono-header-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ono-header-txt h2.ono-main-txt {
+  color: #2F358E;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 10px 0px;
+  text-align: center;
+}
+.ono-details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 50px;
+    gap: 70px;
+}
+.ono-details-container .ono-main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ono-header-txt p.ono-secondary-txt {
+    font-size: 20px;
+    margin: 10px 0px;
+    letter-spacing: 1.5px;
+}
+.ono-main-content h3.ono-inner-txt {
+    font-size: 20px;
+    font-weight: bold;
+}
+.ono-inner-button button {
+    background-color: #2F358E;
+    color: #fff;
+    font-weight: bold;
+    height: 30px;
+    width: 85px;
+    border: none;
+    border-radius: 10px;
+}
+.ono-main-content p.ono-last-text {
+    text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .ono-main-content p.ono-last-text {
+    width: 75%;
+  }
+  .ono-details-container {
+    flex-direction: column;
+  }
+  .ono-header-txt p.ono-secondary-txt {
+    font-size: 14px;
+  }
+  .ono-header-txt h2.ono-main-txt {
+    font-size: 22px;
+  }
+  .ono-details-container {
+    margin-top: 35px;
+  }
+  .ono-details-container {
+    gap: 50px;
+  }
+  .ono-container.container {
+    background-color: #EBEBEB;
+    padding: 10px 0px;
+  }
+}
+</style>
+{% schema %}
+  {
+    "name": "Ono Information ",
+    "settings": [
+      {
+          "type": "text",
+          "id": "main_txt",
+          "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "Secondary_txt",
+          "label": "Title"
+      }
+
+    ],
+    "blocks": [
+    {
+      "type": "txt",
+      "name": "Details",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "inner_txt",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "text",
+          "id": "button_txt",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "aurthor_txt",
+          "label": "Details"
+        }
+      ]
+    }
+  ],
+    "presets": [
+    {
+      "name": "Ono Information",
+      "category": "Custom",
+      "settings": {
+      }
+    }
+    ]
+  }
+{% endschema %}

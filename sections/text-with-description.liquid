@@ -1,0 +1,61 @@
+<div class="text-with-description-1"> 
+  <div class="text-with-description-inner">
+    <h2 class="main-heading-twd">{{ section.settings.main_txt }}</h2>
+    <p class="main-para-twd">{{ section.settings.Secondary_txt }}</p>
+  </div>
+</div>
+<style>
+.text-with-description-1 {
+    max-width: 1250px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-with-description-inner .main-heading-twd {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #2F358E;
+    margin-bottom: 3px;
+}
+.text-with-description-inner .main-para-twd {
+    font-size: 13px;
+    text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .text-with-description-inner {
+    width: 75%;
+  }
+  .text-with-description-inner .main-para-twd {
+    font-size: 10px;
+    text-align: center;
+  }
+}
+</style>
+{% schema %}
+  {
+    "name": "Ono description ",
+    "settings": [
+      {
+          "type": "text",
+          "id": "main_txt",
+          "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "Secondary_txt",
+          "label": "Title"
+      }
+
+    ],
+    "presets": [
+    {
+      "name": "Ono Description",
+      "category": "Custom",
+      "settings": {
+      }
+    }
+    ]
+  }
+{% endschema %}

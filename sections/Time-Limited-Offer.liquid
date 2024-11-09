@@ -1,0 +1,98 @@
+<div class="deal-offer">
+  <h2>{{ section.settings.deal_text }}</h2>
+  <div id="countdown-timer" data-end-time="{{ section.settings.countdown_end_date }}"></div>
+  <a href="{{ section.settings.product_url }}" class="shop-now-button">Shop Now</a>
+</div>
+<style>
+  .deal-offer {
+    background-color: #f8f9fa; /* Light background */
+    border: 2px solid #ff3d00; /* Red border */
+    padding: 20px;
+    text-align: center; /* Center all text */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 600px;
+    margin: 20px auto; /* Center section on page */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  }
+
+  .deal-offer h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff3d00; /* Red color */
+    margin-bottom: 20px;
+  }
+
+  #countdown-timer {
+    font-size: 20px;
+    color: #333; /* Dark gray color */
+    margin-bottom: 20px;
+  }
+
+  .shop-now-button {
+    display: inline-block;
+    background-color: #ff3d00; /* Red background */
+    color: #fff; /* White text */
+    padding: 12px 24px;
+    text-decoration: none; /* Remove underline */
+    font-size: 18px;
+    border-radius: 5px; /* Rounded button */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+
+  .shop-now-button:hover {
+    background-color: #e63900; /* Darker red on hover */
+  }
+</style>
+{% schema %}
+{
+  "name": "Deal Offer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "deal_text",
+      "label": "Deal Text",
+      "default": "Hurry up! Sale is on!"
+    },
+    {
+      "type": "text",
+      "id": "countdown_end_date",
+      "label": "Countdown End Date",
+      "default": "2024-12-31T23:59:59"
+    },
+    {
+      "type": "url",
+      "id": "product_url",
+      "label": "Product URL",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Time Limited deal offer",
+      "category": "Promotions"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const endTime = new Date(document.getElementById('countdown-timer').getAttribute('data-end-time')).getTime();
+    
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const timeLeft = endTime - now;
+      
+      if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        document.getElementById('countdown-timer').innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      } else {
+        document.getElementById('countdown-timer').innerHTML = "Deal expired!";
+      }
+    }
+    
+    setInterval(updateCountdown, 1000);
+  });
+</script>

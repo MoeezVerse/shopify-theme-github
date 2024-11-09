@@ -1,0 +1,48 @@
+<div class="line-image-main">
+  <div class="line-image-inside">
+    {% for block in section.blocks %}
+    <div class="line-image-container" style="background-image: {{ section.settings.Line-image }};">
+      <p>{{ block.settings.line-title }}</p>
+      <img src="{{ block.settings.dot-image | img_url:"master"}}" alt="Dot image" width="48" height="48">
+    </div>
+      {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Line Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "Line-image",
+      "label": "Line Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "txt",
+      "name": "Locations",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "dot-image",
+          "label": "Dot Image"
+        },
+        {
+          "type": "textarea",
+          "id": "line-title",
+          "label": "Line image title "
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Line image",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

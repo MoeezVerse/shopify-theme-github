@@ -1,0 +1,289 @@
+<div id="testimonials">
+  <div class="testimonial-heading">
+    <span>Comments</span>
+    <h4>Clients Say</h4>
+  </div>
+  <div class="testimonial-box-container">
+    <!-- Display testimonials here -->
+    {% for block in section.blocks %}
+      <div class="testimonial-box">
+        <div class="box-top">
+          <div class="profile">
+            <div class="profile-img">
+              <img src="{{ block.settings.card-image | img_url:'master' }}" alt="customer-image">
+            </div>
+            <div class="name-user">
+              <strong>{{ block.settings.customer-name }}</strong>
+              <span>@{{ block.settings.customer-username }}</span>
+            </div>
+          </div>
+          <div class="reviews-star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+        <div class="client-comment">
+          <p>{{ block.settings.customer-review }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <!-- Pagination Controls -->
+  <div class="pagination-controls">
+    <button id="pagination-button">
+        <span id="page-number">1</span>
+        <div id="loading-bar"></div>
+    </button>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonialBoxes = document.querySelectorAll('.testimonial-box');
+    const totalItems = testimonialBoxes.length;
+    const cycle = [4, 6, 2];  // Array to control the number of items shown in each state
+    let currentCycleIndex = 0;
+
+    function showTestimonials(count) {
+        testimonialBoxes.forEach((box, index) => {
+            box.style.display = index < count ? 'block' : 'none';
+        });
+        document.getElementById('page-number').textContent = count; // Update the button text
+        animateLoadingBar();
+    }
+
+    function animateLoadingBar() {
+        const loadingBar = document.getElementById('loading-bar');
+        loadingBar.style.width = '0%';
+        loadingBar.style.visibility = 'visible'; // Ensure the bar is visible
+        loadingBar.style.opacity = '1'; // Ensure the bar is fully opaque
+        setTimeout(() => {
+            loadingBar.style.width = '100%';
+        }, 50);
+    }
+
+    document.getElementById('pagination-button').addEventListener('click', () => {
+        currentCycleIndex = (currentCycleIndex + 1) % cycle.length;  // Move to the next cycle index
+        showTestimonials(cycle[currentCycleIndex]);  // Show the number of testimonials based on the current cycle
+    });
+
+    // Initial load
+    showTestimonials(cycle[currentCycleIndex]);  // Start with the first cycle, which is 4 testimonials
+});
+
+
+</script>
+
+<style>
+a{
+    text-decoration: none;
+}
+#testimonials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+}
+.testimonial-heading{
+    letter-spacing: 1px;
+    margin: 30px 0px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.testimonial-heading span{
+    font-size: 3.3rem;
+    font-weight: 800;
+    color: #252525;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.testimonial-heading h4 {
+    font-size: 20px;
+    margin: 0px;
+}
+.testimonial-box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:100%;
+}
+.testimonial-box{
+    width:500px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer;
+}
+.profile-img{
+    width:60px;
+    height: 60px;
+    border-radius: 60%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.profile-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.profile{
+    display: flex;
+    align-items: center;
+}
+.name-user{
+    display: flex;
+    flex-direction: column;
+}
+.name-user strong{
+    color: #3d3d3d;
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+}
+.name-user span{
+    color: #979797;
+    font-size: 1.4rem;
+}
+.reviews-star{
+    color: #f9d71c;
+}
+.box-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.client-comment p{
+    font-size: 1.9rem;
+    color: #4b4b4b;
+}
+.testimonial-box:hover{
+    transform: translateY(-10px);
+    transition: all ease 0.3s;
+}
+
+
+.pagination-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#pagination-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #0073e6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#pagination-button:hover {
+    background-color: #005bb5;
+}
+
+#page-number {
+    position: relative;
+    z-index: 2;
+}
+
+#loading-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 0%;
+    background-color: #ffcc00;
+    z-index: 1;
+    transition: width 0.3s ease-in-out;
+    visibility: visible; /* Ensure the bar is visible */
+    opacity: 1; /* Ensure the bar is fully opaque */
+}
+
+
+@media(max-width:1060px){
+    .testimonial-box{
+        width:45%;
+        padding: 10px;
+    }
+}
+@media(max-width:790px){
+    .testimonial-box{
+        width:100%;
+    }
+    .testimonial-heading h1{
+        font-size: 1.4rem;
+    }
+}
+@media(max-width:340px){
+    .box-top{
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+    .reviews{
+        margin-top: 10px;
+    }
+}
+::selection{
+    color: #ffffff;
+    background-color: #252525;
+}
+</style>
+
+
+{% schema %}
+{
+  "name": "Write a review",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "txt",
+      "name": "Write a review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card-image",
+          "label": "Customer pfp"
+        },
+        {
+          "type": "text",
+          "id": "customer-name",
+          "label": "Customer name"
+        },
+        {
+          "type": "text",
+          "id": "customer-username",
+          "label": "Customer Username"
+        },
+        {
+          "type": "richtext",
+          "id": "customer-review",
+          "label": "Customer Review"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "write a review",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

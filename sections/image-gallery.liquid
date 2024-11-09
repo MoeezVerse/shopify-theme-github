@@ -1,0 +1,242 @@
+<div class="Ono-image-gallery">
+<div class="image-gallery">
+  <div class="image-gallery-inner">
+    {% for block in section.blocks %}
+    <div class="image-gallery-main">
+      <img class="main-image" src="{{ block.settings.block_image_1 | img_url : "master" }}" alt="image gallery-1" width="" height="">
+      <img class="main-image-mb" src="{{ block.settings.block_image_1_mb | img_url : "master" }}" alt="image gallery-1" width="" height="">
+      <div class="image-gallerymain-inner">
+      <img class="Secondary-image" src="{{ block.settings.block_image_2 | img_url : "master" }}" alt="image gallery-2" width="" height="">
+      <img class="Secondary-image-mb" src="{{ block.settings.block_image_2_mb | img_url : "master" }}" alt="image gallery-2-mb" width="" height="">
+      <img class="Secondary-image" src="{{ block.settings.block_image_3 | img_url : "master" }}" alt="image gallery-3" width="" height="">
+      <img class="Secondary-image-mb" src="{{ block.settings.block_image_3_mb | img_url : "master" }}" alt="image gallery-3-mb" width="" height="">
+      <img class="Secondary-image" src="{{ block.settings.block_image_4 | img_url : "master" }}" alt="image gallery-4" width="" height="">
+      <img class="Secondary-image-mb" src="{{ block.settings.block_image_4_mb | img_url : "master" }}" alt="image gallery-4-mb" width="" height="">
+      <img class="Secondary-image" src="{{ block.settings.block_image_5 | img_url : "master" }}" alt="image gallery-5" width="" height="">
+      <img class="Secondary-image-mb" src="{{ block.settings.block_image_5_mb | img_url : "master" }}" alt="image gallery-5-mb" width="" height="">
+      </div>
+      <img class="main-image" src="{{ block.settings.block_image_6 | img_url : "master" }}" alt="image gallery-6" width="" height="">
+      <img class="main-image-mb" src="{{ block.settings.block_image_6_mb | img_url : "master" }}" alt="image gallery-1" width="" height="">
+    </div>
+    {% endfor %}
+    <div class="image-gallery-bottom">
+    <div class="image-gallery-button">
+      <button>{{ section.settings.btn_text }} <img src="{{ section.settings.btn-image | img_url : "master" }}" alt="button-vector" width="30" height="30"> </button>
+    </div>
+    <div class="image-gallery-review-sec">
+      <img src="{{ section.settings.review-image | img_url : "master" }}" alt="review-star" width="80" height="11">
+      <p>{{ section.settings.review_text }}</p>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<style>
+.Ono-image-gallery{
+  background-color: #EBEBEB;
+}
+.image-gallery {
+    max-width: 1250px;
+    margin: 0px auto;
+    margin-top: 60px;
+}
+.image-gallery-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+.image-gallery-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 20px;
+}
+.image-gallery-main .main-image{
+  width: 100%;
+  max-height: 356px;
+}
+.image-gallery-main .main-image-mb {
+  display:none
+}
+.image-gallery-main .Secondary-image{
+  width: 100%;
+  max-width: 191px;
+  height: 170px;
+}
+.image-gallery-main .Secondary-image-mb{
+  display: none;
+}
+.image-gallery-main .image-gallerymain-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+.image-gallery-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+}
+.image-gallery-button button {
+    width: 216px;
+    height: 45px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 29px;
+    border: none;
+    background-color: #F7B101;
+    cursor: pointer;
+    font-weight: 600;
+}
+.image-gallery-review-sec {
+    display: flex;
+    align-items: center;
+}
+.image-gallery-review-sec img {
+    margin-right: 15px;
+}
+.image-gallery-review-sec p {
+    margin: 0px;
+    font-weight: 800;
+}
+@media screen and (max-width: 768px) {
+  .image-gallery-main .main-image {
+    display: none;
+  }
+  .image-gallery-main {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .image-gallery-main .main-image-mb {
+    display: block;
+    width: 100%;
+    max-width: 365px;
+    height: 145px;
+  }
+  .image-gallery-main .Secondary-image{
+    display: none;
+  }
+  .image-gallery-main .Secondary-image-mb{
+    display: block;
+    width: 100%;
+    max-width: 167px;
+    height: 102px;
+  }
+  .image-gallery-main .image-gallerymain-inner {
+    width: 73%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .image-gallery-main .image-gallerymain-inner {
+    width: 100%;
+  }
+}
+</style>
+{% schema %}
+ {
+  "name": "Ono Image Gallery",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "btn-image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "review-image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "review_text",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "txt",
+      "name": "Image Gallery",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_image_1",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_1_mb",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_2",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_2_mb",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_3",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_3_mb",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_4",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_4_mb",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_5",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_5_mb",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_6",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_6_mb",
+          "label": "Mobile Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ono Image Gallery",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

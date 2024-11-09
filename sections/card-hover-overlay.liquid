@@ -1,0 +1,139 @@
+<div class="main-card-overlay">
+  <div class="wrapper">
+    <div class="box-area">
+      {% for block in section.blocks %}
+      <div class="box">
+        <img src="{{ block.settings.card-image | img_url:"master" }}" alt="" width="" height="">
+        <div class="overlay">
+          <h3>{{ block.settings.overlay-head }}</h3>
+          <p>{{ block.settings.overlay-text }}</p>
+          <a href="#">{{ block.settings.overlay-btn }}</a>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+<style>
+.main-card-overlay{
+  width: 80%;
+  margin: 0px auto;
+  margin-top: 100px;
+}
+.box-area {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.box {
+    max-width: 350px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.box img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+    max-height: 400px;
+    object-fit: cover;
+}
+.overlay {
+    height: 0px;
+    width: 100%;
+    background: linear-gradient(transparent, #1d1c1ca3 58%);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 40px;
+    
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+    color: #fff;
+}
+.overlay h3 {
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 80%;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+.box:hover .overlay {
+    height: 100%;
+}
+.overlay a {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    padding: 5px 15px;
+}
+@media screen and (max-width: 768px) {
+  .main-card-overlay {
+    width: 80%;
+  }
+  .box-area {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+}
+</style>
+{% schema %}
+{
+  "name": "Card overlay",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "txt",
+      "name": "Card Overlay",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card-image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "overlay-head",
+          "label": "Overlay Heading"
+        },
+        {
+          "type": "text",
+          "id": "overlay-text",
+          "label": "Overlay Text"
+        },
+        {
+          "type": "text",
+          "id": "overlay-btn",
+          "label": "Overlay btn"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Overlay Card",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

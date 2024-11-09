@@ -1,0 +1,176 @@
+<div class="ono-lp-faq">
+  <div class="faq-main">
+    <div class="faq-heading">
+      <h2>{{ section.settings.heading_text }}</h2>
+    </div>
+    <div class="container-faq faqs">
+      <ul class="acc">
+        {% for blocks in section.blocks %}
+        <li>
+          <button class="acc_ctrl"><h2>{{ blocks.settings.faq-title }}</h2></button>
+          <div class="acc_panel">
+            <p>{{ blocks.settings.faq-question }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+.ono-lp-faq .faq-main {
+    max-width: 1250px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+.faq-heading {
+    text-align: center;
+}
+.faq-heading h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2F358E;
+}
+.container-faq .acc_ctrl h2 {
+  color: #282F35;
+  font-family: 'Josefin Sans', Arial, sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: left;
+}
+.container-faq .acc_panel p {
+  color: #666666;
+  font-family: 'Malgun Gothic', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 20px;
+}
+.container-faq {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+.acc {
+  overflow: hidden;
+  padding: 0;
+}
+.acc li {
+  list-style-type: none;
+  padding: 0;
+}
+.acc_ctrl {
+  background: #FFFFFF;
+  border: none;
+  border-bottom: solid 1px #F2F2F2;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  padding: 2em;
+  position: relative;
+  width: 100%;
+}
+.acc_ctrl:before {
+  background: #44596B;
+  content: '';
+  height: 2px;
+  margin-right: 37px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: rotate(90deg);
+  transition: all 0.2s ease-in-out;
+  width: 14px;
+}
+.acc_ctrl:after {
+  background: #44596B;
+  content: '';
+  height: 2px;
+  margin-right: 37px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 15px;
+}
+.acc_ctrl.active:before {
+  transform: rotate(0deg);
+}
+.acc_ctrl.active h2, .acc_ctrl:focus h2 {
+  position: relative;
+}
+.acc_panel {
+  background: #F2F2F2;
+  display: none;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .container-faq .acc_ctrl h2 {
+    font-size: 11px;
+    width: 80%;
+  }
+  .faq-heading h2 {
+    font-size: 22px;
+  }
+  .flickity-prev-next-button.previous {
+    left: -10px;
+  }
+  .flickity-prev-next-button.next {
+    right: -10px;
+  }
+}
+</style>
+{% schema %}
+{
+  "name": "ONO FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "FAQ Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "txt",
+      "name": "Faq Questions",
+      "settings": [
+        {
+          "type": "text",
+          "id": "faq-title",
+          "label": "Faq Title"
+        },
+        {
+          "type": "text",
+          "id": "faq-question",
+          "label": "Frequently Asked Questions"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ONO FAQ",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
+<script>
+$(document).ready(function() {
+  $('.acc_ctrl').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    if ($this.hasClass('active')) {
+      $this.removeClass('active');
+      $this.next('.acc_panel').slideUp(300);
+    } else {
+      $('.acc_ctrl').removeClass('active');
+      $('.acc_panel').slideUp(300);
+      $this.addClass('active');
+      $this.next('.acc_panel').slideDown(300);
+    }
+  });
+});
+</script>

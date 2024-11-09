@@ -1,0 +1,267 @@
+<div class="a1-location-side-bar">
+  <div class="side-bar-location-inner">
+    <div class="top-part">
+      {% for block in section.blocks %}
+      <div class="left-data-holder">
+        <div class="location-page-image">
+          <img src="{{ block.settings.loction-image | img_url:"master" }}" alt="Location image" width="140" height="140">
+        </div>
+        <div class="right-data-holder">
+          <div class="location-title">
+            {% if block.settings.location-title != blank %}
+            <p>{{ block.settings.location-title }}</p>
+              {% endif %}
+          </div>
+          <div class="post-location-title">
+            {% if block.settings.Location-post != blank %}
+            <p>{{ block.settings.Location-post }}</p>
+            {% endif %}
+          </div>
+          <div class="data-section">
+            <div class="location-address">
+              {% if block.settings.Address != blank %}
+              <span class="location-sub-heading">Address: </span> 
+               {{ block.settings.Address }}
+              {% endif %}
+            </div>
+            <div class="location-telephone-num">
+              {% if block.settings.tel-num != blank %}
+              <span classs="location-sub-heading">Store: </span>
+              <a class="action-link" href="tel:{{ block.settings.tel-num | strip }}">{{ block.settings.tel-num }}</a>
+              {% endif %}
+            </div>
+            <div class="location-telephone-num">
+              {% if block.settings.tel-num-2 != blank %}
+              <span classs="location-sub-heading">Ecommerce: </span>
+              <a class="action-link" href="Ecommerce:{{ block.settings.tel-num-2 | strip }}">{{ block.settings.tel-num-2 }}</a>
+                {% endif %}
+            </div>
+            <div class="location-telephone-num">
+              {% if block.settings.tel-num-3 != blank %}
+              <span classs="location-sub-heading">Office:  </span>
+              <a class="action-link" href="Office:{{ block.settings.tel-num-3 | strip }}">{{ block.settings.tel-num-3 }}</a>
+              {% endif %}
+            </div>
+            <div class="location-email">
+              {% if block.settings.Email != blank %}
+              <span classs="location-sub-heading">Email: </span>
+              <a class="action-link" href="Email:{{ block.settings.Email | strip}}">{{ block.settings.Email }}</a>
+              {% endif %}
+            </div>
+          </div>
+          <div class="map-button-holder">
+            {% if block.settings.button-text != blank %}
+              <a href="{{ block.settings.button-url }}" target="_blank">{{ block.settings.button-text }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    
+  </div>
+  <div class="embeded-map-holder">
+    <iframe src="https://www.google.com/maps/d/embed?mid=1BmUjy-e7pxm4uUlkp-guQzuorC-APPkF&amp;ehbc=2E312F" width="100%" height="100%"></iframe>
+  </div>
+</div>
+
+<style>
+
+.a1-location-side-bar {
+    width: 80%;
+    margin: 70px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.side-bar-location-inner {
+    height: 600px;
+    overflow-y: auto;
+}
+.side-bar-location-inner {
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 37%;
+    padding: 25px 12px 25px 20px;
+}
+.left-data-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+.top-part .left-data-holder {
+    border: 1px solid #dfdfdf;
+    background-color: #f9f9f9;
+    padding: 15px 15px 25px;
+    margin-bottom: 25px;
+}
+.location-page-image {
+    max-width: 140px;
+}
+.location-page-image img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.location-title {
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 23px;
+    margin-top: 13px;
+}
+.location-title d {
+    color: #ec0000;
+}
+.data-section {
+    margin: 5px 0;
+}
+.location-address {
+    line-height: 1.3;
+    font-size: 15px;
+}
+span.location-sub-heading {
+    font-weight: 700;
+}
+.location-telephone-num {
+    font-size: 15px;
+    line-height: 1.3;
+}
+.location-telephone-num span {
+    font-weight: 600;
+}
+.location-telephone-num a.action-link {
+    color: #000;
+    text-decoration: none;
+}
+.location-telephone-num-3 span {
+    font-weight: 600;
+}
+.location-telephone-num-3 a.action-link {
+    color: #000;
+    text-decoration: none;
+}
+.location-email {
+    line-height: 1.3;
+    font-size: 15px;
+}
+.location-email span {
+    font-weight: 600;
+}
+.location-email a.action-link {
+    color: #EC0000;
+    text-decoration: none;
+}
+.map-button-holder a {
+    background: #ec0000;
+    color: #fff;
+    font-weight: 900;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    width: max-content;
+    padding: 0 15px;
+    height: 35px;
+    text-decoration: none;
+}
+.embeded-map-holder {
+    width: 60%;
+    height: auto;
+}
+@media screen and (max-width: 768px) {
+  .embeded-map-holder {
+      width: 100%;
+      height: 400px;
+  }
+  .a1-location-side-bar {
+      flex-direction: column;
+      gap: 30px;
+  }
+  .side-bar-location-inner {
+      width: 100%;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Location Section",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "txt",
+      "name": "Locations",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "loction-image",
+          "label": "Loctaion Image"
+        },
+        {
+          "type": "textarea",
+          "id": "location-title",
+          "label": "Location Tile "
+        },
+        {
+          "type": "text",
+          "id": "Location-post",
+          "label": "Post Location Title"
+        },
+        {
+          "type": "text",
+          "id": "Address",
+          "label": "Address"
+        },
+        {
+          "type": "text",
+          "id": "tel-num",
+          "label": "Store Telephone"
+        },
+        {
+          "type": "text",
+          "id": "tel-num-2",
+          "label": "Ecommerce Telephone"
+        },
+        {
+          "type": "text",
+          "id": "tel-num-3",
+          "label": "Office Telephone"
+        },
+        {
+          "type": "text",
+          "id": "Email",
+          "label": "Email",
+          "default": "@a1cashandcarry.com"
+        },
+        {
+          "type": "url",
+          "id": "button-url",
+          "label": "Button Url"
+        },
+        {
+          "type": "text",
+          "id": "button-text",
+          "label": "Button Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A1 Cash & Carry Location",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

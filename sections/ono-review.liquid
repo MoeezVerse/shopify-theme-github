@@ -1,0 +1,210 @@
+<div class="ono-lp-review">
+  <div class="ono-lp-inner-review ">
+    <div class="ono-rv-heading">
+      <h2>{{ section.settings.heading_text }}</h2>
+    </div>
+    <div class="reviews">
+      {% for block in section.blocks %}
+      <div class="review-inner">
+        <div class="img-txt-inner">
+          <div class="image">
+            <img class="customer-image" src="{{ block.settings.vendor-image | img_url:'master' }}" alt="customer image" width="" height=""> 
+            <div class="image-txt">
+              <h3>{{ block.settings.rv-head-txt }}</h3>
+              <img class="review-image" src="{{ block.settings.star-image | img_url:'master' }}" alt="5 star" width="81.51" height="13.15">
+              <p>{{ block.settings.rv-bottom-text }}</p>
+            </div>
+          </div>
+          <div>
+            <img src="{{ block.settings.Comma-image | img_url:'master' }}" alt="Comma" width="56" height="39">
+          </div>
+        </div>
+        <div class="review-last">
+          <p class="review-last-head">{{ block.settings.last-reveiw-text }}</p>
+          {% if block.settings.Review-text %}
+          <p class="review-text-para">{{ block.settings.Review-text }}</p>
+          {% endif %}
+          <p class="read-more">{{ block.settings.read-more }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div> 
+</div>
+
+<style>
+.ono-lp-review {
+    background-color: #EBEBEB;
+}
+.ono-rv-heading h2 {
+    margin: 0px;
+    text-align: center;
+    font-size: 30px;
+    color: #2F358E;
+    font-weight: bold;
+    padding: 30px 0px;
+}
+.review-inner {
+    max-width: 40%;
+    margin: 0px 20px;
+    width: 100%;
+    min-height: 280px;
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    padding: 20px 20px;
+}
+.reviews {
+    padding: 60px 5px;
+}
+.img-txt-inner {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.img-txt-inner .image {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+.image-txt h3 {
+    margin: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.image-txt p {
+    margin: 0px;
+    font-size: 12px;
+    color: #2F358E;
+}
+.reviews .image img.customer-image {
+    max-width: 62px;
+    height: 60px;
+    width: 100%;
+}
+.review-last p.review-last-head {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2F358E;
+}
+.review-last p.read-more {
+    font-size: 13px;
+    font-weight: bold;
+    font-style: italic;
+    color: #2F358E;
+}
+.reviews .flickity-viewport {
+    height: 450px;
+}
+.flickity-viewport {
+  transition: height 0.2s;
+}
+*:focus-visible {
+  box-shadow: none;
+}
+.flickity-prev-next-button.previous {
+    left: -25px;
+}
+.flickity-prev-next-button.next {
+    right: -25px;
+}
+.reviews.flickity-enabled.is-draggable {
+    width: 90%;
+    margin: 0px auto;
+}
+@media screen and (max-width: 768px) {
+  .reviews {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 30px;
+  }
+  .flickity-enabled.is-draggable .flickity-viewport {
+    height: 360px;
+  }
+  .review-inner {
+    max-width: 100%;
+  }
+  .flickity-button:focus {
+    box-shadow: none;
+  }
+}
+</style>
+{% schema %}
+{
+  "name": "Ono Review Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "txt",
+      "name": "Image Gallery",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "vendor-image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "rv-head-txt",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "star-image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "rv-bottom-text",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "Comma-image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "last-reveiw-text",
+          "label": "Review Heading"
+        },
+        {
+          "type": "text",
+          "id": "Review-text",
+          "label": "Customer Review"
+        },
+        {
+          "type": "text",
+          "id": "read-more",
+          "label": "More Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ono Review Section",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
+<script>
+var elem = document.querySelector('.reviews');
+var flkty = new Flickity( elem, {
+  // options
+  cellAlign: 'left',
+  adaptiveHeight: true,
+  wrapAround: true,
+  groupCells: 1,
+  autoPlay: 1500,
+  contain: true
+});
+</script>

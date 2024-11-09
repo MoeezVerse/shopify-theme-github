@@ -1,0 +1,207 @@
+{% assign meta_image = shop.metaobjects['banner_image']['banner-image-flyer'] %}
+{{ meta_image.flyer_banner_image.value }}
+
+{{ meta_image | json }}
+<div class="a1-custom-flyer-container {{ section.settings.Custom-class }}">
+  <div class="a1-custom-flyer-content">
+    <h2 class="a1-custom-flyer-heading">{{ section.settings.flyer-heading }}</h2>
+  </div>
+  <div class="search-box city-search-box-custom-v2">
+    <div class="search-bar__input-wrapper">
+      <input type="text" oninput="handleLocationCitySearchInput(event)" class="search-input" placeholder="Search by City">
+    </div>
+    <button type="submit" class="search-bar__submit" aria-label="Translation missing: en.header.search.submit">
+       <img class="a1-custom-flyer-image" alt="" height="20" width="20" src="{{ section.settings.search-bar-icon | img_url:"master" }}">
+    </button>
+  </div>
+  <div class="a1-custom-flyer-section" bis_skin_checked="1">
+    <div class="a1-custom-flyer-box" bis_skin_checked="1">
+      {% for block in section.blocks %}
+        <a class="as-custom-flyer-anchor" href="{{ block.settings.flyer-url }}">
+          {% if block.settings.flyer-image == blank %}
+          <img class="a1-custom-flyer-image" alt="" height="" width="" src="{{ meta_image.flyer_banner_image.value | img_url:"master" }}">
+          {% else %}
+          <img class="a1-custom-flyer-image" alt="" height="" width="" src="{{ block.settings.flyer-image | img_url:"master" }}">
+          {% endif %}
+          <p class="a1-custom-flyer-text" data-city="{{ block.settings.flyer-text }}">{{ block.settings.flyer-text }}</p>
+        </a>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+<style>
+h2.a1-custom-flyer-heading {
+    text-align: center;
+    width: fit-content;
+    border-bottom: 3px solid #ec0000;
+    text-transform: uppercase;
+    margin: 30px auto 30px;
+}
+.search-box.city-search-box-custom-v2 {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: white;
+    margin: 30px auto;
+    width: 95%;
+    max-width: 710px;
+}
+.search-bar__input-wrapper {
+    flex: 1;
+    border: 1px solid #dddddd;
+    border-right: none;
+}
+.search-bar__input-wrapper input.search-input {
+    outline: none;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px;
+}
+button.search-bar__submit {
+    border: none;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    width: 55px;
+    height: 44px;
+    color: #000;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: #dfdfdf;
+}
+.a1-custom-flyer-box {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: baseline;
+    max-width: 720px;
+    margin: auto;
+    gap: 30px;
+}
+a.as-custom-flyer-anchor {
+    flex-basis: calc(34% - 30px);
+}
+img.a1-custom-flyer-image {
+    width: 100%;
+    max-height: 277px;
+    object-fit: contain;
+}
+p.a1-custom-flyer-text {
+    background-color: #ec0000;
+    color: white;
+    width: 100%;
+    padding: 10px 8px;
+    font-size: 15px;
+    margin-top: 8px;
+    text-align: center;
+    border-radius: 5px;
+}
+/* search icon */
+.search-icon {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid currentColor; /* Color of the icon */
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.search-icon::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 10px;
+  height: 2px;
+  background-color: currentColor; /* Color of the icon */
+  transform: rotate(45deg);
+}
+
+.search-icon::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 2px;
+  height: 10px;
+  background-color: currentColor; /* Color of the icon */
+  transform: rotate(45deg);
+}
+</style>
+<script>
+function handleLocationCitySearchInput(event) {
+  const searchTerm = event.target.value.toLowerCase(); // Convert the input to lowercase
+  const cityList = document.querySelectorAll('.a1-custom-flyer-text'); // Select all city elements
+  
+  cityList.forEach(cityElement => {
+    const cityName = cityElement.getAttribute('data-city').toLowerCase(); 
+    const cityParent = cityElement.parentElement; 
+    
+    if (cityName.includes(searchTerm)) {
+      cityParent.style.display = ''; 
+    } else {
+      cityParent.style.display = 'none'; 
+    }
+  });
+}
+
+</script>
+{% schema %}
+{
+  "name": "A1 custom flyer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "Custom-class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "flyer-heading",
+      "label": "Flyer Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "search-bar-icon",
+      "label": "Search Bar Icon"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "txt",
+      "name": "Custom flyer",
+      "settings": [
+        {
+          "type": "url",
+          "id": "flyer-url",
+          "label": "Flyer Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "flyer-image",
+          "label": "Flyer image"
+        },
+        {
+          "type": "text",
+          "id": "flyer-text",
+          "label": "Flyer Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A1 Custom Flyer",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

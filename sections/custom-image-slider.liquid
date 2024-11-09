@@ -1,0 +1,91 @@
+<div class="container-slider {{ section.settings.custom-class }}">
+  <h2 class="a1-custom-flyer-heading">{{ section.settings.heading_text }}</h2>
+  <div class="store-slider slick-carousel-holder">
+    {% for block in section.blocks %}
+      {% assign image_url = block.settings.carousel_image | img_url:'x250',scale:'2x' %}
+      <img loading="lazy" data-lazy="{{ block.settings.carousel_image | img_url:'master' }}" src="{{ image_url }}" 
+           alt="store images" width="300" height="250">
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .container-slider {
+    max-width: 90%;
+    margin: 0px auto;
+  }
+
+  h2.a1-custom-flyer-heading {
+    text-align: center;
+    width: fit-content;
+    border-bottom: 3px solid #ec0000;
+    text-transform: uppercase;
+    margin: 30px auto 30px;
+  }
+
+  .slick-carousel-holder {
+    padding: 10px 0;
+  }
+
+  /* Add spacing between slides */
+  .store-slider .slick-slide {
+    padding: 0 10px; /* Adjust padding to control space */
+  }
+
+  .store-slider .slick-slide img {
+    height: 250px;
+    object-fit: cover;
+    width: 100%; /* Ensures images fit within each slide */
+  }
+</style>
+
+<script>
+  $(document).ready(function(){
+    $('.store-slider').slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      lazyLoad: 'ondemand',
+      arrows: true,  // Enable navigation arrow
+      prevArrow: '<div class="class-to-style"><span class="fa fa-angle-left"></span><span class="sr-only">Prev</span></div>',
+      nextArrow: '<div class="class-to-style"><span class="fa fa-angle-right"></span><span class="sr-only">Next</span></div>'
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Custom Image Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom-class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Section Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Store Images",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "carousel_image",
+          "label": "Carousel Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Carousel Image",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

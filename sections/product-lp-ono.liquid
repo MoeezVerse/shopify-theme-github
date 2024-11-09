@@ -1,0 +1,183 @@
+{% assign pdp_ono = all_products[section.settings.product_ono] %}
+
+<div class="product-lp-ono">
+  <div class="product-main">
+    <div class="side-product-images">
+      <div class="product-variants-images">
+        {% if pdp_ono.variants.size > 0 %}
+          {% for variant in pdp_ono.variants %}
+            <div class="variant-image" data-variant-id="{{ variant.id }}" data-image-src="{{ variant.featured_image | img_url: 'master' }}">
+              {% if variant.featured_image %}
+                <img src="{{ variant.featured_image | img_url: 'medium' }}" alt="{{ variant.title }}">
+              {% else %}
+                <img src="{{ pdp_ono.featured_image | img_url: 'medium' }}" alt="{{ pdp_ono.title }}">
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+  
+      <div class="Product-main_image">
+        {% if pdp_ono.featured_image %}
+          <img id="main-product-image" src="{{ pdp_ono.featured_image | img_url: 'master' }}" alt="{{ pdp_ono.title }}">
+        {% endif %}
+      </div>
+    </div>
+    
+  <div class="product-information">
+    <p class="product-vendor">{{ pdp_ono.vendor }}</p>
+    <h2 class="product-tile">{{ pdp_ono.title }}</h2>
+    <span class="product-price">{{ pdp_ono.price | money_with_currency }}</span>
+
+    <div id="Quantity-Form-template--18237599842594__main" class="product-form__input product-form__quantity">
+      <label class="quantity__label form__label" for="Quantity-template--18237599842594__main">
+        Quantity
+        <span class="quantity__rules-cart no-js-hidden hidden">
+          <span class="loading-overlay hidden">
+            <span class="loading-overlay__spinner">
+              <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </span>
+          </span>
+          <span>(<span class="quantity-cart">0</span> in cart)</span>
+        </span>
+      </label>
+      <quantity-input class="quantity">
+        <button class="quantity__button no-js-hidden disabled" name="minus" type="button">
+          <span class="visually-hidden">Decrease quantity</span>
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-minus" fill="none" viewBox="0 0 10 2">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z" fill="currentColor">
+            </path></svg>
+            </button>
+            <input class="quantity__input" type="number" name="quantity" id="Quantity-template--18237599842594__main" data-cart-quantity="0" data-min="1" min="1" step="1" value="1" form="product-form-template--18237599842594__main" max="null">
+            <button class="quantity__button no-js-hidden" name="plus" type="button">
+              <span class="visually-hidden">Increase quantity</span>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-plus" fill="none" viewBox="0 0 10 10">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor">
+            </path></svg>
+        </button>
+        </quantity-input>
+        <div class="quantity__rules caption no-js-hidden"></div>
+      </div>
+    <div class="metafield-product">
+      <h3>{{ section.settings.Related_product }}</h3>
+      <a href="{{ pdp_ono.metafields.custom.related_product.value.url }}">{{ pdp_ono.metafields.custom.related_product.value.title }}</a>
+      <img src="{{ pdp_ono.metafields.custom.related_product.value.featured_image | img_url:"master" }}" alt="" width="150" height="150">
+    </div>
+    </div>
+  </div> 
+</div>
+<style>
+.product-lp-ono {
+    width: 90%;
+    margin: 60px auto;
+}
+.product-lp-ono .product-main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.side-product-images {
+    display: flex;
+}
+.side-product-images .product-variants-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.product-information {
+   flex-basis: 18%;
+}
+.product-lp-ono .Product-main_image {
+    max-width: 498px;
+    border: 1px solid #a49e9e38;
+}
+.product-lp-ono .Product-main_image img {
+    width: 100%;
+    object-fit: contain;
+}
+.product-variants-images .variant-image {
+    max-width: 98px;
+    border: 1px solid #a49e9e38;
+}
+.product-variants-images .variant-image img {
+    width: 100%;
+}
+.metafield-product h3 {
+    font-weight: 700;
+}
+.metafield-product p {
+    font-size: 16px;
+    font-weight: 500;
+}
+.metafield-product a {
+    color: rgba(var(--color-foreground), .75);
+}
+.metafield-product a:hover {
+    text-decoration: underline;
+}
+.metafield-product img {
+    border: 1px solid #a49e9e38;
+    margin-top: 15px;
+}
+@media screen and (max-width: 768px) {
+  .product-lp-ono .product-main {
+    flex-direction: column;
+  }
+  .side-product-images {
+    flex-direction: column-reverse;
+  }
+  .side-product-images .product-variants-images {
+    flex-direction: row;
+    margin-top: 15px;
+    margin-right: 0px;
+  }
+  .product-variants-images .variant-image {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const variantImages = document.querySelectorAll('.variant-image');
+    const mainImage = document.getElementById('main-product-image');
+    
+    variantImages.forEach(function(variantImage) {
+        variantImage.addEventListener('click', function() {
+            const newImageSrc = this.getAttribute('data-image-src');
+            mainImage.setAttribute('src', newImageSrc);
+        });
+    });
+});
+
+</script>
+{% schema %}
+{
+  "name": "Product",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product_ono",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "Related_product",
+      "label": "Related Product"
+    }
+  ],
+  "blocks": [
+  ],
+  "presets": [
+    {
+      "name": "Main Product",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

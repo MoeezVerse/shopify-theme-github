@@ -1,0 +1,60 @@
+<div class="container">
+  <h1 class="main-page-title">{{ section.settings.flyer-flyer-heading }}</h1>
+  <div class="rte custom-page-data" bis_skin_checked="1">
+    <div style="text-align: start;">
+      {% for block in section.blocks %}
+      <p><img src="{{ block.settings.flyer-image | img_url:"master" }}" alt="Cities Monthly flyer" width="" height=""></p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<style>
+.main-page-title {
+  text-align: center;
+  text-transform: uppercase;
+  width: max-content;
+  border-bottom: 3px solid #ec0000;
+  font-size: 30px;
+  margin: 30px auto;
+}
+.rte {
+    margin-bottom: 30px;
+}
+.rte p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+</style>
+{% schema %}
+{
+  "name": "Cities Monthly Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "flyer-heading",
+      "label": "Flyer Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "txt",
+      "name": "Custom flyer",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "flyer-image",
+          "label": "Flyer image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A1 Custom Flyer",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,131 @@
+<div class="supply-iwt-conatiner" bis_skin_checked="1">
+  <div class="container" bis_skin_checked="1">
+    {% for block in section.blocks %}
+      <div class="why-order-content" bis_skin_checked="1">
+        <div class="left-image" bis_skin_checked="1">
+          <img src="{{ block.settings.Box-image | img_url:"master" }}" alt="Boxes Image" height="" width="">
+        </div>
+        <div class="right-text" bis_skin_checked="1">
+          <h2>{{ block.settings.Main-text }}</h2>
+          <ul>
+            <li>
+              <img src="{{ block.settings.tick-image | img_url:"master" }}" alt="Tick Icon" height="" width="">
+              {{ block.settings.inner-text }}
+            </li>
+            <li>
+              <img src="{{ block.settings.tick-image | img_url:"master" }}" alt="Tick Icon" height="" width="">
+              {{ block.settings.inner-text-2 }}
+            </li>
+            <li>
+              <img src="{{ block.settings.tick-image | img_url:"master" }}" alt="Tick Icon" height="" width="">
+              {{ block.settings.inner-text-3 }}
+            </li>
+            <li>
+              <img src="{{ block.settings.tick-image | img_url:"master" }}" alt="Tick Icon" height="" width="">
+              {{ block.settings.inner-text-4 }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+</div>
+<style>
+ .why-order-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 20%;
+}
+.left-image {
+    flex-basis: 20%;
+}
+.left-image img {
+    width: 100%;
+    height: auto;
+}
+.right-text {
+    flex-basis: 30%;
+}
+.right-text h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.right-text ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.right-text ul li img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .why-order-content {
+        gap: 11%;
+        padding: 10px;
+        flex-direction: column-reverse;
+    }
+}
+</style>
+{% schema %}
+{
+  "name": "SB Image With Text",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Image with text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "Box-image",
+          "label": "Box image"
+        },
+        {
+          "type": "image_picker",
+          "id": "tick-image",
+          "label": "Tick image"
+        },
+        {
+          "type": "text",
+          "id": "Main-text",
+          "label": "Main Heading"
+        },
+        {
+          "type": "text",
+          "id": "inner-text",
+          "label": "Enter your text",
+        },
+        {
+          "type": "text",
+          "id": "inner-text-2",
+          "label": "Enter your text",
+        },
+        {
+          "type": "text",
+          "id": "inner-text-3",
+          "label": "Enter your text",
+        },
+        {
+          "type": "text",
+          "id": "inner-text-4",
+          "label": "Enter your text",
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SB Image with text",
+      "category": "Custom",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,60 @@
+<div class="container-slider {{ section.settings.custom-class }}">
+    <h2 class="a1-custom-flyer-heading">{{ section.settings.heading_text }}</h2>
+    <div class="store-slider slick-carousel-holder {{  }}">
+      {% for block in section.blocks %}
+        <div class="inner-categories-to-shop {{ block.settings.background }}">
+        {% assign image_url = block.settings.carousel_image | img_url:'x250',scale:'2x' %}
+        <img loading="lazy" data-lazy="{{ block.settings.carousel_image | img_url:'master' }}" src=" image_url }}" alt="store images" width="300" height="250">
+        <p class="categories-text">{{ block.settings.categories-text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% schema %}
+{
+  "name": "Categories to shop",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom-class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Section Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Store Images",
+      "settings": [
+        {
+            "type": "color_background",
+            "id": "background",
+            "label": "Background",
+            "default": "linear-gradient(#ffffff, #000000)"
+        },
+        {
+          "type": "image_picker",
+          "id": "carousel_image",
+          "label": "categories image"
+        },
+        {
+            "type": "text",
+            "id": "categories-text",
+            "label": "Enter your text"
+        }
+
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Categories to shop",
+      "category": "Custom Section"
+    }
+  ]
+}
+{% endschema %}

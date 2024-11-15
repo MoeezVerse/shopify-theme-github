@@ -216,6 +216,18 @@
     },
     "categories_to_shop_D46dHd": {
       "type": "categories-to-shop",
+      "blocks": {
+        "image_rVRcRB": {
+          "type": "image",
+          "settings": {
+            "background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
+            "categories-text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_rVRcRB"
+      ],
       "settings": {
         "custom-class": "categories-to-shop",
         "heading_text": "categories to shop"

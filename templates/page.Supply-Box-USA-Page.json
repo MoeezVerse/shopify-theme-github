@@ -220,7 +220,8 @@
         "image_rVRcRB": {
           "type": "image",
           "settings": {
-            "background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
+            "background": "linear-gradient(180deg, rgba(194, 249, 255, 1), rgba(0, 0, 0, 1) 100%)",
+            "carousel_image": "shopify://shop_images/bags_medium_e1114aae-58bd-4ef1-ba81-13d93d09f660.png",
             "categories-text": ""
           }
         }

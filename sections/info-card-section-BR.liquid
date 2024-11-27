@@ -1,0 +1,208 @@
+<div class="info-card-section">
+    <div class="info-card-container info-card-container-flyer">
+        {% for block in section.blocks %}
+            <div class="info-card-v2" style="background-color: {{ block.settings.background_color }};">
+                <div class="info-card-text">
+                    <p class="main-text">{{ block.settings.text_main }}</p>
+                    <p class="para-text">{{ block.settings.text_para }}</p>
+                    {% if block.settings.description_image != blank %}
+                      <div class="description-icon">
+                        <img src="{{ block.settings.description_image | img_url:"master" }}" alt="{{ block.settings.description_image }}" width="" height="">
+                      </div>
+                    {% endif %}
+                    <div class="info-card-btn">
+                        <a href="{{ block.settings.btn_url }}">{{ block.settings.btn_para }}</a>
+                    </div>
+                </div>
+                
+                <div class="info-card-image">
+                    <img src="{{ block.settings.category_image | img_url:"master" }}" alt="{{ block.settings.category_image }}" width="60" height="113">
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.info-card-section {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 0px 20px;
+}
+.info-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+.info-card-v2 {
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  display: flex;
+  align-items: stretch;
+  flex-basis: 33%;
+  border-radius: 8px;
+  padding: 20px 35px 20px;
+}
+.info-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 0px;
+  justify-content: center;
+}
+.info-card-text p.main-text {
+  font-size: 26px;
+  margin: 0px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.info-card-text p.para-text {
+  font-size: 16px;
+  max-width: 100%;
+}
+.info-card-btn {
+  display: flex;
+  align-items: flex-end;
+}
+.info-card-btn a {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1vw;
+  font-weight: 500;
+}
+.info-card-image {
+  flex: 0 1 190px;
+  display: flex;
+  align-items: center;
+}
+.info-card-image img {
+  width: 100%;
+  height: auto;
+}
+.description-icon img {
+  max-width: 100px;
+  min-height: 43.2px;
+  object-fit: contain;
+}
+{% comment %} slick css {% endcomment %}
+.info-card-section .slick-initialized .slick-slide {
+  display: flex;
+  min-height: 270px;
+  gap: 15%;
+} 
+@media (max-width: 768px) {
+  .info-card-container {
+    flex-direction: column;
+  }
+  .info-card-btn a {
+    font-size: 12px;
+  }
+}
+</style>
+<script>
+    $(document).ready(function () {
+      // Function to initialize or destroy Slick based on window width
+      function toggleSlick() {
+        const $slider = $('.info-card-container'); // Selector for the Slick container
+  
+        if (window.outerWidth <= 769) {
+          if (!$slider.hasClass('slick-initialized')) {
+            $slider.slick({
+              infinite: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              autoplaySpeed: 2000,
+              lazyLoad: 'ondemand',
+              arrows: true,
+              prevArrow: '<div class="class-to-style custom-left"><span class="fa fa-angle-left"></span><span class="sr-only">Prev</span></div>',
+              nextArrow: '<div class="class-to-style custom-right"><span class="fa fa-angle-right"></span><span class="sr-only">Next</span></div>',
+            });
+          }
+        } else {
+          if ($slider.hasClass('slick-initialized')) {
+            $slider.slick('unslick'); // Destroy Slick if initialized
+          }
+        }
+      }
+  
+      // Call toggleSlick on page load
+      toggleSlick();
+  
+      // Recheck on window resize
+      $(window).resize(function () {
+        toggleSlick();
+      });
+    });
+  </script>
+
+{% schema %}
+{
+  "name": "Categories to shop",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom-class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Section Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Card",
+      "name": "Card",
+      "settings": [
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Select Background Color"
+        },
+        {
+            "type": "text",
+            "id": "text_main",
+            "label": "Enter your text"
+        },
+        {
+            "type": "text",
+            "id": "text_para",
+            "label": "Enter your text"
+        },
+        {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Select the Url"
+        },
+        {
+            "type": "text",
+            "id": "btn_para",
+            "label": "Enter your text"
+        },
+        {
+          "type": "image_picker",
+          "id": "category_image",
+          "label": "categories image"
+        },
+        {
+          "type": "image_picker",
+          "id": "description_image",
+          "label": "Insta Cart Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Info Card"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,103 @@
+<div class="best-makekrt-price-main-{{ section.id }} {{ section.settings.custom-class }}">
+    <h2 class="a1-custom-flyer-heading">{{ section.settings.heading_text }}</h2>
+    <div class="category-circle-container">
+    {% for block in section.blocks %}
+    <div class="category-circle">
+        <a class="category-circle-main-inside" href="{{ block.settings.market-url }}">
+            <div class="circle-image" style="background-image: url('{{ block.settings.market-images | img_url: 'master' }}');"></div>
+                <p>{{ block.settings.market-text }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+<style>
+.best-makekrt-price-main-template--23774529388834__marke_price_br_6N3FYT {
+    width: 90%;
+    margin: 0px auto;
+}
+.category-circle-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+}
+.category-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    flex-basis: calc(25% - 1.5em);
+    background: #80808017;
+}
+a.category-circle-main-inside {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+.circle-image {
+    width: 56px;
+    height: 56px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block !important;
+}
+.category-circle-main-inside p {
+    margin-top: 0;
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+</style>
+{% schema %}
+{
+  "name": "Burlington flyer's",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Enter section Title"
+    },
+    {
+        "type": "text",
+        "id": "custom-class",
+        "label": "Custom Class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Prices",
+      "name": "Market Prices",
+      "settings": [
+        {
+          "type": "url",
+          "id": "market-url",
+          "label": "Market URl"
+        },
+        {
+            "type": "image_picker",
+            "id": "market-images",
+            "label": "Enter the market images"
+        },
+        {
+            "type": "text",
+            "id": "market-text",
+            "label": "Market Names"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Best Market Prices"
+    }
+  ]
+}
+{% endschema %}

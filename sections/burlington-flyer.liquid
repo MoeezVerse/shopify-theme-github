@@ -1,0 +1,183 @@
+<div class="burlington-flyer-main {{ section.settings.custom-class }}">
+    <div class="flyer-content">
+        <div class="flyer-content-left-half">
+            {% for block in section.blocks %}
+            {% if block.type == "Flyer" %}
+                <a class="flyer-link" href="{{ block.settings.Flyer_slick_url }}">
+                    <div class="flyer-inside-type">
+                        <img src="{{ block.settings.Flyer_image-slick | img_url:"master"  }}" alt="{{ block.settings.Flyer_image-slick.alt }}" width="" height="">
+                    </div>
+                </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="flyer-content-right">
+            {% for block in section.blocks %}
+            {% if block.type == "Flyer-left" %}
+            <div class="flyer-content-right-half">
+                <img src="{{ block.settings.flyer_image-left | img_url:"master" }}" alt="{{ block.settings.flyer_image-left.alt }}" width="" height="">
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<style>
+.burlington-flyer-main {
+    max-width: 90%;
+    margin: 0px auto;
+}
+.burlington-flyer-main .flyer-content {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.flyer-content-left-half {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #80808036;
+    padding: 10px;
+    max-width: 100%;
+    width: 32%;
+}
+.slick-slide .flyer-content-left-half img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.flyer-content-right-half img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.flyer-content-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.flyer-content-right-half {
+    display: flex;
+}
+.flyer-content-left-half a.flyer-link.slick-slide {
+    display: flex;
+    justify-content: center;
+}
+.flyer-content-left-half .flyer-inside-type img {
+    width: 250px;
+}
+{% comment %} arrow Css {% endcomment %}
+.burlington-flyer-main .class-to-style.custom-left {
+    top: 40%;
+    left: 43px;
+    padding: 5px;
+}
+.burlington-flyer-main .class-to-style.custom-right {
+    right: 50px;
+    top: 40%;
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    .burlington-flyer-main .flyer-content {
+        flex-direction: column;
+    }
+    .flyer-content-left-half {
+        width: 100%;
+    }
+    .flyer-content-left-half .flyer-inside-type img {
+        width: 250px;
+        object-fit: cover;
+        margin: auto;
+    }
+    .slick-initialized .slick-slide {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0px;
+    }
+}
+</style>
+<script>
+    $(document).ready(function(){
+      $('.flyer-content-left-half').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplaySpeed: 1000,
+        arrows: true,  // Enable navigation arrow
+        prevArrow: '<div class="class-to-style custom-left"><span class="fa fa-angle-left"></span><span class="sr-only">Prev</span></div>',
+        nextArrow: '<div class="class-to-style custom-right"><span class="fa fa-angle-right"></span><span class="sr-only">Next</span></div>',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              autoplaySpeed: 1000,
+              arrows: false
+            }
+          },
+          {
+            breakpoint: 769,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              autoplaySpeed: 1000,
+              arrows: false
+            }
+          }
+        ]
+      })
+      });
+</script>
+{% schema %}
+{
+  "name": "Burlington flyer's",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom-class",
+      "label": "Custom Class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Flyer",
+      "name": "Slick Flyer",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "Flyer_image-slick",
+          "label": "Enter the Banner Flyer Image"
+        },
+        {
+            "type": "url",
+            "id": "Flyer_slick_url",
+            "label": "Enter the flyer link"
+        }
+      ]
+    },
+    {
+      "type": "Flyer-left",
+      "name": "left Flyer",
+       "settings": [
+        {
+        "type": "image_picker",
+        "id": "flyer_image-left",
+        "label": "Enter the Banner Flyer Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Burlington flyer's"
+    }
+  ]
+}
+{% endschema %}

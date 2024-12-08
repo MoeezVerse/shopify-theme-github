@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "main": {
       "type": "SB-image-banner",
@@ -217,21 +217,237 @@
     "categories_to_shop_D46dHd": {
       "type": "categories-to-shop",
       "blocks": {
-        "image_rVRcRB": {
-          "type": "image",
+        "category_tmbGnP": {
+          "type": "Category",
           "settings": {
-            "background": "linear-gradient(180deg, rgba(194, 249, 255, 1), rgba(0, 0, 0, 1) 100%)",
-            "carousel_image": "shopify://shop_images/bags_medium_e1114aae-58bd-4ef1-ba81-13d93d09f660.png",
-            "categories-text": "Bulk Bags"
+            "background_color": "#e1ffe1",
+            "category_image": "shopify://shop_images/bags_medium_e1114aae-58bd-4ef1-ba81-13d93d09f660.png",
+            "text": "Grocery",
+            "category_link": ""
+          }
+        },
+        "category_48TcLG": {
+          "type": "Category",
+          "settings": {
+            "background_color": "#c2f9ff",
+            "category_image": "shopify://shop_images/sun-cat_copy_4_medium_9dc3e1a7-7e9c-49f5-b8b1-f45bec80d519.png",
+            "text": "Cleaning Supplies",
+            "category_link": ""
+          }
+        },
+        "category_YtdGJ6": {
+          "type": "Category",
+          "settings": {
+            "background_color": "#ffe7bd",
+            "category_image": "shopify://shop_images/sun-cat_copy_5_medium_2ed1010f-843a-4cb7-8069-807ccef77323.png",
+            "text": "Garbage Bags",
+            "category_link": ""
+          }
+        },
+        "category_fQWtqY": {
+          "type": "Category",
+          "settings": {
+            "background_color": "#f8e2e3",
+            "category_image": "shopify://shop_images/Artboard_1_1_medium_1.png",
+            "text": "Grocery",
+            "category_link": ""
+          }
+        },
+        "category_ghMApd": {
+          "type": "Category",
+          "settings": {
+            "background_color": "#fff2ca",
+            "category_image": "shopify://shop_images/Artboard_1_copy_4_medium_2491d1d2-c880-4fe9-9197-583b39643abf.png",
+            "text": "Meats and Food",
+            "category_link": ""
+          }
+        },
+        "category_ffjhTd": {
+          "type": "Category",
+          "settings": {
+            "background_color": "#c2f9ff",
+            "category_image": "shopify://shop_images/Artboard_1_copy_5_medium_1.png",
+            "text": "Beverage",
+            "category_link": ""
+          }
+        },
+        "category_mkHtH3": {
+          "type": "Category",
+          "settings": {
+            "background_color": "#f8e2e3",
+            "category_image": "shopify://shop_images/Artboard_1_copy_6_medium_1.png",
+            "text": "Dairy",
+            "category_link": ""
+          }
+        },
+        "category_FebV7D": {
+          "type": "Category",
+          "settings": {
+            "background_color": "#ffe7bd",
+            "category_image": "shopify://shop_images/sun-cat_copy_medium_1.png",
+            "text": "Disposable Dinnerware",
+            "category_link": ""
+          }
+        },
+        "category_3DTF6n": {
+          "type": "Category",
+          "settings": {
+            "background_color": "#e1ffe1",
+            "category_image": "shopify://shop_images/sun-cat_copy_3_medium_a68c94ce-f966-4c2f-b3d6-780566d57854.png",
+            "text": "Sea Food",
+            "category_link": ""
           }
         }
       },
       "block_order": [
-        "image_rVRcRB"
+        "category_tmbGnP",
+        "category_48TcLG",
+        "category_YtdGJ6",
+        "category_fQWtqY",
+        "category_ghMApd",
+        "category_ffjhTd",
+        "category_mkHtH3",
+        "category_FebV7D",
+        "category_3DTF6n"
       ],
       "settings": {
         "custom-class": "categories-to-shop",
         "heading_text": "categories to shop"
+      }
+    },
+    "info_card_section_br_PG4kG3": {
+      "type": "info-card-section-BR",
+      "blocks": {
+        "card_yh8B3P": {
+          "type": "Card",
+          "settings": {
+            "background_color": "#f8e2e3",
+            "text_main": "In Store Shopping",
+            "text_para": "With over 10,000+products",
+            "btn_url": "",
+            "btn_para": "View Locations",
+            "category_image": "shopify://shop_images/Artboard_1.png"
+          }
+        },
+        "card_PdjjWq": {
+          "type": "Card",
+          "settings": {
+            "background_color": "#ffe7bd",
+            "text_main": "We Deliver",
+            "text_para": "Delivering forthe last 26 years",
+            "btn_url": "",
+            "btn_para": "View Schedule",
+            "category_image": "shopify://shop_images/Artboard_1_copy.png"
+          }
+        },
+        "card_993Hwf": {
+          "type": "Card",
+          "settings": {
+            "background_color": "#b4e8b4",
+            "text_main": "Same Day Delivery",
+            "text_para": "",
+            "btn_url": "",
+            "btn_para": "View Shop now",
+            "category_image": "shopify://shop_images/Artboard_1_copy_3.png",
+            "description_image": "shopify://shop_images/oie_Y9awDplIqm2w_medium_267fe838-e8a2-4ecb-9a1f-c0b54eabc865.png"
+          }
+        }
+      },
+      "block_order": [
+        "card_yh8B3P",
+        "card_PdjjWq",
+        "card_993Hwf"
+      ],
+      "settings": {
+        "custom-class": "",
+        "heading_text": ""
+      }
+    },
+    "burlington_flyer_rxKYdG": {
+      "type": "burlington-flyer",
+      "blocks": {
+        "flyer_qhmaJf": {
+          "type": "Flyer",
+          "settings": {
+            "Flyer_image-slick": "shopify://shop_images/A1_Flyer_November_2024.webp",
+            "Flyer_slick_url": ""
+          }
+        },
+        "flyer_LnYCJG": {
+          "type": "Flyer",
+          "settings": {
+            "Flyer_image-slick": "shopify://shop_images/A1_Flyer_November_2024.webp",
+            "Flyer_slick_url": ""
+          }
+        },
+        "flyer_left_HdHTX7": {
+          "type": "Flyer-left",
+          "settings": {
+            "flyer_image-left": "shopify://shop_images/Artboard_1_copy_x192_2x_f813bac1-2710-47c7-8425-99324cb5763a.webp"
+          }
+        },
+        "flyer_left_Xc6UGy": {
+          "type": "Flyer-left",
+          "settings": {
+            "flyer_image-left": "shopify://shop_images/Artboard_1_x192_2x_238831d0-95d3-4166-992e-5c177bfd709f.webp"
+          }
+        }
+      },
+      "block_order": [
+        "flyer_qhmaJf",
+        "flyer_LnYCJG",
+        "flyer_left_HdHTX7",
+        "flyer_left_Xc6UGy"
+      ],
+      "settings": {
+        "custom-class": ""
+      }
+    },
+    "marke_price_br_6N3FYT": {
+      "type": "marke-price-BR",
+      "blocks": {
+        "prices_qgqCt4": {
+          "type": "Prices",
+          "settings": {
+            "market-url": "",
+            "market-images": "shopify://shop_images/Artboard_2_copy_medium_1359b2e8-53e0-4d74-a370-f8b61f8c90c1.png",
+            "market-text": "Flyers and Specials"
+          }
+        },
+        "prices_3EfnyP": {
+          "type": "Prices",
+          "settings": {
+            "market-url": "",
+            "market-images": "shopify://shop_images/Artboard_2_copy_3_medium_b4af2b77-ecdb-4d71-a71b-7469b06d0545.png",
+            "market-text": "Price Match Policy"
+          }
+        },
+        "prices_UAHxiK": {
+          "type": "Prices",
+          "settings": {
+            "market-url": "",
+            "market-images": "shopify://shop_images/Artboard_2_copy_4_medium_b44322cc-d705-4970-a470-581b4e6253cd.webp",
+            "market-text": "Buy The Case and Save"
+          }
+        },
+        "prices_zdJ4fN": {
+          "type": "Prices",
+          "settings": {
+            "market-url": "",
+            "market-images": "shopify://shop_images/Artboard_2_copy_2_medium_25d4bf12-0c00-49a2-9b84-29b30108e6fc.png",
+            "market-text": "Buying a Pallet? <br> Ask for A1-Time-Deal"
+          }
+        }
+      },
+      "block_order": [
+        "prices_qgqCt4",
+        "prices_3EfnyP",
+        "prices_UAHxiK",
+        "prices_zdJ4fN"
+      ],
+      "settings": {
+        "heading_text": "Best Makret Price",
+        "custom-class": ""
       }
     }
   },
@@ -241,6 +457,9 @@
     "sb_featured_categories_6iDET3",
     "faq_usa_landing_page_icwfBc",
     "custom_image_slider_kghMiA",
-    "categories_to_shop_D46dHd"
+    "categories_to_shop_D46dHd",
+    "info_card_section_br_PG4kG3",
+    "burlington_flyer_rxKYdG",
+    "marke_price_br_6N3FYT"
   ]
 }

@@ -169,8 +169,9 @@
                   %}
                 </li>
               {%- endfor -%}
-              {% render 'Collection-add-to cart' %}
+              
             </ul>
+            {% render 'Collection-add-to cart' %}
 
             {%- if paginate.pages > 1 -%}
               {% render 'pagination', paginate: paginate, anchor: '' %}

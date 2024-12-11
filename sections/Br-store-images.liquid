@@ -1,0 +1,101 @@
+<div class="container-slider-{{ section.id }} {{ section.settings.custom-class }}">
+    <h2 class="a1-custom-flyer-heading">{{ section.settings.heading_text }}</h2>
+    <div class="slick-carousel-holder-v1 store-slider">
+        {% for block in section.blocks %}
+            <img src="{{ block.settings.store-images | img_url: 'master' }}" alt="{{ block.settings.store-images.alt }}" height="" width=""> 
+        {% endfor %}
+    </div>
+</div>
+<style>
+    .container-slider-template--23774529388834__br_store_images_qQYjxX {
+        max-width: 1440px;
+        margin: 0px auto;
+    }
+    .container-slider-template--23774529388834__br_store_images_qQYjxX .slick-initialized.slick-slider {
+        margin: 28px 0px;
+    }
+    .container-slider-template--23774529388834__br_store_images_qQYjxX img {
+        height: 289px;
+        object-fit: cover;
+        margin: 0px 8px;
+    }
+
+    @media (max-width: 768px) {
+        .container-slider-template--23774529388834__br_store_images_qQYjxX {
+            max-width: 90%;
+        }
+    }
+</style>
+<script>
+    $(document).ready(function(){
+      $('.slick-carousel-holder-v1').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay:true,
+        autoplaySpeed:1500,
+        arrows: true,  // Enable navigation arrow
+        prevArrow: '<div class="class-to-style custom-left"><span class="fa fa-angle-left"></span><span class="sr-only">Prev</span></div>',
+        nextArrow: '<div class="class-to-style custom-right"><span class="fa fa-angle-right"></span><span class="sr-only">Next</span></div>',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              infinite: true,
+              autoplay:true,
+              autoplaySpeed: 1000,
+              arrows: false
+            }
+          },
+          {
+            breakpoint: 769,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              infinite: true,
+              autoplay:true,
+              autoplaySpeed: 1000,
+              arrows: false
+            }
+          }
+        ]
+      })
+      });
+</script>
+{% schema %}
+{
+  "name": "Store Location Images",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Enter section Title"
+    },
+    {
+        "type": "text",
+        "id": "custom-class",
+        "label": "Custom Class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Images",
+      "name": "Store Images",
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "store-images",
+            "label": "Store Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Location Images"
+    }
+  ]
+}
+{% endschema %}

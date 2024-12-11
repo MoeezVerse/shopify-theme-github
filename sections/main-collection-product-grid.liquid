@@ -143,6 +143,7 @@
           <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
 
+            {% render 'Collection-add-to cart' %}
             <ul
               id="product-grid"
               data-id="{{ section.id }}"
@@ -171,7 +172,7 @@
               {%- endfor -%}
               
             </ul>
-            {% render 'Collection-add-to cart' %}
+            
 
             {%- if paginate.pages > 1 -%}
               {% render 'pagination', paginate: paginate, anchor: '' %}

@@ -16,5 +16,26 @@
   $(document).on('click','#collection-cart-{{ product.id }}',function(){
     let getvarintid = $(this).parents('.collection-cart').find('#varaintgetid').val();
     alert(getvarintid);
+
+    let formobj = {
+    quantity: 1,
+    id : getvarintid
+  };
+
+  $.ajax({
+    type: "Post",
+    url: "/cart/add.js",
+    cache: "",
+    data: "",
+    dataType: "",
+    success: function(data){
+      console.log('success');
+    },
+    error : function(xhr, ajaxOption, thrownError ){
+      console.log('error');
+    }
   });
+    
+  });
+  
 </script>

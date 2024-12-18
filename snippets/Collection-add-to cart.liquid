@@ -1,4 +1,6 @@
-<div class="collection-cart">
+<div class="collection-cart" style="
+    z-index: 9999999;
+    position: relative;">
   {% for variant in product.variants %}
     <input type="hidden" id="varaintgetid" value="{{ variant.id }}">
   {% endfor %}

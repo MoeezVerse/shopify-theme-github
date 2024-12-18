@@ -25,9 +25,9 @@
   $.ajax({
     type: "Post",
     url: "/cart/add.js",
-    cache: "",
-    data: "",
-    dataType: "",
+    cache: false,
+    data: formobj,
+    dataType: "json",
     success: function(data){
       console.log('success');
     },

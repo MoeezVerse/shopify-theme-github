@@ -143,8 +143,8 @@
               id="title-{{ section_id }}-{{ card_product.id }}"
             {% endif %}
           >
-             <!-- href="{{ card_product.url }}" -->
             <a
+              href="{{ card_product.url }}"
               id="CardLink-{{ section_id }}-{{ card_product.id }}"
               class="full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
@@ -197,10 +197,9 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '' %}
-            
+            {% render 'Collection-add-to cart', product: card_product  %}
           </div>
         </div>
-        {% render 'Collection-add-to cart', product: card_product %}
         {%- if show_quick_add -%}
           <div class="quick-add no-js-hidden">
             {%- liquid

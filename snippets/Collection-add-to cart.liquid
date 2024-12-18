@@ -38,6 +38,9 @@ $(document).on('click', '#collection-cart-{{ product.id }}', function () {
                 dataType: "json",
                 success: function (cartData) {
                     console.log('Updated cart:', cartData);
+
+                    // Update your cart UI dynamically here
+                    $('#cart-count').text(cartData.item_count); // Example: update cart item count
                 },
                 error: function (xhr, ajaxOption, thrownError) {
                     console.log('Error fetching updated cart:', thrownError);

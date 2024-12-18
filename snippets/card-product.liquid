@@ -199,7 +199,7 @@
             {% render 'price', product: card_product, price_class: '' %}
           </div>
         </div>
-        
+        {% render 'Collection-add-to cart', product: card_product %}
         {%- if show_quick_add -%}
           <div class="quick-add no-js-hidden">
             {%- liquid
@@ -335,7 +335,6 @@
     </div>
   </div>
 {%- else -%}
-  {% render 'Collection-add-to cart', product: card_product %}
   <div class="product-card-wrapper card-wrapper underline-links-hover">
     <div
       class="

@@ -2,9 +2,12 @@
   {% for variant in product.variants %}
     <input type="hidden" id="varaintgetid" value="{{ variant.id }}">
   {% endfor %}
-  <button type="button" name="add" id="collection-cart-{{ product.id }}" >Add To cart</button>
+  <button onclick="addToCart()" type="button" name="add" id="collection-cart-{{ product.id }}" >Add To cart</button>
 </div>
 
 <script>
-  
+  function addToCart() {
+   let addCart = document.querySelectorAll('.collection-cart button');
+    addCart.alert("ok");
+}
 </script>

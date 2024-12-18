@@ -196,7 +196,7 @@
               </p>
             {%- endif -%}
 
-            {% render 'price', product: card_product, price_class: '' %}
+            
             
           </div>
         </div>
@@ -333,6 +333,7 @@
           {%- endif -%}
         </div>
       </div>
+      {% render 'price', product: card_product, price_class: '' %}
     </div>
   </div>
 {%- else -%}

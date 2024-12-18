@@ -22,7 +22,6 @@ $(document).on('click', '#collection-cart-{{ product.id }}', function () {
         id: getvarintid
     };
 
-    // Add product to cart
     $.ajax({
         type: "POST",
         url: "/cart/add.js",
@@ -32,47 +31,24 @@ $(document).on('click', '#collection-cart-{{ product.id }}', function () {
         success: function (data) {
             console.log('Product added to cart:', data);
 
-            // Fetch the updated cart data
-            updateCart();
+            // Fetch the updated cart
+            $.ajax({
+                type: "GET",
+                url: "/cart.js",
+                dataType: "json",
+                success: function (cartData) {
+                    console.log('Updated cart:', cartData);
+                },
+                error: function (xhr, ajaxOption, thrownError) {
+                    console.log('Error fetching updated cart:', thrownError);
+                }
+            });
         },
         error: function (xhr, ajaxOption, thrownError) {
             console.log('Error adding product to cart:', thrownError);
         }
     });
 });
-
-// Function to fetch updated cart data
-function updateCart() {
-    $.ajax({
-        type: "GET",
-        url: "/cart.js",
-        dataType: "json",
-        success: function (cartData) {
-            console.log('Updated cart data:', cartData);
-
-            // Update the cart count dynamically
-            $('#cart-count').text(cartData.item_count);
-
-            // Optional: Update the cart preview or other cart elements dynamically
-            updateCartPreview(cartData);
-        },
-        error: function (xhr, ajaxOption, thrownError) {
-            console.log('Error fetching updated cart:', thrownError);
-        }
-    });
-}
-
-// Optional: Function to update cart preview (if applicable)
-function updateCartPreview(cartData) {
-    let cartItemsHtml = '';
-    cartData.items.forEach(function (item) {
-        cartItemsHtml += `
-            <li>${item.quantity} x ${item.title}</li>
-        `;
-    });
-    $('#cart-preview').html(cartItemsHtml); // Update your cart preview container
-}
-
 
   
 </script>

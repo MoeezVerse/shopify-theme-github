@@ -8,8 +8,13 @@
 </div>
 
 <script>
-  function addToCart() {
-   let addCart = document.querySelectorAll('.collection-cart button');
-    alert("ok");
-}
+//   function addToCart() {
+//    let addCart = document.querySelectorAll('.collection-cart button');
+//     alert("ok");
+// }
+
+  $(document).on('click','#collection-cart-{{ product.id }}',function(){
+    let getvarintid = $(this).parents('collection-cart').find('#varaintgetid').val();
+    alert('ok');
+  });
 </script>

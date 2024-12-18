@@ -134,6 +134,7 @@
             {%- endif -%}
           </div>
         </div>
+        {% render 'Collection-add-to cart', product: card_product %}
       </div>
       <div class="card__content">
         <div class="card__information">
@@ -199,7 +200,7 @@
             {% render 'price', product: card_product, price_class: '' %}
           </div>
         </div>
-        {% render 'Collection-add-to cart', product: card_product %}
+        
         {%- if show_quick_add -%}
           <div class="quick-add no-js-hidden">
             {%- liquid

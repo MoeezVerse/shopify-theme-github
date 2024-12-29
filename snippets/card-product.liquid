@@ -197,7 +197,9 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '' %}
+            {% if template == 'collection' %}
             {% render 'Collection-add-to cart', product: card_product  %}
+            {% endif %}
           </div>
         </div>
         {%- if show_quick_add -%}

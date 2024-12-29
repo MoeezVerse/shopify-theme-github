@@ -2,13 +2,13 @@
     <h2 class="a1-custom-flyer-heading">{{ section.settings.heading_text }}</h2>
     <div class="slick-carousel-holder-v1 store-slider">
         {% for block in section.blocks %}
-            <img src="{{ block.settings.store-images | img_url: 'master' }}" alt="{{ block.settings.store-images.alt }}" height="" width=""> 
+            <img class="image-slider" src="{{ block.settings.store-images | img_url: 'master' }}" alt="{{ block.settings.store-images.alt }}" height="" width=""> 
         {% endfor %}
     </div>
 </div>
 <style>
-    .container-slider-template--23774529388834__br_store_images_qQYjxX {
-        max-width: 1440px;
+    .container-slider-template--23964182839586__br_store_images_qQYjxX {
+        width: 1440px;
         margin: 0px auto;
     }
     .container-slider-template--23774529388834__br_store_images_qQYjxX .slick-initialized.slick-slider {

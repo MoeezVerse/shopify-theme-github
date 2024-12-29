@@ -4,38 +4,62 @@
   {% for variant in product.variants %}
     <input type="hidden" id="varaintgetid" value="{{ variant.id }}">
   {% endfor %}
-  <button onclick="" type="button" name="add" id="collection-cart-{{ product.id }}" >Add To cart</button>
+  <button class="Ctr-btn" onclick="" type="button" name="add" id="collection-cart-{{ product.id }}" >Add To cart</button>
 </div>
-
-<script>
-//   function addToCart() {
-//    let addCart = document.querySelectorAll('.collection-cart button');
-//     alert("ok");
-// }
-
-  $(document).on('click','#collection-cart-{{ product.id }}',function(){
-    let getvarintid = $(this).parents('.collection-cart').find('#varaintgetid').val();
-    alert(getvarintid);
-
-    let formobj = {
-    quantity: 1,
-    id : getvarintid
-  };
-
-  $.ajax({
-    type: "Post",
-    url: "/cart/add.js",
-    cache: false,
-    data: formobj,
-    dataType: "json",
-    success: function(data){
-      console.log('success');
-    },
-    error : function(xhr, ajaxOption, thrownError ){
-      console.log('error');
-    }
-  });
+<style>
+  .collection-cart {
+    display: flex;
+    justify-content: center;
+    max-width: 90%;
+}
+button.Ctr-btn {
+  width: 100%;
+  padding: 5px 0px;
+  font-family: sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #EC0000;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+</style>
+  <script>
+    $(document).on('click', '#collection-cart-{{ product.id }}', function () {
+      let getVariantId = $('#varaintgetid').val();
     
-  });
-  
-</script>
+      let formObj = {
+        id: getVariantId,
+        quantity: 1
+      };
+    
+      $.ajax({
+        type: "POST",
+        url: "/cart/add.js",
+        data: formObj,
+        dataType: "json",
+        success: function (data) {
+          console.log('Product added to cart:', data);
+    
+          // Fetch updated cart and update quantity dynamically
+          $.ajax({
+            type: "GET",
+            url: "/cart.js",
+            dataType: "json",
+            success: function (cart) {
+              // Update cart count in the header
+              $('.cart-count-bubble').text(cart.item_count); // Update cart count dynamically
+              console.log('Updated cart:', cart);
+            },
+            error: function (xhr) {
+              console.log('Failed to fetch updated cart:', xhr.responseJSON);
+            }
+          });
+        },
+        error: function (xhr, ajaxOption, thrownError) {
+          console.log('Failed to add to cart.', xhr.responseJSON);
+        }
+      });
+    });    
+  </script>

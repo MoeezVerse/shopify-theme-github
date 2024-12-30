@@ -60,12 +60,20 @@
         {% endif %}
         <div class="text-reviews">
           <div class="security-text">
-            <img src="{{ block.settings.protection-icon | img_url:"master" }}" alt="" width="" height="">
+            {% if block.settings.protection-icon %}
+              <img src="{{ block.settings.protection-icon | img_url:"master" }}" alt="" width="" height="">
+            {% endif %}
+            {% if block.settings.protection-text %}
             <span>{{ block.settings.protection-text }}</span>
+            {% endif %}
           </div>
           <div class="reviews">
-            <img src="{{ block.settings.reviews-stars | img_url:"master" }}" alt="{{  }}" width="" height="">
-            <span>{{ block.settings.review-text }}</span>
+            {% if block.settings.reviews-stars %}
+              <img src="{{ block.settings.reviews-stars | img_url:"master" }}" alt="{{  }}" width="" height="">
+            {% endif %}
+            {% if block.settings.review-text %}
+              <span>{{ block.settings.review-text }}</span>
+            {% endif %}
           </div>
         </div>
       </div>

@@ -22,9 +22,7 @@
       "blocks": {
         "banner_ayT37K": {
           "type": "Banner",
-          "settings": {
-            "main-banner": "shopify://shop_images/Group_4835.png"
-          }
+          "settings": {}
         }
       },
       "block_order": [

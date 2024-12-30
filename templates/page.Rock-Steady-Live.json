@@ -20,12 +20,35 @@
     "rs_main_banner_Ugy6WB": {
       "type": "RS-Main-Banner",
       "blocks": {
+        "data_99eWQq": {
+          "type": "Data",
+          "settings": {
+            "main-badge": "shopify://shop_images/Vector_bbd8987c-1336-4a1d-b4bc-e90394c37455.png",
+            "main-badge-text": "Enjoy The World’s 1st Portable, All-In-One Sound System",
+            "main-heading": "Immersive Sound Wherever LIFE TAKES YOU.",
+            "supportive-text": "Enjoy Fully Immersive Sound and pump up the bass with the world's first wireless Bluetooth subwoofer.",
+            "info-1": "shopify://shop_images/Vector_1_d8d3fbc3-9768-4209-b979-703f2dd8602a.png",
+            "info-1-text": "Fully Portable Wireless Subwoofer",
+            "info-2": "shopify://shop_images/Group.png",
+            "info-2-text": "16hrs Battery Life With Fast Charge",
+            "info-3": "shopify://shop_images/Group_4829.png",
+            "info-3-text": "Fast & Easy Setup",
+            "info-4": "shopify://shop_images/Group_4827.png",
+            "info-4-text": "Unlimited Speaker Connections",
+            "btn-text": "Build Your Sound System",
+            "protection-icon": "shopify://shop_images/Vector_2_c7a01999-b98b-42f5-931f-e5a0c1788bcd.png",
+            "protection-text": "Shopify Secure Checkout",
+            "reviews-stars": "shopify://shop_images/Group_4151_5a2548d2-7bd6-4f8a-ba10-7bd3ce675f8c.png",
+            "review-text": "500+ 5 Star Reviews Online"
+          }
+        },
         "banner_ayT37K": {
           "type": "Banner",
           "settings": {}
         }
       },
       "block_order": [
+        "data_99eWQq",
         "banner_ayT37K"
       ],
       "settings": {}

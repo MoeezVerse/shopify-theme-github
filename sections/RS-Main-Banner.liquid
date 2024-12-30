@@ -1,6 +1,182 @@
+<div class="RS-Banner">
+  <div class="RS-Main-Banner">
+    {% for block in section.blocks %}
+    <div class="right-banner-data">
+      <div class="main-bage-text">
+        <img src="{{ block.settings.main-badge | img_url:"master" }}" alt="{{ }}" width="" height="">
+        <span>{{ block.settings.main-badge-text }}</span>
+      </div>
+      <div class="main-heading">
+        <p>{{ block.settings.main-heading }}</p>
+      </div>
+      <div class="supportive-text">
+        <p>{{ block.settings.supportive-text }}</p>
+      </div>
+      <div class="informative-text">
+        <div class="info infor-1">
+          <img src="{{ block.settings.info-1 | img_url:"master" }}" alt="{{  }}" width="" height="" >
+          <span>{{ block.settings.info-1-text }}</span>
+        </div>
+        <div class="info infor-2">
+          <img src="{{ block.settings.info-2 | img_url:"master" }}" alt="{{  }}" width="" height="" >
+          <span>{{ block.settings.info-2-text }}</span>
+        </div>
+        <div class="info infor-3">
+          <img src="{{ block.settings.info-3 | img_url:"master" }}" alt="{{  }}" width="" height="" >
+          <span>{{ block.settings.info-3-text }}</span>
+        </div>
+        <div class="info infor-4">
+          <img src="{{ block.settings.info-4 | img_url:"master" }}" alt="{{  }}" width="" height="" >
+          <span>{{ block.settings.info-4-text }}</span>
+        </div>
+      </div>
+      <div class="btn-reviews">
+        <button>{{ block.settings.btn-text }}</button>
+        <div class="text-reviews">
+          <div class="security-text">
+            <img src="{{ block.settings.protection-icon | img_url:"master" }}" alt="" width="" height="">
+            <span>{{ block.settings.protection-text }}</span>
+          </div>
+          <div class="reviews">
+            <img src="{{ block.settings.reviews-stars | img_url:"master" }}" alt="{{  }}" width="" height="">
+            <span>{{ block.settings.review-text }}</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+      {%  endfor %}
+    {% for block in section.blocks %}
+    <div class="left-side-banner">
+      <img src="{{ block.settings.main-banner | img_url:"master" }}" alt="" width="" height="">
+    </div> 
+      {% endfor %}
+  </div>
+</div>
 {% schema %}
   {
     "name": "Section name",
-    "settings": []
+    "settings": [
+      
+    ],
+     "blocks": [
+    {
+      "type": "Data",
+      "name": "Data",
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "main-badge",
+            "label": "Select The Icon"
+        },
+        {
+          "type": "text",
+          "id": "main-badge-text",
+          "label": "Enter Your Text",
+          "default": "Enjoy The World’s 1st Portable, All-In-One Sound System"
+        },
+        {
+            "type": "text",
+            "id": "main-heading",
+            "label": "Enter Your Text",
+            "default": "Immersive Sound Wherever LIFE TAKES YOU."
+        },
+        {
+          "type": "text",
+          "id": "supportive-text",
+          "label": "Enter Your Text",
+          "default": "Enjoy Fully Immersive Sound and pump up the bass with the world's first wireless Bluetooth subwoofer."
+        },
+        {
+            "type": "image_picker",
+            "id": "info-1",
+            "label": "Select The Icon"
+        },
+        {
+          "type": "text",
+          "id": "info-1-text",
+          "label": "Enter Your Text",
+          "default": "Fully Portable Wireless Subwoofer"
+        },
+        {
+            "type": "image_picker",
+            "id": "info-2",
+            "label": "Select The Icon"
+        },
+        {
+          "type": "text",
+          "id": "info-2-text",
+          "label": "Enter Your Text",
+          "default": "16hrs Battery Life With Fast Charge"
+        },
+        {
+            "type": "image_picker",
+            "id": "info-3",
+            "label": "Select The Icon"
+        },
+        {
+          "type": "text",
+          "id": "info-3-text",
+          "label": "Enter Your Text",
+          "default": "Fast & Easy Setup"
+        },
+        {
+            "type": "image_picker",
+            "id": "info-4",
+            "label": "Select The Icon"
+        },
+        {
+          "type": "text",
+          "id": "info-4-text",
+          "label": "Enter Your Text",
+          "default": "Unlimited Speaker Connections"
+        },
+        {
+          "type": "text",
+          "id": "btn-text",
+          "label": "Enter Your Text",
+          "default": "Build Your Sound System"
+        },
+        {
+            "type": "image_picker",
+            "id": "protection-icon",
+            "label": "Select The Icon"
+        },
+        {
+          "type": "text",
+          "id": "protection-text",
+          "label": "Enter Your Text",
+          "default": " Shopify Secure Checkout"
+        },
+        {
+            "type": "image_picker",
+            "id": "reviews-stars",
+            "label": "Select The Icon"
+        },
+        {
+          "type": "text",
+          "id": "review-text",
+          "label": "Enter Your Text",
+          "default": "500+ 5 Star Reviews Online"
+        }
+      ]
+    },
+   {
+      "type": "Banner",
+      "name": "Banner",
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "main-banner",
+            "label": "Main Banner"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rock Steady Main"
+    }
+  ]
   }
 {% endschema %}

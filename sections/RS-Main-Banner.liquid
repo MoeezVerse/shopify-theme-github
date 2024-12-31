@@ -135,32 +135,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid #0099FF; /* Adjust the border color if needed */
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #ffffff; /* Background color */
-}
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0px;
 
+}
 .info {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Space between the icon and text */
+    flex-basis: calc(50% - 10px);
 }
-
 .info img {
-  width: 24px; /* Adjust the icon size */
-  height: 24px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
-
 .info span {
   font-size: 16px; /* Adjust font size */
   color: #333333; /* Text color */
   font-weight: 500; /* Adjust font weight if needed */
-}
-
-.info:nth-child(2n) {
-  border-left: 1px solid #d3d3d3; /* Adds a divider between info sections */
-  padding-left: 20px;
 }
 
 .left-side-banner {

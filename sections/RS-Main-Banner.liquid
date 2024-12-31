@@ -13,7 +13,7 @@
       </div>
       <div class="main-heading">
         {% if block.settings.main-heading %}
-          <p>{{ block.settings.main-heading }}</p>
+          <h2>{{ block.settings.main-heading }}</h2>
         {% endif %}
       </div>
       <div class="supportive-text">
@@ -93,6 +93,30 @@
       {% endfor %}
   </div>
 </div>
+
+<style>
+.RS-Banner {
+    max-width: 1340px;
+    margin: 0px auto;
+}
+.RS-Main-Banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.main-bage-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.main-bage-text span {
+    font-size: 15px;
+    color: #000;
+}
+  
+</style>
+
 {% schema %}
   {
     "name": "Section name",

@@ -83,11 +83,13 @@
       {%  endfor %}
     
     {% for block in section.blocks %}
+      {% if block.type == "Bannner" %}
     <div class="left-side-banner">
       {% if block.settings.main-banner %}
       <img src="{{ block.settings.main-banner | img_url:"master" }}" alt="" width="" height="">
       {% endif %}
     </div> 
+        {% endif %}
       {% endfor %}
   </div>
 </div>

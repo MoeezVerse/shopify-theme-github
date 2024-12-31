@@ -142,6 +142,9 @@
 }
 .info {
     flex-basis: calc(50% - 10px);
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }
 .info img {
     width: auto;
@@ -206,6 +209,18 @@
     font-size: 12px;
 }
 @media (max-width: 768px) {
+  .right-banner-data {
+    padding: 0px 10px;
+  }
+  .main-heading {
+    text-align: center;
+  }
+  .right-banner-data .main-heading h2 {
+    width: 100%;
+  }
+  .main-bage-text span {
+      font-size: 12px;
+  }
   .RS-Main-Banner {
     flex-direction: column;
   }
@@ -214,6 +229,12 @@
   }
   .text-reviews {
     justify-content: center;
+  }
+  .security-text span {
+    font-size: 10px;
+  }
+  .reviews span {
+    font-size: 10px;
   }
 }
 </style>

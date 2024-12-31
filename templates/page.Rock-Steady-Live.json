@@ -44,7 +44,9 @@
         },
         "banner_ayT37K": {
           "type": "Banner",
-          "settings": {}
+          "settings": {
+            "main-banner": "shopify://shop_images/Group_4835.png"
+          }
         }
       },
       "block_order": [

@@ -131,6 +131,38 @@
     text-transform: capitalize;
     margin: 10px 0px;
 }
+.informative-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #0099FF; /* Adjust the border color if needed */
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff; /* Background color */
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the icon and text */
+}
+
+.info img {
+  width: 24px; /* Adjust the icon size */
+  height: 24px;
+}
+
+.info span {
+  font-size: 16px; /* Adjust font size */
+  color: #333333; /* Text color */
+  font-weight: 500; /* Adjust font weight if needed */
+}
+
+.info:nth-child(2n) {
+  border-left: 1px solid #d3d3d3; /* Adds a divider between info sections */
+  padding-left: 20px;
+}
+
 .left-side-banner {
     max-width: 709px;
 }

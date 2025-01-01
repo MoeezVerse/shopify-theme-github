@@ -79,7 +79,9 @@
         "data_MAK6HF",
         "image_pQMNbL"
       ],
-      "settings": {}
+      "settings": {
+        "Background-image": "shopify://shop_images/Rectangle_91.png"
+      }
     }
   },
   "order": [

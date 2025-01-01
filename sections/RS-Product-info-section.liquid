@@ -1,6 +1,6 @@
-<div class="rs-product-infromation">
+<div class="rs-product-infromation" style="background-image: url({{ section.settings.Background-image | img_url:'master' }});">
   {% for block in section.blocks %}
-  <div class="product-info-main"  style="background-image: url({{ block.settings.Background-image | img_url:'master' }});">
+  <div class="product-info-main">
     <div class="product-image">
       <img src="{{ block.settings.product-image | img_url:'master' }}" alt="" width="" height="">
     </div>
@@ -40,18 +40,17 @@
   {
     "name": "Section name",
     "settings": [
-      
+      {
+          "type": "image_picker",
+          "id": "Background-image",
+          "label": "Select The Background Image"
+      }
     ],
     "blocks": [
     {
       "type": "Data",
       "name": "Product Information",
       "settings": [
-        {
-            "type": "image_picker",
-            "id": "Background-image",
-            "label": "Select The Background Image"
-        },
         {
           "type": "text",
           "id": "btn-heading",

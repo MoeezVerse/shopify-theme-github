@@ -70,7 +70,9 @@
         },
         "image_pQMNbL": {
           "type": "Image",
-          "settings": {}
+          "settings": {
+            "product-image": "shopify://shop_images/Rectangle_685.png"
+          }
         }
       },
       "block_order": [

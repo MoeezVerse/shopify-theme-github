@@ -1,9 +1,12 @@
 <div class="rs-product-infromation" style="background-image: url({{ section.settings.Background-image | img_url:'master' }});">
   {% for block in section.blocks %}
   <div class="product-info-main">
+    {% if block.type == 'Image' %}
     <div class="product-image">
       <img src="{{ block.settings.product-image | img_url:'master' }}" alt="" width="" height="">
     </div>
+      {% endif %}
+    {% if block.type == 'Data' %}
     <div class="product-information">
       <h2 class="product-main-title">{{ block.settings.btn-heading }}</h2>
       <p class="product-detailed">{{ block.settings.btn-para }}</p>
@@ -31,6 +34,7 @@
         </div>
       </div>
     </div>
+      {% endif %}
   </div>
     {% endfor %}
 </div>

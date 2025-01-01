@@ -1,6 +1,83 @@
+<div class="rs-product-infromation">
+  {% for block in section.blocks %}
+  <div class="product-info-main"  style="background-image: url({{  }});">>
+    <div class="product-image">
+      <img src="{{  }}" alt="" width="" height="">
+    </div>
+    <div class="product-information">
+      <h2 class="product-main-title">{{  }}</h2>
+      <p class="product-detailed">{{  }}</p>
+      <div class="btn-reviews">
+        {% if block.settings.btn-text %}
+        <button>{{ block.settings.btn-text }}</button>
+        {% endif %}
+        <div class="text-reviews">
+          <div class="security-text">
+            {% if block.settings.protection-icon %}
+              <img src="{{ block.settings.protection-icon | img_url:"master" }}" alt="" width="" height="">
+            {% endif %}
+            {% if block.settings.protection-text %}
+            <span>{{ block.settings.protection-text }}</span>
+            {% endif %}
+          </div>
+          <div class="reviews">
+            {% if block.settings.reviews-stars %}
+              <img src="{{ block.settings.reviews-stars | img_url:"master" }}" alt="{{  }}" width="" height="">
+            {% endif %}
+            {% if block.settings.review-text %}
+              <span>{{ block.settings.review-text }}</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+
+
 {% schema %}
   {
     "name": "Section name",
-    "settings": []
+    "settings": [
+      
+    ],
+    "blocks": [
+    {
+      "type": "Data",
+      "name": "Product Information",
+      "settings": [
+        {
+          "type": "text",
+          "id": "btn-text",
+          "label": "Enter Your Text",
+          "default": "Build Your Sound System"
+        },
+        {
+            "type": "image_picker",
+            "id": "protection-icon",
+            "label": "Select The Icon"
+        },
+        {
+          "type": "text",
+          "id": "protection-text",
+          "label": "Enter Your Text",
+          "default": " Shopify Secure Checkout"
+        },
+        {
+            "type": "image_picker",
+            "id": "reviews-stars",
+            "label": "Select The Icon"
+        },
+        {
+          "type": "text",
+          "id": "review-text",
+          "label": "Enter Your Text",
+          "default": "500+ 5 Star Reviews Online"
+        }
+        
+      ]
+    }
+    ]
   }
 {% endschema %}

@@ -1,12 +1,12 @@
 <div class="rs-product-infromation">
   {% for block in section.blocks %}
-  <div class="product-info-main"  style="background-image: url({{  }});">>
+  <div class="product-info-main"  style="background-image: url({{ block.settings.Background-image | img_url:'master' }});">>
     <div class="product-image">
-      <img src="{{  }}" alt="" width="" height="">
+      <img src="{{ block.settings.product-image | img_url:'master' }}" alt="" width="" height="">
     </div>
     <div class="product-information">
-      <h2 class="product-main-title">{{  }}</h2>
-      <p class="product-detailed">{{  }}</p>
+      <h2 class="product-main-title">{{ block.settings.btn-heading }}</h2>
+      <p class="product-detailed">{{ block.settings.btn-para }}</p>
       <div class="btn-reviews">
         {% if block.settings.btn-text %}
         <button>{{ block.settings.btn-text }}</button>
@@ -48,6 +48,23 @@
       "name": "Product Information",
       "settings": [
         {
+            "type": "image_picker",
+            "id": "Background-image",
+            "label": "Select The Background Image"
+        },
+        {
+          "type": "text",
+          "id": "btn-heading",
+          "label": "Enter Your Text",
+          "default": "experience THE sound approved by experts."
+        },
+        {
+          "type": "text",
+          "id": "btn-para",
+          "label": "Enter Your Text",
+          "default": "Hear what a sound expert had to say about Rocksteady and what you can expect too.  "
+        },
+        {
           "type": "text",
           "id": "btn-text",
           "label": "Enter Your Text",
@@ -77,7 +94,23 @@
         }
         
       ]
+    },
+    {
+      "type": "Image",
+      "name": "Product Image",
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "product-image",
+            "label": "Select The Product Image"
+        }
+      ]
     }
-    ]
+  ],
+    "presets": [
+    {
+      "name": "Rock Steady Product Information"
+    }
+  ]
   }
 {% endschema %}

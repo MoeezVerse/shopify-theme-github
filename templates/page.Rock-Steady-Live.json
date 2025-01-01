@@ -54,10 +54,35 @@
         "banner_ayT37K"
       ],
       "settings": {}
+    },
+    "rs_product_info_section_UzgQXe": {
+      "type": "RS-Product-info-section",
+      "blocks": {
+        "data_MAK6HF": {
+          "type": "Data",
+          "settings": {
+            "btn-heading": "experience THE sound approved by experts.",
+            "btn-para": "Hear what a sound expert had to say about Rocksteady and what you can expect too.",
+            "btn-text": "Build Your Sound System",
+            "protection-text": "Shopify Secure Checkout",
+            "review-text": "500+ 5 Star Reviews Online"
+          }
+        },
+        "image_pQMNbL": {
+          "type": "Image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "data_MAK6HF",
+        "image_pQMNbL"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "rs_main_banner_Ugy6WB"
+    "rs_main_banner_Ugy6WB",
+    "rs_product_info_section_UzgQXe"
   ]
 }

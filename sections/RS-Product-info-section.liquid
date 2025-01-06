@@ -64,12 +64,13 @@
     text-transform: uppercase;
     font-weight: bolder;
     margin: 0px;
-    max-width: 55%;
+    max-width: 70%;
     font-size: 35px;
 }
 p.product-detailed {
     margin: 0px;
-    max-width: 67%;
+    max-width: 73%;
+    width: 100%;
 }
 .product-image {
     max-width: 532px;
@@ -77,6 +78,11 @@ p.product-detailed {
 .product-image img {
     width: 100%;
     height: auto;
+}
+@media (max-width: 768px){
+  .product-info-main {
+    flex-direction: column;
+  }
 }
 </style>
 {% schema %}

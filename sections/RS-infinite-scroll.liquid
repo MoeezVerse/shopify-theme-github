@@ -1,0 +1,83 @@
+<div class="logos">
+    {% for block in section.blocks %}
+    <div class="logo_items">
+        <img src="{{ block.settings.brands-logo | img_url:'master' }}" alt="" height="" width="">
+    </div>
+    {% endfor %}
+</div>
+
+<style>
+    @keyframes slides {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+      
+      .logos {
+        overflow: hidden;
+        padding: 30px 0px;
+        white-space: nowrap;
+        position: relative;
+      }
+      
+      .logos:before, .logos:after {
+        position: absolute;
+        top: 0;
+        content: '';
+        width: 250px;
+        height: 100%;
+        z-index: 2;
+      }
+      
+      .logos:before {
+        left: 0;
+        background: linear-gradient(to left, rgba(255,255,255,0), rgb(255, 255, 255));
+      }
+      
+      .logos:after {
+        right: 0;
+        background: linear-gradient(to right, rgba(255,255,255,0), rgb(255, 255, 255));
+      }
+      
+      .logo_items {
+        display: inline-block;
+        animation: 4s slides infinite linear;
+      }
+      
+      .logos:hover .logo_items {
+        animation-play-state: paused;
+      }
+      
+      .logo_items img{
+        height: 100px;
+      }
+</style>
+
+{% schema %}
+{
+  "name": "RS Infinte Scroll",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Brands Logo",
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "brands-logo",
+            "label": "Enter Your Image "
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RS Infinte Scroll"
+    }
+  ]
+}
+{% endschema %}

@@ -22,137 +22,140 @@
         </div>
     </div>
 </div>
+
 <style>
-.rock-steady-faq.container {
-    margin: 50px 50px 0px 50px;
-}
-.rock-steady-main {
-    width: 100%;
-    max-width: 1440px;
-    display: flex;
-    justify-content: space-between;
-    font-family: Zurich Extended;
-    font-weight: 700;
-    margin: auto;
-    gap: 50px;
-}
-.main-faq-image {
-    width: 45%;
-}
-.main-faq-image img {
-    height: auto;
-    max-width: 100%;
-    border-style: none;
-    vertical-align: top;
-}
-.faq-main-heading{
-    font-size: 30px;
-    font-weight: 600;
-    text-align: center;
-    line-height: 32px;
-    padding: 24px 10px;
-    letter-spacing: 1.5px;
-}
-.container-faq .acc_ctrl h2 {
-    color: #282F35;
-    font-family: 'Josefin Sans', Arial, sans-serif;
-    font-size: 15px;
-    letter-spacing: 1px;
-    margin: 0;
-    text-transform: uppercase;
-    text-align: left;
+  .rock-steady-faq.container {
+      margin: 50px 50px 0px 50px;
   }
-  .container-faq .acc_panel p {
-    color: #666666;
-    font-family: 'Malgun Gothic', Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 20px;
-    font-weight: 500;
+  .rock-steady-main {
+      width: 100%;
+      max-width: 1440px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start; /* Ensure items align at the top */
+      font-family: Zurich Extended;
+      font-weight: 700;
+      margin: auto;
+      gap: 50px;
+  }
+  .main-faq-image {
+      flex-shrink: 0;
+      width: 45%;
+  }
+  .main-faq-image img {
+      height: auto;
+      max-width: 100%;
+      border-style: none;
+      vertical-align: top;
+  }
+  .main-faq {
+      flex: 1; /* Fixes: Ensure the FAQ section takes equal space */
+  }
+  .faq-main-heading {
+      font-size: 30px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 32px;
+      padding: 24px 10px;
+      letter-spacing: 1.5px;
   }
   .container-faq {
-    max-width: 1250px;
-    margin: 0 auto;
+      width: 100%; /* Fixes: Prevent horizontal overflow */
+      max-width: 1250px;
+      margin: 0 auto;
+  }
+  .container-faq .acc_ctrl h2 {
+      color: #282F35;
+      font-family: 'Josefin Sans', Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 1px;
+      margin: 0;
+      text-transform: uppercase;
+      text-align: left;
+      max-width: 85%;
+  }
+  .container-faq .acc_panel p {
+      color: #666666;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 20px;
+      font-weight: 500;
   }
   .acc {
-    overflow: hidden;
-    padding: 0;
+      overflow: hidden;
+      padding: 0;
   }
   .acc li {
-    list-style-type: none;
-    padding: 0;
+      list-style-type: none;
+      padding: 0;
   }
   .acc_ctrl {
-    background: #FFFFFF;
-    border: none;
-    border-bottom: solid 1px #F2F2F2;
-    cursor: pointer;
-    display: block;
-    outline: none;
-    padding: 2em;
-    position: relative;
-    width: 100%;
+      background: #FFFFFF;
+      border: none;
+      border-bottom: solid 1px #F2F2F2;
+      cursor: pointer;
+      display: block;
+      outline: none;
+      padding: 2em;
+      position: relative;
+      width: 100%;
   }
   .acc_ctrl:before {
-    background: #44596B;
-    content: '';
-    height: 2px;
-    margin-right: 37px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: rotate(90deg);
-    transition: all 0.2s ease-in-out;
-    width: 14px;
+      background: #44596B;
+      content: '';
+      height: 2px;
+      margin-right: 37px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: rotate(90deg);
+      transition: all 0.2s ease-in-out;
+      width: 14px;
   }
   .acc_ctrl:after {
-    background: #44596B;
-    content: '';
-    height: 2px;
-    margin-right: 37px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    width: 15px;
+      background: #44596B;
+      content: '';
+      height: 2px;
+      margin-right: 37px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 15px;
   }
   .acc_ctrl.active:before {
-    transform: rotate(0deg);
+      transform: rotate(0deg);
   }
   .acc_ctrl.active h2, .acc_ctrl:focus h2 {
-    position: relative;
+      position: relative;
   }
   .acc_panel {
-    background: #F2F2F2;
-    display: none;
-    overflow: hidden;
+      background: #F2F2F2;
+      display: none;
+      overflow: hidden;
   }
-  @media  screen and (max-width: 1024px) {
-    .main-faq-image {
-        display: none;
-    }
-    .rock-steady-main {
-        display: block;
-    }
+  @media screen and (max-width: 1024px) {
+      .main-faq-image {
+          display: none;
+      }
+      .rock-steady-main {
+          display: block;
+      }
   }
   @media screen and (max-width: 768px) {
-    .container-faq .acc_ctrl h2 {
-      font-size: 11px;
-      width: 80%;
-    }
-    .faq-heading h2 {
-      font-size: 22px;
-    }
-    .flickity-prev-next-button.previous {
-      left: -10px;
-    }
-    .flickity-prev-next-button.next {
-      right: -10px;
-    }
-    .rock-steady-faq.container {
-        margin: 50px 20px 0px 20px;
-    }
+      .container-faq .acc_ctrl h2 {
+        font-size: 11px;
+        width: 80%;
+      }
+      .faq-heading h2 {
+        font-size: 22px;
+      }
+      .rock-steady-faq.container {
+          margin: 50px 20px 0px 20px;
+      }
   }
   </style>
+
 {% schema %}
 {
   "name": "Rock Steady Faq",

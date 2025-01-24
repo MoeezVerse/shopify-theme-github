@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "main": {
       "type": "main-page",
@@ -84,11 +84,71 @@
       "settings": {
         "Background-image": "shopify://shop_images/Rectangle_91.png"
       }
+    },
+    "rock_steady_faq_XnrLxL": {
+      "type": "rock-steady-faq",
+      "blocks": {
+        "txt_xK7x8N": {
+          "type": "txt",
+          "settings": {
+            "faq-title": "HOW DO I KNOW WHICH SPEAKER BUNDLE TO CHOOSE?",
+            "faq-question": "A two-pack of speakers plus a subwoofer will give you a full and immersive sound experience. Add more speakers or subwoofers to expand the listening area or to enhance the listening environment."
+          }
+        },
+        "txt_a4EYQQ": {
+          "type": "txt",
+          "settings": {
+            "faq-title": "HOW DO I CONNECT MULTIPLE SPEAKERS AND SUBWOOFERS TO MY SOURCE DEVICE?",
+            "faq-question": "Rocksteady Stadium speakers and subwoofers connect to each other, requiring you to only connect one (1) speaker or subwoofer to your audio source."
+          }
+        },
+        "txt_LRGxmV": {
+          "type": "txt",
+          "settings": {
+            "faq-title": "DO I NEED A SUBWOOFER?",
+            "faq-question": "No, the Rocksteady Stadium speakers sound great whether you have 1 or several, and adding a subwoofer provides for a deeper and full sound."
+          }
+        },
+        "txt_b7GyAp": {
+          "type": "txt",
+          "settings": {
+            "faq-title": "HOW LONG WILL IT TAKE FOR MY NEW SPEAKERS TO ARRIVE?",
+            "faq-question": "All speaker orders include free ground shipping from our SoCal warehouse. Expedited shipping is optional if you need them quicker"
+          }
+        },
+        "txt_rbXC3i": {
+          "type": "txt",
+          "settings": {
+            "faq-title": "WHAT IF I HAVE QUESTIONS OR NEED HELP?",
+            "faq-question": "We offer free support via chat, via email(support@RocksteadyAudio.com) and we provide setup videos."
+          }
+        }
+      },
+      "block_order": [
+        "txt_xK7x8N",
+        "txt_a4EYQQ",
+        "txt_LRGxmV",
+        "txt_b7GyAp",
+        "txt_rbXC3i"
+      ],
+      "settings": {
+        "faq-image": "shopify://shop_images/Girls_on_Deck_Walking_SubNewGrill.png",
+        "heading_text": "WHAT CUSTOMERS USUALLY ASK."
+      }
+    },
+    "rs_best_seller_XTBUjL": {
+      "type": "RS-Best-Seller",
+      "settings": {
+        "heading_text": "Best Seller",
+        "collections": "automated-collection"
+      }
     }
   },
   "order": [
     "main",
     "rs_main_banner_Ugy6WB",
-    "rs_product_info_section_UzgQXe"
+    "rs_product_info_section_UzgQXe",
+    "rock_steady_faq_XnrLxL",
+    "rs_best_seller_XTBUjL"
   ]
 }

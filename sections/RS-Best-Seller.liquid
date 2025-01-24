@@ -1,0 +1,143 @@
+{% assign rs_collection = collections[section.settings.collections] %}
+<div class="Rs-Best-Seller">
+    <div class="best-seller-main">
+        <div class="rs-main-heading">
+            <h2 class="main-text">{{ section.settings.heading_text }}</h2>
+        </div>
+        <div class="main-info-collection">
+            {% for product in rs_collection.products %}
+            <div class="main-collection-information" id="product-{{ product.id }}">
+                <div class="Main-image">
+                    {% comment %} <div class="product-item__label-list label-list">
+                        <span class="label label--highlight">{{ product.tags | join: ', ' }}</span>
+                    </div> {% endcomment %}
+                    <div class="product-image">
+                        <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+                    </div>
+                </div>
+                <div class="product-item__info product-item__info--with-button">
+                    <div class="product-item-meta">
+                        <a href="/products/{{ product.handle }}" class="product-item-meta__title">{{ product.title }}</a>
+                        <div class="product-item-meta__price-list-container">
+                            <div class="price-list price-list--centered">
+                                <span class="price price--highlight">
+                                    <span class="visually-hidden">Sale price</span>{{ product.compare_at_price | money }}
+                                </span>
+                                <span class="price price--compare">
+                                    <span class="visually-hidden">Regular price</span>{{ product.price | money }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item__cta-wrapper">
+                        {% if product.variants.size > 0 %}
+                        <input type="hidden" id="variant-id-{{ product.id }}" class="variant-id" value="{{ product.variants.first.id }}">
+                        <button type="button" data-product-id="{{ product.id }}" class="collection-cart-button product-item__cta button button--primary">
+                            + Add to cart
+                        </button>
+                        {% else %}
+                        <p class="error-message">This product is out of stock.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).on('click', '.collection-cart-button', function (e) {
+        e.preventDefault();
+
+        // Retrieve product ID and its corresponding variant ID
+        let productId = $(this).data('product-id');
+        let variantId = $(`#variant-id-${productId}`).val();
+
+        console.log('Variant ID:', variantId);
+
+        if (!variantId) {
+            console.error('Variant ID is missing!');
+            return;
+        }
+
+        let formObj = {
+            id: variantId,
+            quantity: 1
+        };
+
+        // Add to cart AJAX request
+        $.ajax({
+            type: "POST",
+            url: "/cart/add.js",
+            data: formObj,
+            dataType: "json",
+            success: function (data) {
+                console.log('Product added to cart:', data);
+
+                // Fetch updated cart and update quantity dynamically
+                $.ajax({
+                    type: "GET",
+                    url: "/cart.js",
+                    dataType: "json",
+                    success: function (cart) {
+                        $('.cart-count-bubble').text(cart.item_count); // Update cart count dynamically
+                        console.log('Updated cart:', cart);
+                    },
+                    error: function (xhr) {
+                        console.error('Failed to fetch updated cart:', xhr.responseJSON);
+                    }
+                });
+            },
+            error: function (xhr) {
+                console.error('Failed to add to cart.', xhr.responseJSON);
+            }
+        });
+    });
+</script>
+
+<style>
+    .best-seller-main {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .main-info-collection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .rs-main-heading {
+        text-align: center;
+    }
+    .rs-main-heading h2.main-text {
+        font-size: 48px;
+        font-weight: bold;
+        line-height: 1.0833333333;
+        letter-spacing: -1px;
+    }
+    </style>
+
+{% schema %}
+{
+    "name": "RS Best Seller",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading_text",
+            "label": "Collection Title"
+        },
+        {
+            "type": "collection",
+            "id": "collections",
+            "label": "Select Collection"
+        }
+    ],
+    "presets": [
+        {
+            "name": "RS Best Seller",
+            "settings": {}
+        }
+    ]
+}
+{% endschema %}

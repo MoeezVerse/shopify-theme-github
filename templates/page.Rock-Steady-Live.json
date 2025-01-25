@@ -55,6 +55,63 @@
       ],
       "settings": {}
     },
+    "rs_infinite_scroll_CQUJeV": {
+      "type": "RS-infinite-scroll",
+      "blocks": {
+        "image_ztaWt7": {
+          "type": "image",
+          "settings": {
+            "brands-logo": "shopify://shop_images/logo_b03ebf3a-685c-45d2-bc49-e8d95baa6afa.png"
+          }
+        },
+        "image_JAjHgB": {
+          "type": "image",
+          "settings": {
+            "brands-logo": "shopify://shop_images/logo_b03ebf3a-685c-45d2-bc49-e8d95baa6afa.png"
+          }
+        },
+        "image_zeVBQE": {
+          "type": "image",
+          "settings": {
+            "brands-logo": "shopify://shop_images/logo_b03ebf3a-685c-45d2-bc49-e8d95baa6afa.png"
+          }
+        },
+        "image_KhJXNA": {
+          "type": "image",
+          "settings": {
+            "brands-logo": "shopify://shop_images/logo_b03ebf3a-685c-45d2-bc49-e8d95baa6afa.png"
+          }
+        },
+        "image_CaRDYH": {
+          "type": "image",
+          "settings": {
+            "brands-logo": "shopify://shop_images/logo_b03ebf3a-685c-45d2-bc49-e8d95baa6afa.png"
+          }
+        },
+        "image_yzr6gc": {
+          "type": "image",
+          "settings": {
+            "brands-logo": "shopify://shop_images/logo_b03ebf3a-685c-45d2-bc49-e8d95baa6afa.png"
+          }
+        },
+        "image_qa3b33": {
+          "type": "image",
+          "settings": {
+            "brands-logo": "shopify://shop_images/logo_b03ebf3a-685c-45d2-bc49-e8d95baa6afa.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_ztaWt7",
+        "image_JAjHgB",
+        "image_zeVBQE",
+        "image_KhJXNA",
+        "image_CaRDYH",
+        "image_yzr6gc",
+        "image_qa3b33"
+      ],
+      "settings": {}
+    },
     "rs_product_info_section_UzgQXe": {
       "type": "RS-Product-info-section",
       "blocks": {
@@ -147,6 +204,7 @@
   "order": [
     "main",
     "rs_main_banner_Ugy6WB",
+    "rs_infinite_scroll_CQUJeV",
     "rs_product_info_section_UzgQXe",
     "rock_steady_faq_XnrLxL",
     "rs_best_seller_XTBUjL"

@@ -1,0 +1,129 @@
+<section class="RS-image-gallery">
+    <button>Pause</button>
+    <article>
+        {% for block in section.blocks %}
+      <div>
+        <ul>
+          <li><img src="{{ block.settings.gallery_image_1 | img_url: 'master' }}" width="" height="" alt=""></li>
+        </ul>
+      </div>
+      {% endfor %}
+      {% for block in section.blocks %}
+      <div>
+        <ul>
+          <li><img src="{{ block.settings.gallery_images_2 | img_url: 'master' }}" width="" height="" alt=""></li>
+        </ul>
+      </div>
+      {% endfor %}
+    </article>
+  </section>
+
+
+
+  <style>
+      button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      
+      img {
+        display: block;
+        width: 100%;
+      }
+      
+      section {
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      article {
+        display: flex;
+        width: 200%;
+        animation: bannermove 20s linear infinite;
+      }
+      
+      article.paused {
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused;
+      }
+      
+      div {
+        width: 100%;
+      }
+      
+      ul {
+        display: flex;
+        background: red;
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+      }
+      
+      li {
+        width: 100%;
+        background: blue;
+      }
+      
+      li:nth-child(2) {
+        background: green;
+      }
+      
+      li:nth-child(3) {
+        background: yellow;
+      }
+      
+      @keyframes "bannermove" {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+   </style>
+
+   <script>
+    $('button').click(function() {
+        $("article").toggleClass("paused")
+      });
+   </script>
+
+  {% schema %}
+  {
+    "name": "RS Image Gallery",
+    "settings": [
+      ],
+    "blocks": [
+    {
+      "type": "images",
+      "name": "image gallery 1",
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "gallery_image_1",
+            "label": "Select the Image"
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "name": "gallery 2",
+       "settings": [
+        {
+            "type": "image_picker",
+            "id": "gallery_images_2",
+            "label": "Select the image you want to"
+        }
+      ]
+    }
+  ],
+      "presets": [
+          {
+              "name": "RS Image gallery coursel",
+              "settings": {}
+          }
+      ]
+  }
+  {% endschema %}

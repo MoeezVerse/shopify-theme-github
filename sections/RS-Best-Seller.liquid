@@ -12,7 +12,7 @@
                         <span class="label label--highlight">{{ product.tags | join: ', ' }}</span>
                     </div> {% endcomment %}
                     <div class="product-image">
-                        <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+                        <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}" height="" width="">
                     </div>
                 </div>
                 <div class="product-item__info product-item__info--with-button">
@@ -116,6 +116,22 @@
         line-height: 1.0833333333;
         letter-spacing: -1px;
     }
+    .product-item-meta {
+        max-width: 100%;
+    }
+    .product-item-meta__title {
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+    }
+    .Rs-Best-Seller .product-item__cta-wrapper {
+        max-width: 100%;
+    }
+    .Rs-Best-Seller button.collection-cart-button.product-item__cta.button.button--primary {
+        width: 100%;
+    }
+    
     </style>
 
 {% schema %}

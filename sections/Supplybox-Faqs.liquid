@@ -1,6 +1,328 @@
+<div class="custom-faq-container a1-event-tabs">
+  <div class="custom-faq-content">
+    <h2 class="faq-title a1-custom-flyer-heading">{{ section.settings.heading }}</h2>
+   <div class="custom-faq-title-container">
+   {%- assign default_faqs = section.settings.default_faq | downcase -%}
+   {%- assign default_faqss = section.settings.default_faq -%}
+     
+    {% for block in section.blocks %}
+     {% if block.type == 'heading' %}
+       {%- if block.settings.faq_headings == default_faqss -%}
+            {%- assign is_active = true -%}
+          {%- else -%}
+           {%- assign is_active = false -%}
+          {% endif %}
+       <div class="custom-faq-title ">
+         <div class="faq-group-title {% if is_active %}active{% endif %}" >{{ block.settings.faq_headings }}</div>
+       </div>
+      {% endif %}
+    {% endfor %}
+   </div>
+   <div class="custom-faq-qna-main-container">
+     {% for block in section.blocks %}
+      {% if block.type == 'QNA' %}
+        {%- if block.settings.qna == default_faqs -%}
+            {%- assign is_active = true -%}
+          {%- else -%}
+           {%- assign is_active = false -%}
+          {% endif %}
+       <div data-qna="{{ block.settings.qna }}" {% if is_active %}style="display:block;" {% else %}style="display:none;"{% endif %} class="faq-group-questions">
+        {% if block.settings.title != blank %}
+         <div class="faq-item">
+                <div class="faq-question">{{ block.settings.title | escape }} 
+                <div class="sign-holder">
+                    <i class="fa fa-plus"></i><i class="fa fa-minus"></i>
+                </div>
+                </div>
+                <div style="display:none;" class="faq-answer">
+                {{ block.settings.answer }}
+                </div>
+          </div>
+          {%  else %} 
+          <div class="Simple-text" >
+            <span>{{ block.settings.simple_text }}</span>
+           </div>
+          {% endif %}
+       </div>
+       
+       {% endif %}
+     {% endfor %}
+   </div>
+  </div>
+</div>
+
+<script>
+
+  document.querySelectorAll('.custom-faq-title').forEach(function (title) {
+  title.addEventListener('click', function () {
+    // Reset background color for all titles
+    document.querySelectorAll('.custom-faq-title').forEach(function (el) {
+      el.classList.remove("active");  // Reset the background color
+    });
+
+    // Set background color for the clicked title
+      el.classList.add("active");  // Reset the background color
+    });
+});
+
+
+  
+ document.querySelectorAll('.custom-faq-title').forEach(function (title) {
+  title.addEventListener('click', function () {
+    var elements = document.querySelectorAll('.faq-group-questions');
+    var title_attr = this.querySelector('.faq-group-title').textContent.toLowerCase();
+    
+    // Remove active class from all titles and add to the clicked one
+    document.querySelectorAll('.faq-group-title').forEach(function (el) {
+      el.classList.remove('active');
+    });
+    this.querySelector('.faq-group-title').classList.add('active');
+
+    // Show/hide corresponding FAQ items
+    elements.forEach(function (element) {
+      if (title_attr === element.getAttribute('data-qna')) {
+        element.style.display = 'block';
+      } else {
+        element.style.display = 'none';
+      }
+    });
+  });
+});
+
+  document.querySelectorAll('.faq-question').forEach(function (question) {
+  question.addEventListener('click', function () {
+    var nextElement = this.nextElementSibling;
+    if (nextElement.style.display === 'none' || nextElement.style.display === '') {
+      nextElement.style.display = 'block';
+      debugger
+      this.childNodes[1].children[0].style.display = 'none';
+      this.childNodes[1].children[1].style.display = 'block';
+    } else {
+      this.childNodes[1].children[0].style.display = 'block';
+      this.childNodes[1].children[1].style.display = 'none';
+      nextElement.style.display = 'none';
+    }
+  });
+});
+</script>
+
+<style>
+.faq-group-title.active{
+      background-color: #f0b01b!important;
+      color: #fff!important;
+}
+.a1-event-tabs h2.a1-custom-flyer-heading {
+    text-align: center;
+    width: fit-content;
+    border-bottom: 3px solid #f0b01b;
+    margin: 30px auto 30px;
+    font-weight: 500;
+}
+.faq-group-title{
+      background-color: #F2F2F2!important;
+      color: #000!important;
+}
+.custom-faq-container .custom-faq-content {
+    width: 90%;
+    margin: 30px auto;
+}
+.custom-faq-content h2.faq-title {
+    text-align: center;
+    margin: 40px auto;
+    font-size: 30px;
+}
+.custom-faq-container .custom-faq-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5px;
+}
+.custom-faq-container .custom-faq-title-container .custom-faq-title {
+    width: 33%;
+    cursor: pointer;
+}
+.custom-faq-title-container .faq-group-title {
+    text-align: center;
+    background-color: #10AEEE;
+    color: #fff;
+    font-weight: 700;
+    padding: 12px;
+    font-size: 16px;
+}
+.custom-faq-title-container .faq-group-questions {
+    padding: 15px;
+}
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: #616161;
+    font-weight: 700;
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+}
+.sign-holder {
+    position: relative;
+    background-color: #898989;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+.sign-holder i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s all ease-in;
+    color: #fff;
+    font-size: 12px;
+}
+  .faq-item .fa-minus{
+    display:none;
+  }
+.sign-holder i.icon-plus:before {
+    content: "\ead5";
+}
+.sign-holder i.icon-minus {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sign-holder .icon-minus:before {
+    content: "\eae6";
+}
+.custom-faq-qna-main-container .faq-answer {
+    display: none;
+    color: #898989;
+    font-size: 14px;
+    padding: 10px 25px;
+    margin-bottom: 10px;
+    background-color: #F2F2F2;
+}
+.faq-item .faq-answer p br {
+    display: none;
+}
+
+.Simple-text {
+    background-color: #f9f9f9; /* Light grey background */
+    border: 1px solid #ddd; /* Light border */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px;
+    color: #333; /* Darker text for readability */
+}
+
+.Simple-text span {
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .custom-faq-container .custom-faq-title-container .custom-faq-title {
+    width: 32%;
+    margin-bottom: 5px;
+  }
+  .custom-faq-content h2.faq-title {
+    font-size: 24px;
+  }
+}
+</style>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "EV-FAQs",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Heading",
+        "default": "Frequently Asked Questions"
+      },
+      {
+        "type": "text",
+        "id": "default_faq",
+        "label": "Default Open FAQ Group",
+        "default": "Mammoth Ring",
+        "info": "Enter the title of the FAQ group you want to be open by default."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "heading",
+        "name": "Faq Headings",
+        "settings": [
+          {
+            "type": "text",
+            "id": "faq_headings",
+            "label": "Heading",
+            "default": "Default"
+          }
+        ]
+      },
+      {
+        "type": "QNA",
+        "name": "Question Answer",
+        "settings": [
+          {
+          "type": "radio",
+          "id": "qna",
+          "label": "Select Main Title",
+          "options": [
+            {
+              "value": "mammoth ring",
+              "label": "Mammoth Ring"
+            },
+            {
+              "value": "red tiger",
+              "label": "Red Tiger"
+            },
+            {
+              "value": "the dragon",
+              "label": "The Dragon"
+            },
+            {
+              "value": "titan trainer",
+              "label": "Titan Trainer"
+            }
+          ],
+          "default": "mammoth ring"
+        },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          },
+          {
+            "type": "richtext",
+            "id": "simple_text",
+            "label": "Enter Your Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+    {
+      "name": "EV-FAQs"
+    }
+  ]
   }
 {% endschema %}

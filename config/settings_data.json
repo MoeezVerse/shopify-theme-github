@@ -1,1 +1,958 @@
-{"current":{"logo_width":90,"colors_solid_button_labels":"#ffffff","colors_accent_1":"#121212","gradient_accent_1":"","colors_accent_2":"#334fb4","gradient_accent_2":"","colors_text":"#121212","colors_outline_button_labels":"#121212","colors_background_1":"#ffffff","gradient_background_1":"","colors_background_2":"#f3f3f3","gradient_background_2":"","type_header_font":"assistant_n4","heading_scale":100,"type_body_font":"assistant_n4","body_scale":100,"page_width":1200,"spacing_sections":0,"spacing_grid_horizontal":8,"spacing_grid_vertical":8,"buttons_border_thickness":1,"buttons_border_opacity":100,"buttons_radius":0,"buttons_shadow_opacity":0,"buttons_shadow_horizontal_offset":0,"buttons_shadow_vertical_offset":4,"buttons_shadow_blur":5,"variant_pills_border_thickness":1,"variant_pills_border_opacity":55,"variant_pills_radius":40,"variant_pills_shadow_opacity":0,"variant_pills_shadow_horizontal_offset":0,"variant_pills_shadow_vertical_offset":4,"variant_pills_shadow_blur":5,"inputs_border_thickness":1,"inputs_border_opacity":55,"inputs_radius":0,"inputs_shadow_opacity":0,"inputs_shadow_horizontal_offset":0,"inputs_shadow_vertical_offset":4,"inputs_shadow_blur":5,"card_style":"standard","card_image_padding":0,"card_text_alignment":"left","card_color_scheme":"background-2","card_border_thickness":0,"card_border_opacity":10,"card_corner_radius":0,"card_shadow_opacity":0,"card_shadow_horizontal_offset":0,"card_shadow_vertical_offset":4,"card_shadow_blur":5,"collection_card_style":"standard","collection_card_image_padding":0,"collection_card_text_alignment":"left","collection_card_color_scheme":"background-2","collection_card_border_thickness":0,"collection_card_border_opacity":10,"collection_card_corner_radius":0,"collection_card_shadow_opacity":0,"collection_card_shadow_horizontal_offset":0,"collection_card_shadow_vertical_offset":4,"collection_card_shadow_blur":5,"blog_card_style":"standard","blog_card_image_padding":0,"blog_card_text_alignment":"left","blog_card_color_scheme":"background-2","blog_card_border_thickness":0,"blog_card_border_opacity":10,"blog_card_corner_radius":0,"blog_card_shadow_opacity":0,"blog_card_shadow_horizontal_offset":0,"blog_card_shadow_vertical_offset":4,"blog_card_shadow_blur":5,"text_boxes_border_thickness":0,"text_boxes_border_opacity":10,"text_boxes_radius":0,"text_boxes_shadow_opacity":0,"text_boxes_shadow_horizontal_offset":0,"text_boxes_shadow_vertical_offset":4,"text_boxes_shadow_blur":5,"media_border_thickness":1,"media_border_opacity":5,"media_radius":0,"media_shadow_opacity":0,"media_shadow_horizontal_offset":0,"media_shadow_vertical_offset":4,"media_shadow_blur":5,"popup_border_thickness":1,"popup_border_opacity":10,"popup_corner_radius":0,"popup_shadow_opacity":0,"popup_shadow_horizontal_offset":0,"popup_shadow_vertical_offset":4,"popup_shadow_blur":5,"drawer_border_thickness":1,"drawer_border_opacity":10,"drawer_shadow_opacity":0,"drawer_shadow_horizontal_offset":0,"drawer_shadow_vertical_offset":4,"drawer_shadow_blur":5,"badge_position":"bottom left","badge_corner_radius":40,"sale_badge_color_scheme":"accent-2","sold_out_badge_color_scheme":"inverse","accent_icons":"text","brand_headline":"","brand_description":"<p><\/p>","brand_image_width":100,"social_facebook_link":"","social_instagram_link":"","social_youtube_link":"","social_tiktok_link":"","social_twitter_link":"","social_snapchat_link":"","social_pinterest_link":"","social_tumblr_link":"","social_vimeo_link":"","predictive_search_enabled":true,"predictive_search_show_vendor":false,"predictive_search_show_price":false,"currency_code_enabled":true,"cart_type":"notification","show_vendor":false,"show_cart_note":false,"cart_drawer_collection":"","sections":{"main-password-header":{"type":"main-password-header","settings":{"color_scheme":"background-1"}},"main-password-footer":{"type":"main-password-footer","settings":{"color_scheme":"background-1"}},"ono-information":{"type":"ono-information","blocks":{"txt_aV3GGT":{"type":"txt","settings":{"block_image":"shopify:\/\/shop_images\/Group_4017.png","inner_txt":"How it works in three easy steps:","button_link":"","button_txt":"Step 1","aurthor_txt":"Make it your own. Choose a color that suits your style and order your ONO Roller."}},"txt_h94PkE":{"type":"txt","settings":{"block_image":"shopify:\/\/shop_images\/Group_4018.png","inner_txt":"Roll It Out","button_link":"","button_txt":"Step 2","aurthor_txt":"Keep your hands busy, or roll out your muscles. Find what works best for you and get rolling!"}},"txt_8wELJd":{"type":"txt","settings":{"block_image":"shopify:\/\/shop_images\/Group_4013.png","inner_txt":"Feel the Relief","button_link":"","button_txt":"Step 3","aurthor_txt":"Sit back, relax and discover the stress relieving capabilities of your ONO."}}},"block_order":["txt_aV3GGT","txt_h94PkE","txt_8wELJd"],"settings":{"main_txt":"Relax Your Mind & Boost Productivity","Secondary_txt":"How it works in three easy steps:"}},"text-with-description":{"type":"text-with-description","settings":{"main_txt":"The ONO lifestyle","Secondary_txt":"Relaxation never goes out of style. Take your ONO wherever you go."}},"image-gallery":{"type":"image-gallery","blocks":{"txt_67Qmcg":{"type":"txt","settings":{"block_image_1":"shopify:\/\/shop_images\/Rectangle_593.png","block_image_1_mb":"shopify:\/\/shop_images\/Rectangle_609.png","block_image_2":"shopify:\/\/shop_images\/Rectangle_596.png","block_image_2_mb":"shopify:\/\/shop_images\/Rectangle_613.png","block_image_3":"shopify:\/\/shop_images\/Rectangle_594.png","block_image_3_mb":"shopify:\/\/shop_images\/Rectangle_611.png","block_image_4":"shopify:\/\/shop_images\/Rectangle_597.png","block_image_4_mb":"shopify:\/\/shop_images\/Rectangle_614.png","block_image_5":"shopify:\/\/shop_images\/Rectangle_595.png","block_image_5_mb":"shopify:\/\/shop_images\/Rectangle_612.png","block_image_6":"shopify:\/\/shop_images\/Rectangle_598.png","block_image_6_mb":"shopify:\/\/shop_images\/Rectangle_610.png"}}},"block_order":["txt_67Qmcg"],"settings":{"btn-image":"shopify:\/\/shop_images\/right-arrow.png","btn_text":"GET YOUR ONO","review-image":"shopify:\/\/shop_images\/Group_4151.png","review_text":"Over 800+ Reviews"}},"ono-video-section":{"type":"ono-video-section","blocks":{"heading_cXp8qH":{"type":"heading","settings":{"heading":"Calm in the palm of your hand","heading_size":"h1"}},"text_MVPEjk":{"type":"text","settings":{"text":"Sleek, totally silent fidget tools to help channel restless energy into presence and focus.","text_style":"body"}},"buttons_Aj4Lra":{"type":"buttons","settings":{"button_label_1":"FIND CALM","button_link_1":"","button_style_secondary_1":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_cXp8qH","text_MVPEjk","buttons_Aj4Lra"],"settings":{"image":"shopify:\/\/shop_images\/ONO_Home_GIF.gif","image_overlay_opacity":40,"image_height":"medium","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"background-1","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"ono-review":{"type":"ono-review","blocks":{"txt_iKbRb3":{"type":"txt","settings":{"vendor-image":"shopify:\/\/shop_images\/Group_4067.png","rv-head-txt":"S.F","star-image":"shopify:\/\/shop_images\/Group_4066.png","rv-bottom-text":"Verified Buyer","Comma-image":"shopify:\/\/shop_images\/Vector_4.png","last-reveiw-text":"I purchased both.","Review-text":"<p>The small one and the larger one. I like the larger one because of the way it sits in my hand. But I do use them both. For me it’s just helps me relax...<\/p>","read-more":"Read More"}},"txt_UwD9Gx":{"type":"txt","settings":{"vendor-image":"shopify:\/\/shop_images\/Group_3934.png","rv-head-txt":"Jessica","star-image":"shopify:\/\/shop_images\/Group_4066.png","rv-bottom-text":"Verified Buyer","Comma-image":"shopify:\/\/shop_images\/Vector_4.png","last-reveiw-text":"This was purchased as a gift","Review-text":"<p>This was purchased as a gift that hasn’t been given yet. But, I was very pleased with the look & feel of it.<\/p>","read-more":"Read More"}},"txt_rFycYN":{"type":"txt","settings":{"vendor-image":"shopify:\/\/shop_images\/Group_3933.png","rv-head-txt":"Karen Moody","star-image":"shopify:\/\/shop_images\/Group_4066.png","rv-bottom-text":"Verified Buyer","Comma-image":"shopify:\/\/shop_images\/Vector_4.png","last-reveiw-text":"Smooth frictionless rolling with a satin like texture.","Review-text":"<p>Smooth frictionless rolling with a satin like texture. The aluminum warms with your touch to provide several tactile sensations....<\/p>","read-more":"Read More"}},"txt_3XWrjx":{"type":"txt","settings":{"vendor-image":"shopify:\/\/shop_images\/Group_3933.png","rv-head-txt":"T.F","star-image":"shopify:\/\/shop_images\/Group_4066.png","rv-bottom-text":"Verified Buyer","Comma-image":"shopify:\/\/shop_images\/Vector_4.png","last-reveiw-text":"This was purchased as a gift","Review-text":"This was purchased as a gift that hasn’t been given yet. But, I was very pleased with the look & feel of it.","read-more":"Read More"}},"txt_QtpjFg":{"type":"txt","settings":{"vendor-image":"shopify:\/\/shop_images\/Group_3933.png","rv-head-txt":"K>M","star-image":"shopify:\/\/shop_images\/Group_4066.png","rv-bottom-text":"Verified Buyer","Comma-image":"shopify:\/\/shop_images\/Vector_4.png","last-reveiw-text":"I purchased both.","Review-text":"The small one and the larger one. I like the larger one because of the way it sits in my hand. But I do use them both. For me it’s just helps me relax...","read-more":"Read More"}},"txt_FdmMBf":{"type":"txt","settings":{"vendor-image":"shopify:\/\/shop_images\/Group_3934.png","rv-head-txt":"J>","star-image":"shopify:\/\/shop_images\/Group_4066.png","rv-bottom-text":"Verified Buyer","Comma-image":"shopify:\/\/shop_images\/Vector_4.png","last-reveiw-text":"I purchased both.","Review-text":"The small one and the larger one. I like the larger one because of the way it sits in my hand. But I do use them both. For me it’s just helps me relax...","read-more":"Read More"}}},"block_order":["txt_iKbRb3","txt_UwD9Gx","txt_rFycYN","txt_3XWrjx","txt_QtpjFg","txt_FdmMBf"],"settings":{"heading_text":"Real Reviews From Real Customers"}},"ono-lp-faq":{"type":"ono-lp-faq","blocks":{"txt_GbkwwC":{"type":"txt","settings":{"faq-title":"Do you ship internationally?","faq-question":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."}},"txt_xpDVk3":{"type":"txt","settings":{"faq-title":"What is the ONO made of?","faq-question":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."}},"txt_fCLwKm":{"type":"txt","settings":{"faq-title":"How big is the ONO Roller?","faq-question":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."}},"txt_aQ4hAT":{"type":"txt","settings":{"faq-title":"What is the difference between the ONO and ONO Jr?","faq-question":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."}},"txt_66AFnV":{"type":"txt","settings":{"faq-title":"Do you offer a warranty or money back guarantee?","faq-question":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."}},"txt_k3JBUV":{"type":"txt","settings":{"faq-title":"What does the ono roller feel like?","faq-question":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."}}},"block_order":["txt_GbkwwC","txt_xpDVk3","txt_fCLwKm","txt_aQ4hAT","txt_66AFnV","txt_k3JBUV"],"settings":{"heading_text":"Frequently Asked Questions"}},"card-hover-overlay":{"type":"card-hover-overlay","blocks":{"txt_wVGkAU":{"type":"txt","settings":{"card-image":"shopify:\/\/shop_images\/mountains-6479150_640.png","overlay-head":"Mountains","overlay-text":"The mountains rise majestically, their peaks piercing the sky and kissing the clouds.","overlay-btn":"Explore Now"}},"txt_cpjR3g":{"type":"txt","settings":{"card-image":"shopify:\/\/shop_images\/waterBG-_1_4c2ae058-2629-49d9-bc44-b66630642846.png","overlay-head":"Sea","overlay-text":"The sea stretches out endlessly.","overlay-btn":"Explore Now"}},"txt_KYh9gd":{"type":"txt","settings":{"card-image":"shopify:\/\/shop_images\/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006_10a43d82-d3ec-432f-a0c3-c32f5564a677.png","overlay-head":"Mountains","overlay-text":"The mountains rise majestically, their peaks piercing the sky and kissing the clouds.","overlay-btn":"Explore Now"}}},"block_order":["txt_wVGkAU","txt_cpjR3g","txt_KYh9gd"],"settings":{}},"Write-a-review":{"type":"Write-a-review","blocks":{"txt_y8LzXU":{"type":"txt","settings":{"card-image":"shopify:\/\/shop_images\/Ninja-2-512.png","customer-name":"Noah Wood","customer-username":"noahwood","customer-review":"<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.<\/p>"}},"txt_QATmRq":{"type":"txt","settings":{"card-image":"shopify:\/\/shop_images\/Ninja-2-512.png","customer-name":"Moeez Ansar","customer-username":"mooezansar","customer-review":"<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.<\/p>"}},"txt_jRg9z6":{"type":"txt","settings":{"card-image":"shopify:\/\/shop_images\/Ninja-2-512.png","customer-name":"Mark Wood","customer-username":"markwood","customer-review":"<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.<\/p>"}},"txt_RRCHGE":{"type":"txt","settings":{"card-image":"shopify:\/\/shop_images\/Ninja-2-512.png","customer-name":"Ichigo kurasaki","customer-username":"soulreaper","customer-review":"<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.<\/p>"}},"txt_37NbQU":{"type":"txt","settings":{"card-image":"shopify:\/\/shop_images\/Ninja-2-512.png","customer-name":"Zaraki Kenpenchi","customer-username":"zaraki_004","customer-review":"<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.<\/p>"}},"txt_dEwJ9E":{"type":"txt","settings":{"card-image":"shopify:\/\/shop_images\/Ninja-2-512.png","customer-name":"Aizen Souske","customer-username":"Aizen","customer-review":"<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.<\/p>"}}},"block_order":["txt_y8LzXU","txt_QATmRq","txt_jRg9z6","txt_RRCHGE","txt_37NbQU","txt_dEwJ9E"],"settings":{}},"product-lp-ono":{"type":"product-lp-ono","settings":{"product_ono":"the-collection-snowboard-liquid","Related_product":"Related Product"}},"Side-locations-bar":{"type":"Side-locations-bar","blocks":{"txt_Mm9aMa":{"type":"txt","settings":{"loction-image":"shopify:\/\/shop_images\/Barrie_Store_1080x1080_150x_2x_dc06103b-5e06-4327-b992-bf4cbbdc6711.png","location-title":"BARRIE - <d>now open!<\/d>","Location-post":"","Address":"27 Caplan Ave Barrie, ON L4N 6K3 (Located Near Hwy 400&Mapleview)","tel-num":"","tel-num-2":"","tel-num-3":"705-728-9393","Email":"@a1cashandcarry.com","button-url":"","button-text":"DETAILS \/ MAP"}},"txt_MA33QD":{"type":"txt","settings":{"loction-image":"shopify:\/\/shop_images\/Image_2_150x_2x_1.png","location-title":"Burlington - <d>Coming soon!<\/d>","Location-post":"","Address":"3495 N Service Rd, Burlington, ON L7N 3G2, Canada","tel-num":"","tel-num-2":"","tel-num-3":"","Email":"@a1cashandcarry.com","button-url":"","button-text":"DETAILS \/ MAP"}},"txt_4DftCQ":{"type":"txt","settings":{"loction-image":"shopify:\/\/shop_images\/mississuaga_150x_2x_ef80568f-60e3-4013-9c4c-73f047f2e22f.png","location-title":"Etobicoke","Location-post":"","Address":"225 Evans Avenue Etobicoke ON M8Z 1J5","tel-num":"","tel-num-2":"","tel-num-3":"416-503-2277","Email":"@a1cashandcarry.com","button-url":"","button-text":"DETAILS \/ MAP"}},"txt_izn3BH":{"type":"txt","settings":{"loction-image":"shopify:\/\/shop_images\/MicrosoftTeams-image_150x_2x_d622c25f-18e5-4c30-b17a-08c776660925.png","location-title":"Kitchener","Location-post":"","Address":"135 Gateway Park Dr, Kitchener, ON, N2P 2J9","tel-num":"","tel-num-2":"","tel-num-3":"519-653-3434","Email":"@a1cashandcarry.com","button-url":"","button-text":"DETAILS \/ MAP"}},"txt_Vmkg7G":{"type":"txt","settings":{"loction-image":"shopify:\/\/shop_images\/etobicoke_150x_2x_eb915485-5901-4635-af09-78fb6cc05397.png","location-title":"London","Location-post":"","Address":"1110 Dearness Drive London ON, N6E 1N9","tel-num":"","tel-num-2":"","tel-num-3":"519-681-4141","Email":"@a1cashandcarry.com","button-url":"","button-text":"DETAILS \/ MAP"}},"txt_ixHDxf":{"type":"txt","settings":{"loction-image":"shopify:\/\/shop_images\/mississuaga_150x_2x_ef80568f-60e3-4013-9c4c-73f047f2e22f.png","location-title":"Mississauga (Kennedy - Head Office)","Location-post":"","Address":"6400 Kennedy Road Mississauga ON, L5T 2Z5","tel-num":"905-670-8884","tel-num-2":"437-837-5711","tel-num-3":"905-676-9950","Email":"@a1cashandcarry.com","button-url":"","button-text":"DETAILS \/ MAP"}},"txt_HgLk9n":{"type":"txt","settings":{"loction-image":"shopify:\/\/shop_images\/north-york-2_38e258a6-df86-4329-b30d-264bf4d7efd7_150x_2x_1.png","location-title":"Mississauga (Torbram)","Location-post":"","Address":"7300 Torbram Road, Unit 2 Mississauga ON, L4T 3X2","tel-num":"","tel-num-2":"","tel-num-3":"905-672-2700","Email":"@a1cashandcarry.com","button-url":"","button-text":"DETAILS \/ MAP"}}},"block_order":["txt_Mm9aMa","txt_MA33QD","txt_4DftCQ","txt_izn3BH","txt_Vmkg7G","txt_ixHDxf","txt_HgLk9n"],"settings":{}},"ono-new-page-design":{"type":"ono-new-page-design","blocks":{"txt_876aRF":{"type":"txt","settings":{"product-image":"shopify:\/\/shop_images\/Group_4367.png","product-title":"ONO Roller","product-1":"Materials","product-pr-1":"Aircraft-grade aluminum with a smooth sandblasted finish","product-2":"Dimension","product-pr-2":"3.40\" x 0.85\" x 1.75\"","product-3":"Colors","product-pr-3":"Black, sapphire, silver, rose gold","product-4":"Weight","product-pr-4":"6 oz","url-product":"shopify:\/\/products\/the-multi-managed-snowboard","btn-text":"Shop ONO Roller"}},"txt_QYAdrt":{"type":"txt","settings":{"product-image":"shopify:\/\/shop_images\/Group_4398.png","product-title":"ONO Roller Jr.","product-1":"Materials","product-pr-1":"Non-toxic ABS plastic with a soft touch finish","product-2":"Dimension","product-pr-2":"3.00\" x 0.75\" x 1.50\"","product-3":"Colors","product-pr-3":"Black, teal, purple, orange","product-4":"Weight","product-pr-4":"3 oz","url-product":"","btn-text":"Shop ONO Roller Jr."}},"txt_hEkeRW":{"type":"txt","settings":{"product-image":"shopify:\/\/shop_images\/Group_4397.png","product-title":"ONO Steel","product-1":"Materials","product-pr-1":"Stainless steel with a smooth polished finish","product-2":"Dimension","product-pr-2":"3.40\" x 0.85\" x 1.75\"\"","product-3":"Colors","product-pr-3":"Natural steel","product-4":"Weight","product-pr-4":"13 oz","url-product":"","btn-text":"Shop ONO Steel"}}},"block_order":["txt_876aRF","txt_QYAdrt","txt_hEkeRW"],"settings":{"tile-name":"See Which ONO is Right for You","title-text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."}},"A1-flyer-section":{"type":"A1-flyer-section","blocks":{"txt_Mpyc6Q":{"type":"txt","settings":{"flyer-url":"","flyer-text":"barrie"}},"txt_VmhMLK":{"type":"txt","settings":{"flyer-url":"","flyer-image":"shopify:\/\/shop_images\/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png","flyer-text":"Etobicoke"}},"txt_YYUeFB":{"type":"txt","settings":{"flyer-url":"","flyer-image":"shopify:\/\/shop_images\/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png","flyer-text":"Kitchener"}},"txt_xb7MM3":{"type":"txt","settings":{"flyer-url":"","flyer-image":"shopify:\/\/shop_images\/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png","flyer-text":"London"}},"txt_3wimWG":{"type":"txt","settings":{"flyer-url":"","flyer-image":"shopify:\/\/shop_images\/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png","flyer-text":"Mississauga Kennedy"}},"txt_gJ3qXm":{"type":"txt","settings":{"flyer-url":"","flyer-image":"shopify:\/\/shop_images\/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png","flyer-text":"Mississauga Torbram"}},"txt_4Gi7rH":{"type":"txt","settings":{"flyer-url":"","flyer-image":"shopify:\/\/shop_images\/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png","flyer-text":"North York"}}},"block_order":["txt_Mpyc6Q","txt_VmhMLK","txt_YYUeFB","txt_xb7MM3","txt_3wimWG","txt_gJ3qXm","txt_4Gi7rH"],"settings":{"Custom-class":"custom-monthly-flyer","flyer-heading":"IN-STORE DEALS","search-bar-icon":"shopify:\/\/shop_images\/icons8-search-30.png"}}},"content_for_index":[]},"presets":{"Default":{"logo_width":90,"colors_solid_button_labels":"#ffffff","colors_accent_1":"#121212","gradient_accent_1":"","colors_accent_2":"#334fb4","gradient_accent_2":"","colors_text":"#121212","colors_outline_button_labels":"#121212","colors_background_1":"#ffffff","gradient_background_1":"","colors_background_2":"#f3f3f3","gradient_background_2":"","type_header_font":"assistant_n4","heading_scale":100,"type_body_font":"assistant_n4","body_scale":100,"page_width":1200,"spacing_sections":0,"spacing_grid_horizontal":8,"spacing_grid_vertical":8,"buttons_border_thickness":1,"buttons_border_opacity":100,"buttons_radius":0,"buttons_shadow_opacity":0,"buttons_shadow_horizontal_offset":0,"buttons_shadow_vertical_offset":4,"buttons_shadow_blur":5,"variant_pills_border_thickness":1,"variant_pills_border_opacity":55,"variant_pills_radius":40,"variant_pills_shadow_opacity":0,"variant_pills_shadow_horizontal_offset":0,"variant_pills_shadow_vertical_offset":4,"variant_pills_shadow_blur":5,"inputs_border_thickness":1,"inputs_border_opacity":55,"inputs_radius":0,"inputs_shadow_opacity":0,"inputs_shadow_horizontal_offset":0,"inputs_shadow_vertical_offset":4,"inputs_shadow_blur":5,"card_style":"standard","card_image_padding":0,"card_text_alignment":"left","card_color_scheme":"background-2","card_border_thickness":0,"card_border_opacity":10,"card_corner_radius":0,"card_shadow_opacity":0,"card_shadow_horizontal_offset":0,"card_shadow_vertical_offset":4,"card_shadow_blur":5,"collection_card_style":"standard","collection_card_image_padding":0,"collection_card_text_alignment":"left","collection_card_color_scheme":"background-2","collection_card_border_thickness":0,"collection_card_border_opacity":10,"collection_card_corner_radius":0,"collection_card_shadow_opacity":0,"collection_card_shadow_horizontal_offset":0,"collection_card_shadow_vertical_offset":4,"collection_card_shadow_blur":5,"blog_card_style":"standard","blog_card_image_padding":0,"blog_card_text_alignment":"left","blog_card_color_scheme":"background-2","blog_card_border_thickness":0,"blog_card_border_opacity":10,"blog_card_corner_radius":0,"blog_card_shadow_opacity":0,"blog_card_shadow_horizontal_offset":0,"blog_card_shadow_vertical_offset":4,"blog_card_shadow_blur":5,"text_boxes_border_thickness":0,"text_boxes_border_opacity":10,"text_boxes_radius":0,"text_boxes_shadow_opacity":0,"text_boxes_shadow_horizontal_offset":0,"text_boxes_shadow_vertical_offset":4,"text_boxes_shadow_blur":5,"media_border_thickness":1,"media_border_opacity":5,"media_radius":0,"media_shadow_opacity":0,"media_shadow_horizontal_offset":0,"media_shadow_vertical_offset":4,"media_shadow_blur":5,"popup_border_thickness":1,"popup_border_opacity":10,"popup_corner_radius":0,"popup_shadow_opacity":0,"popup_shadow_horizontal_offset":0,"popup_shadow_vertical_offset":4,"popup_shadow_blur":5,"drawer_border_thickness":1,"drawer_border_opacity":10,"drawer_shadow_opacity":0,"drawer_shadow_horizontal_offset":0,"drawer_shadow_vertical_offset":4,"drawer_shadow_blur":5,"badge_position":"bottom left","badge_corner_radius":40,"sale_badge_color_scheme":"accent-2","sold_out_badge_color_scheme":"inverse","accent_icons":"text","brand_headline":"","brand_description":"<p><\/p>","brand_image_width":100,"social_twitter_link":"","social_facebook_link":"","social_pinterest_link":"","social_instagram_link":"","social_tiktok_link":"","social_tumblr_link":"","social_snapchat_link":"","social_youtube_link":"","social_vimeo_link":"","predictive_search_enabled":true,"predictive_search_show_vendor":false,"predictive_search_show_price":false,"currency_code_enabled":true,"cart_type":"notification","show_vendor":false,"show_cart_note":false,"cart_drawer_collection":"","sections":{"main-password-header":{"type":"main-password-header","settings":{"color_scheme":"background-1"}},"main-password-footer":{"type":"main-password-footer","settings":{"color_scheme":"background-1"}}}}}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "logo_width": 90,
+    "colors_solid_button_labels": "#ffffff",
+    "colors_accent_1": "#121212",
+    "gradient_accent_1": "",
+    "colors_accent_2": "#334fb4",
+    "gradient_accent_2": "",
+    "colors_text": "#121212",
+    "colors_outline_button_labels": "#121212",
+    "colors_background_1": "#ffffff",
+    "gradient_background_1": "",
+    "colors_background_2": "#f3f3f3",
+    "gradient_background_2": "",
+    "type_header_font": "assistant_n4",
+    "heading_scale": 100,
+    "type_body_font": "assistant_n4",
+    "body_scale": 100,
+    "page_width": 1200,
+    "spacing_sections": 0,
+    "spacing_grid_horizontal": 8,
+    "spacing_grid_vertical": 8,
+    "buttons_border_thickness": 1,
+    "buttons_border_opacity": 100,
+    "buttons_radius": 0,
+    "buttons_shadow_opacity": 0,
+    "buttons_shadow_horizontal_offset": 0,
+    "buttons_shadow_vertical_offset": 4,
+    "buttons_shadow_blur": 5,
+    "variant_pills_border_thickness": 1,
+    "variant_pills_border_opacity": 55,
+    "variant_pills_radius": 40,
+    "variant_pills_shadow_opacity": 0,
+    "variant_pills_shadow_horizontal_offset": 0,
+    "variant_pills_shadow_vertical_offset": 4,
+    "variant_pills_shadow_blur": 5,
+    "inputs_border_thickness": 1,
+    "inputs_border_opacity": 55,
+    "inputs_radius": 0,
+    "inputs_shadow_opacity": 0,
+    "inputs_shadow_horizontal_offset": 0,
+    "inputs_shadow_vertical_offset": 4,
+    "inputs_shadow_blur": 5,
+    "card_style": "standard",
+    "card_image_padding": 0,
+    "card_text_alignment": "left",
+    "card_color_scheme": "background-2",
+    "card_border_thickness": 0,
+    "card_border_opacity": 10,
+    "card_corner_radius": 0,
+    "card_shadow_opacity": 0,
+    "card_shadow_horizontal_offset": 0,
+    "card_shadow_vertical_offset": 4,
+    "card_shadow_blur": 5,
+    "collection_card_style": "standard",
+    "collection_card_image_padding": 0,
+    "collection_card_text_alignment": "left",
+    "collection_card_color_scheme": "background-2",
+    "collection_card_border_thickness": 0,
+    "collection_card_border_opacity": 10,
+    "collection_card_corner_radius": 0,
+    "collection_card_shadow_opacity": 0,
+    "collection_card_shadow_horizontal_offset": 0,
+    "collection_card_shadow_vertical_offset": 4,
+    "collection_card_shadow_blur": 5,
+    "blog_card_style": "standard",
+    "blog_card_image_padding": 0,
+    "blog_card_text_alignment": "left",
+    "blog_card_color_scheme": "background-2",
+    "blog_card_border_thickness": 0,
+    "blog_card_border_opacity": 10,
+    "blog_card_corner_radius": 0,
+    "blog_card_shadow_opacity": 0,
+    "blog_card_shadow_horizontal_offset": 0,
+    "blog_card_shadow_vertical_offset": 4,
+    "blog_card_shadow_blur": 5,
+    "text_boxes_border_thickness": 0,
+    "text_boxes_border_opacity": 10,
+    "text_boxes_radius": 0,
+    "text_boxes_shadow_opacity": 0,
+    "text_boxes_shadow_horizontal_offset": 0,
+    "text_boxes_shadow_vertical_offset": 4,
+    "text_boxes_shadow_blur": 5,
+    "media_border_thickness": 1,
+    "media_border_opacity": 5,
+    "media_radius": 0,
+    "media_shadow_opacity": 0,
+    "media_shadow_horizontal_offset": 0,
+    "media_shadow_vertical_offset": 4,
+    "media_shadow_blur": 5,
+    "popup_border_thickness": 1,
+    "popup_border_opacity": 10,
+    "popup_corner_radius": 0,
+    "popup_shadow_opacity": 0,
+    "popup_shadow_horizontal_offset": 0,
+    "popup_shadow_vertical_offset": 4,
+    "popup_shadow_blur": 5,
+    "drawer_border_thickness": 1,
+    "drawer_border_opacity": 10,
+    "drawer_shadow_opacity": 0,
+    "drawer_shadow_horizontal_offset": 0,
+    "drawer_shadow_vertical_offset": 4,
+    "drawer_shadow_blur": 5,
+    "badge_position": "bottom left",
+    "badge_corner_radius": 40,
+    "sale_badge_color_scheme": "accent-2",
+    "sold_out_badge_color_scheme": "inverse",
+    "accent_icons": "text",
+    "brand_headline": "",
+    "brand_description": "<p></p>",
+    "brand_image_width": 100,
+    "social_facebook_link": "",
+    "social_instagram_link": "",
+    "social_youtube_link": "",
+    "social_tiktok_link": "",
+    "social_twitter_link": "",
+    "social_snapchat_link": "",
+    "social_pinterest_link": "",
+    "social_tumblr_link": "",
+    "social_vimeo_link": "",
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "currency_code_enabled": true,
+    "cart_type": "notification",
+    "show_vendor": false,
+    "show_cart_note": false,
+    "cart_drawer_collection": "",
+    "sections": {
+      "main-password-header": {
+        "type": "main-password-header",
+        "settings": {
+          "color_scheme": "background-1"
+        }
+      },
+      "main-password-footer": {
+        "type": "main-password-footer",
+        "settings": {
+          "color_scheme": "background-1"
+        }
+      },
+      "ono-information": {
+        "type": "ono-information",
+        "blocks": {
+          "txt_aV3GGT": {
+            "type": "txt",
+            "settings": {
+              "block_image": "shopify://shop_images/Group_4017.png",
+              "inner_txt": "How it works in three easy steps:",
+              "button_link": "",
+              "button_txt": "Step 1",
+              "aurthor_txt": "Make it your own. Choose a color that suits your style and order your ONO Roller."
+            }
+          },
+          "txt_h94PkE": {
+            "type": "txt",
+            "settings": {
+              "block_image": "shopify://shop_images/Group_4018.png",
+              "inner_txt": "Roll It Out",
+              "button_link": "",
+              "button_txt": "Step 2",
+              "aurthor_txt": "Keep your hands busy, or roll out your muscles. Find what works best for you and get rolling!"
+            }
+          },
+          "txt_8wELJd": {
+            "type": "txt",
+            "settings": {
+              "block_image": "shopify://shop_images/Group_4013.png",
+              "inner_txt": "Feel the Relief",
+              "button_link": "",
+              "button_txt": "Step 3",
+              "aurthor_txt": "Sit back, relax and discover the stress relieving capabilities of your ONO."
+            }
+          }
+        },
+        "block_order": [
+          "txt_aV3GGT",
+          "txt_h94PkE",
+          "txt_8wELJd"
+        ],
+        "settings": {
+          "main_txt": "Relax Your Mind & Boost Productivity",
+          "Secondary_txt": "How it works in three easy steps:"
+        }
+      },
+      "text-with-description": {
+        "type": "text-with-description",
+        "settings": {
+          "main_txt": "The ONO lifestyle",
+          "Secondary_txt": "Relaxation never goes out of style. Take your ONO wherever you go."
+        }
+      },
+      "image-gallery": {
+        "type": "image-gallery",
+        "blocks": {
+          "txt_67Qmcg": {
+            "type": "txt",
+            "settings": {
+              "block_image_1": "shopify://shop_images/Rectangle_593.png",
+              "block_image_1_mb": "shopify://shop_images/Rectangle_609.png",
+              "block_image_2": "shopify://shop_images/Rectangle_596.png",
+              "block_image_2_mb": "shopify://shop_images/Rectangle_613.png",
+              "block_image_3": "shopify://shop_images/Rectangle_594.png",
+              "block_image_3_mb": "shopify://shop_images/Rectangle_611.png",
+              "block_image_4": "shopify://shop_images/Rectangle_597.png",
+              "block_image_4_mb": "shopify://shop_images/Rectangle_614.png",
+              "block_image_5": "shopify://shop_images/Rectangle_595.png",
+              "block_image_5_mb": "shopify://shop_images/Rectangle_612.png",
+              "block_image_6": "shopify://shop_images/Rectangle_598.png",
+              "block_image_6_mb": "shopify://shop_images/Rectangle_610.png"
+            }
+          }
+        },
+        "block_order": [
+          "txt_67Qmcg"
+        ],
+        "settings": {
+          "btn-image": "shopify://shop_images/right-arrow.png",
+          "btn_text": "GET YOUR ONO",
+          "review-image": "shopify://shop_images/Group_4151.png",
+          "review_text": "Over 800+ Reviews"
+        }
+      },
+      "ono-video-section": {
+        "type": "ono-video-section",
+        "blocks": {
+          "heading_cXp8qH": {
+            "type": "heading",
+            "settings": {
+              "heading": "Calm in the palm of your hand",
+              "heading_size": "h1"
+            }
+          },
+          "text_MVPEjk": {
+            "type": "text",
+            "settings": {
+              "text": "Sleek, totally silent fidget tools to help channel restless energy into presence and focus.",
+              "text_style": "body"
+            }
+          },
+          "buttons_Aj4Lra": {
+            "type": "buttons",
+            "settings": {
+              "button_label_1": "FIND CALM",
+              "button_link_1": "",
+              "button_style_secondary_1": false,
+              "button_label_2": "",
+              "button_link_2": "",
+              "button_style_secondary_2": false
+            }
+          }
+        },
+        "block_order": [
+          "heading_cXp8qH",
+          "text_MVPEjk",
+          "buttons_Aj4Lra"
+        ],
+        "settings": {
+          "image": "shopify://shop_images/ONO_Home_GIF.gif",
+          "image_overlay_opacity": 40,
+          "image_height": "medium",
+          "desktop_content_position": "middle-center",
+          "show_text_box": true,
+          "desktop_content_alignment": "center",
+          "color_scheme": "background-1",
+          "mobile_content_alignment": "center",
+          "stack_images_on_mobile": true,
+          "show_text_below": true
+        }
+      },
+      "ono-review": {
+        "type": "ono-review",
+        "blocks": {
+          "txt_iKbRb3": {
+            "type": "txt",
+            "settings": {
+              "vendor-image": "shopify://shop_images/Group_4067.png",
+              "rv-head-txt": "S.F",
+              "star-image": "shopify://shop_images/Group_4066.png",
+              "rv-bottom-text": "Verified Buyer",
+              "Comma-image": "shopify://shop_images/Vector_4.png",
+              "last-reveiw-text": "I purchased both.",
+              "Review-text": "<p>The small one and the larger one. I like the larger one because of the way it sits in my hand. But I do use them both. For me it’s just helps me relax...</p>",
+              "read-more": "Read More"
+            }
+          },
+          "txt_UwD9Gx": {
+            "type": "txt",
+            "settings": {
+              "vendor-image": "shopify://shop_images/Group_3934.png",
+              "rv-head-txt": "Jessica",
+              "star-image": "shopify://shop_images/Group_4066.png",
+              "rv-bottom-text": "Verified Buyer",
+              "Comma-image": "shopify://shop_images/Vector_4.png",
+              "last-reveiw-text": "This was purchased as a gift",
+              "Review-text": "<p>This was purchased as a gift that hasn’t been given yet. But, I was very pleased with the look & feel of it.</p>",
+              "read-more": "Read More"
+            }
+          },
+          "txt_rFycYN": {
+            "type": "txt",
+            "settings": {
+              "vendor-image": "shopify://shop_images/Group_3933.png",
+              "rv-head-txt": "Karen Moody",
+              "star-image": "shopify://shop_images/Group_4066.png",
+              "rv-bottom-text": "Verified Buyer",
+              "Comma-image": "shopify://shop_images/Vector_4.png",
+              "last-reveiw-text": "Smooth frictionless rolling with a satin like texture.",
+              "Review-text": "<p>Smooth frictionless rolling with a satin like texture. The aluminum warms with your touch to provide several tactile sensations....</p>",
+              "read-more": "Read More"
+            }
+          },
+          "txt_3XWrjx": {
+            "type": "txt",
+            "settings": {
+              "vendor-image": "shopify://shop_images/Group_3933.png",
+              "rv-head-txt": "T.F",
+              "star-image": "shopify://shop_images/Group_4066.png",
+              "rv-bottom-text": "Verified Buyer",
+              "Comma-image": "shopify://shop_images/Vector_4.png",
+              "last-reveiw-text": "This was purchased as a gift",
+              "Review-text": "This was purchased as a gift that hasn’t been given yet. But, I was very pleased with the look & feel of it.",
+              "read-more": "Read More"
+            }
+          },
+          "txt_QtpjFg": {
+            "type": "txt",
+            "settings": {
+              "vendor-image": "shopify://shop_images/Group_3933.png",
+              "rv-head-txt": "K>M",
+              "star-image": "shopify://shop_images/Group_4066.png",
+              "rv-bottom-text": "Verified Buyer",
+              "Comma-image": "shopify://shop_images/Vector_4.png",
+              "last-reveiw-text": "I purchased both.",
+              "Review-text": "The small one and the larger one. I like the larger one because of the way it sits in my hand. But I do use them both. For me it’s just helps me relax...",
+              "read-more": "Read More"
+            }
+          },
+          "txt_FdmMBf": {
+            "type": "txt",
+            "settings": {
+              "vendor-image": "shopify://shop_images/Group_3934.png",
+              "rv-head-txt": "J>",
+              "star-image": "shopify://shop_images/Group_4066.png",
+              "rv-bottom-text": "Verified Buyer",
+              "Comma-image": "shopify://shop_images/Vector_4.png",
+              "last-reveiw-text": "I purchased both.",
+              "Review-text": "The small one and the larger one. I like the larger one because of the way it sits in my hand. But I do use them both. For me it’s just helps me relax...",
+              "read-more": "Read More"
+            }
+          }
+        },
+        "block_order": [
+          "txt_iKbRb3",
+          "txt_UwD9Gx",
+          "txt_rFycYN",
+          "txt_3XWrjx",
+          "txt_QtpjFg",
+          "txt_FdmMBf"
+        ],
+        "settings": {
+          "heading_text": "Real Reviews From Real Customers"
+        }
+      },
+      "ono-lp-faq": {
+        "type": "ono-lp-faq",
+        "blocks": {
+          "txt_GbkwwC": {
+            "type": "txt",
+            "settings": {
+              "faq-title": "Do you ship internationally?",
+              "faq-question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+            }
+          },
+          "txt_xpDVk3": {
+            "type": "txt",
+            "settings": {
+              "faq-title": "What is the ONO made of?",
+              "faq-question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+            }
+          },
+          "txt_fCLwKm": {
+            "type": "txt",
+            "settings": {
+              "faq-title": "How big is the ONO Roller?",
+              "faq-question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+            }
+          },
+          "txt_aQ4hAT": {
+            "type": "txt",
+            "settings": {
+              "faq-title": "What is the difference between the ONO and ONO Jr?",
+              "faq-question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+            }
+          },
+          "txt_66AFnV": {
+            "type": "txt",
+            "settings": {
+              "faq-title": "Do you offer a warranty or money back guarantee?",
+              "faq-question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+            }
+          },
+          "txt_k3JBUV": {
+            "type": "txt",
+            "settings": {
+              "faq-title": "What does the ono roller feel like?",
+              "faq-question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+            }
+          }
+        },
+        "block_order": [
+          "txt_GbkwwC",
+          "txt_xpDVk3",
+          "txt_fCLwKm",
+          "txt_aQ4hAT",
+          "txt_66AFnV",
+          "txt_k3JBUV"
+        ],
+        "settings": {
+          "heading_text": "Frequently Asked Questions"
+        }
+      },
+      "card-hover-overlay": {
+        "type": "card-hover-overlay",
+        "blocks": {
+          "txt_wVGkAU": {
+            "type": "txt",
+            "settings": {
+              "card-image": "shopify://shop_images/mountains-6479150_640.png",
+              "overlay-head": "Mountains",
+              "overlay-text": "The mountains rise majestically, their peaks piercing the sky and kissing the clouds.",
+              "overlay-btn": "Explore Now"
+            }
+          },
+          "txt_cpjR3g": {
+            "type": "txt",
+            "settings": {
+              "card-image": "shopify://shop_images/waterBG-_1_4c2ae058-2629-49d9-bc44-b66630642846.png",
+              "overlay-head": "Sea",
+              "overlay-text": "The sea stretches out endlessly.",
+              "overlay-btn": "Explore Now"
+            }
+          },
+          "txt_KYh9gd": {
+            "type": "txt",
+            "settings": {
+              "card-image": "shopify://shop_images/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006_10a43d82-d3ec-432f-a0c3-c32f5564a677.png",
+              "overlay-head": "Mountains",
+              "overlay-text": "The mountains rise majestically, their peaks piercing the sky and kissing the clouds.",
+              "overlay-btn": "Explore Now"
+            }
+          }
+        },
+        "block_order": [
+          "txt_wVGkAU",
+          "txt_cpjR3g",
+          "txt_KYh9gd"
+        ],
+        "settings": {}
+      },
+      "Write-a-review": {
+        "type": "Write-a-review",
+        "blocks": {
+          "txt_y8LzXU": {
+            "type": "txt",
+            "settings": {
+              "card-image": "shopify://shop_images/Ninja-2-512.png",
+              "customer-name": "Noah Wood",
+              "customer-username": "noahwood",
+              "customer-review": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>"
+            }
+          },
+          "txt_QATmRq": {
+            "type": "txt",
+            "settings": {
+              "card-image": "shopify://shop_images/Ninja-2-512.png",
+              "customer-name": "Moeez Ansar",
+              "customer-username": "mooezansar",
+              "customer-review": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>"
+            }
+          },
+          "txt_jRg9z6": {
+            "type": "txt",
+            "settings": {
+              "card-image": "shopify://shop_images/Ninja-2-512.png",
+              "customer-name": "Mark Wood",
+              "customer-username": "markwood",
+              "customer-review": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>"
+            }
+          },
+          "txt_RRCHGE": {
+            "type": "txt",
+            "settings": {
+              "card-image": "shopify://shop_images/Ninja-2-512.png",
+              "customer-name": "Ichigo kurasaki",
+              "customer-username": "soulreaper",
+              "customer-review": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>"
+            }
+          },
+          "txt_37NbQU": {
+            "type": "txt",
+            "settings": {
+              "card-image": "shopify://shop_images/Ninja-2-512.png",
+              "customer-name": "Zaraki Kenpenchi",
+              "customer-username": "zaraki_004",
+              "customer-review": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>"
+            }
+          },
+          "txt_dEwJ9E": {
+            "type": "txt",
+            "settings": {
+              "card-image": "shopify://shop_images/Ninja-2-512.png",
+              "customer-name": "Aizen Souske",
+              "customer-username": "Aizen",
+              "customer-review": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>"
+            }
+          }
+        },
+        "block_order": [
+          "txt_y8LzXU",
+          "txt_QATmRq",
+          "txt_jRg9z6",
+          "txt_RRCHGE",
+          "txt_37NbQU",
+          "txt_dEwJ9E"
+        ],
+        "settings": {}
+      },
+      "product-lp-ono": {
+        "type": "product-lp-ono",
+        "settings": {
+          "product_ono": "the-collection-snowboard-liquid",
+          "Related_product": "Related Product"
+        }
+      },
+      "Side-locations-bar": {
+        "type": "Side-locations-bar",
+        "blocks": {
+          "txt_Mm9aMa": {
+            "type": "txt",
+            "settings": {
+              "loction-image": "shopify://shop_images/Barrie_Store_1080x1080_150x_2x_dc06103b-5e06-4327-b992-bf4cbbdc6711.png",
+              "location-title": "BARRIE - <d>now open!</d>",
+              "Location-post": "",
+              "Address": "27 Caplan Ave Barrie, ON L4N 6K3 (Located Near Hwy 400&Mapleview)",
+              "tel-num": "",
+              "tel-num-2": "",
+              "tel-num-3": "705-728-9393",
+              "Email": "@a1cashandcarry.com",
+              "button-url": "",
+              "button-text": "DETAILS / MAP"
+            }
+          },
+          "txt_MA33QD": {
+            "type": "txt",
+            "settings": {
+              "loction-image": "shopify://shop_images/Image_2_150x_2x_1.png",
+              "location-title": "Burlington - <d>Coming soon!</d>",
+              "Location-post": "",
+              "Address": "3495 N Service Rd, Burlington, ON L7N 3G2, Canada",
+              "tel-num": "",
+              "tel-num-2": "",
+              "tel-num-3": "",
+              "Email": "@a1cashandcarry.com",
+              "button-url": "",
+              "button-text": "DETAILS / MAP"
+            }
+          },
+          "txt_4DftCQ": {
+            "type": "txt",
+            "settings": {
+              "loction-image": "shopify://shop_images/mississuaga_150x_2x_ef80568f-60e3-4013-9c4c-73f047f2e22f.png",
+              "location-title": "Etobicoke",
+              "Location-post": "",
+              "Address": "225 Evans Avenue Etobicoke ON M8Z 1J5",
+              "tel-num": "",
+              "tel-num-2": "",
+              "tel-num-3": "416-503-2277",
+              "Email": "@a1cashandcarry.com",
+              "button-url": "",
+              "button-text": "DETAILS / MAP"
+            }
+          },
+          "txt_izn3BH": {
+            "type": "txt",
+            "settings": {
+              "loction-image": "shopify://shop_images/MicrosoftTeams-image_150x_2x_d622c25f-18e5-4c30-b17a-08c776660925.png",
+              "location-title": "Kitchener",
+              "Location-post": "",
+              "Address": "135 Gateway Park Dr, Kitchener, ON, N2P 2J9",
+              "tel-num": "",
+              "tel-num-2": "",
+              "tel-num-3": "519-653-3434",
+              "Email": "@a1cashandcarry.com",
+              "button-url": "",
+              "button-text": "DETAILS / MAP"
+            }
+          },
+          "txt_Vmkg7G": {
+            "type": "txt",
+            "settings": {
+              "loction-image": "shopify://shop_images/etobicoke_150x_2x_eb915485-5901-4635-af09-78fb6cc05397.png",
+              "location-title": "London",
+              "Location-post": "",
+              "Address": "1110 Dearness Drive London ON, N6E 1N9",
+              "tel-num": "",
+              "tel-num-2": "",
+              "tel-num-3": "519-681-4141",
+              "Email": "@a1cashandcarry.com",
+              "button-url": "",
+              "button-text": "DETAILS / MAP"
+            }
+          },
+          "txt_ixHDxf": {
+            "type": "txt",
+            "settings": {
+              "loction-image": "shopify://shop_images/mississuaga_150x_2x_ef80568f-60e3-4013-9c4c-73f047f2e22f.png",
+              "location-title": "Mississauga (Kennedy - Head Office)",
+              "Location-post": "",
+              "Address": "6400 Kennedy Road Mississauga ON, L5T 2Z5",
+              "tel-num": "905-670-8884",
+              "tel-num-2": "437-837-5711",
+              "tel-num-3": "905-676-9950",
+              "Email": "@a1cashandcarry.com",
+              "button-url": "",
+              "button-text": "DETAILS / MAP"
+            }
+          },
+          "txt_HgLk9n": {
+            "type": "txt",
+            "settings": {
+              "loction-image": "shopify://shop_images/north-york-2_38e258a6-df86-4329-b30d-264bf4d7efd7_150x_2x_1.png",
+              "location-title": "Mississauga (Torbram)",
+              "Location-post": "",
+              "Address": "7300 Torbram Road, Unit 2 Mississauga ON, L4T 3X2",
+              "tel-num": "",
+              "tel-num-2": "",
+              "tel-num-3": "905-672-2700",
+              "Email": "@a1cashandcarry.com",
+              "button-url": "",
+              "button-text": "DETAILS / MAP"
+            }
+          }
+        },
+        "block_order": [
+          "txt_Mm9aMa",
+          "txt_MA33QD",
+          "txt_4DftCQ",
+          "txt_izn3BH",
+          "txt_Vmkg7G",
+          "txt_ixHDxf",
+          "txt_HgLk9n"
+        ],
+        "settings": {}
+      },
+      "ono-new-page-design": {
+        "type": "ono-new-page-design",
+        "blocks": {
+          "txt_876aRF": {
+            "type": "txt",
+            "settings": {
+              "product-image": "shopify://shop_images/Group_4367.png",
+              "product-title": "ONO Roller",
+              "product-1": "Materials",
+              "product-pr-1": "Aircraft-grade aluminum with a smooth sandblasted finish",
+              "product-2": "Dimension",
+              "product-pr-2": "3.40\" x 0.85\" x 1.75\"",
+              "product-3": "Colors",
+              "product-pr-3": "Black, sapphire, silver, rose gold",
+              "product-4": "Weight",
+              "product-pr-4": "6 oz",
+              "url-product": "shopify://products/the-multi-managed-snowboard",
+              "btn-text": "Shop ONO Roller"
+            }
+          },
+          "txt_QYAdrt": {
+            "type": "txt",
+            "settings": {
+              "product-image": "shopify://shop_images/Group_4398.png",
+              "product-title": "ONO Roller Jr.",
+              "product-1": "Materials",
+              "product-pr-1": "Non-toxic ABS plastic with a soft touch finish",
+              "product-2": "Dimension",
+              "product-pr-2": "3.00\" x 0.75\" x 1.50\"",
+              "product-3": "Colors",
+              "product-pr-3": "Black, teal, purple, orange",
+              "product-4": "Weight",
+              "product-pr-4": "3 oz",
+              "url-product": "",
+              "btn-text": "Shop ONO Roller Jr."
+            }
+          },
+          "txt_hEkeRW": {
+            "type": "txt",
+            "settings": {
+              "product-image": "shopify://shop_images/Group_4397.png",
+              "product-title": "ONO Steel",
+              "product-1": "Materials",
+              "product-pr-1": "Stainless steel with a smooth polished finish",
+              "product-2": "Dimension",
+              "product-pr-2": "3.40\" x 0.85\" x 1.75\"\"",
+              "product-3": "Colors",
+              "product-pr-3": "Natural steel",
+              "product-4": "Weight",
+              "product-pr-4": "13 oz",
+              "url-product": "",
+              "btn-text": "Shop ONO Steel"
+            }
+          }
+        },
+        "block_order": [
+          "txt_876aRF",
+          "txt_QYAdrt",
+          "txt_hEkeRW"
+        ],
+        "settings": {
+          "tile-name": "See Which ONO is Right for You",
+          "title-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+        }
+      },
+      "A1-flyer-section": {
+        "type": "A1-flyer-section",
+        "blocks": {
+          "txt_Mpyc6Q": {
+            "type": "txt",
+            "settings": {
+              "flyer-url": "",
+              "flyer-text": "barrie"
+            }
+          },
+          "txt_VmhMLK": {
+            "type": "txt",
+            "settings": {
+              "flyer-url": "",
+              "flyer-image": "shopify://shop_images/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png",
+              "flyer-text": "Etobicoke"
+            }
+          },
+          "txt_YYUeFB": {
+            "type": "txt",
+            "settings": {
+              "flyer-url": "",
+              "flyer-image": "shopify://shop_images/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png",
+              "flyer-text": "Kitchener"
+            }
+          },
+          "txt_xb7MM3": {
+            "type": "txt",
+            "settings": {
+              "flyer-url": "",
+              "flyer-image": "shopify://shop_images/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png",
+              "flyer-text": "London"
+            }
+          },
+          "txt_3wimWG": {
+            "type": "txt",
+            "settings": {
+              "flyer-url": "",
+              "flyer-image": "shopify://shop_images/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png",
+              "flyer-text": "Mississauga Kennedy"
+            }
+          },
+          "txt_gJ3qXm": {
+            "type": "txt",
+            "settings": {
+              "flyer-url": "",
+              "flyer-image": "shopify://shop_images/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png",
+              "flyer-text": "Mississauga Torbram"
+            }
+          },
+          "txt_4Gi7rH": {
+            "type": "txt",
+            "settings": {
+              "flyer-url": "",
+              "flyer-image": "shopify://shop_images/A1FLYER_-_Digital_Flyer_-_October_2024_Page_01_1.png",
+              "flyer-text": "North York"
+            }
+          }
+        },
+        "block_order": [
+          "txt_Mpyc6Q",
+          "txt_VmhMLK",
+          "txt_YYUeFB",
+          "txt_xb7MM3",
+          "txt_3wimWG",
+          "txt_gJ3qXm",
+          "txt_4Gi7rH"
+        ],
+        "settings": {
+          "Custom-class": "custom-monthly-flyer",
+          "flyer-heading": "IN-STORE DEALS",
+          "search-bar-icon": "shopify://shop_images/icons8-search-30.png"
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "2532827098368908073": {
+        "type": "shopify://apps/snap-preorder/blocks/presale-backorder/ff20ec89-389a-4a34-9c65-23e040cb765c",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "logo_width": 90,
+      "colors_solid_button_labels": "#ffffff",
+      "colors_accent_1": "#121212",
+      "gradient_accent_1": "",
+      "colors_accent_2": "#334fb4",
+      "gradient_accent_2": "",
+      "colors_text": "#121212",
+      "colors_outline_button_labels": "#121212",
+      "colors_background_1": "#ffffff",
+      "gradient_background_1": "",
+      "colors_background_2": "#f3f3f3",
+      "gradient_background_2": "",
+      "type_header_font": "assistant_n4",
+      "heading_scale": 100,
+      "type_body_font": "assistant_n4",
+      "body_scale": 100,
+      "page_width": 1200,
+      "spacing_sections": 0,
+      "spacing_grid_horizontal": 8,
+      "spacing_grid_vertical": 8,
+      "buttons_border_thickness": 1,
+      "buttons_border_opacity": 100,
+      "buttons_radius": 0,
+      "buttons_shadow_opacity": 0,
+      "buttons_shadow_horizontal_offset": 0,
+      "buttons_shadow_vertical_offset": 4,
+      "buttons_shadow_blur": 5,
+      "variant_pills_border_thickness": 1,
+      "variant_pills_border_opacity": 55,
+      "variant_pills_radius": 40,
+      "variant_pills_shadow_opacity": 0,
+      "variant_pills_shadow_horizontal_offset": 0,
+      "variant_pills_shadow_vertical_offset": 4,
+      "variant_pills_shadow_blur": 5,
+      "inputs_border_thickness": 1,
+      "inputs_border_opacity": 55,
+      "inputs_radius": 0,
+      "inputs_shadow_opacity": 0,
+      "inputs_shadow_horizontal_offset": 0,
+      "inputs_shadow_vertical_offset": 4,
+      "inputs_shadow_blur": 5,
+      "card_style": "standard",
+      "card_image_padding": 0,
+      "card_text_alignment": "left",
+      "card_color_scheme": "background-2",
+      "card_border_thickness": 0,
+      "card_border_opacity": 10,
+      "card_corner_radius": 0,
+      "card_shadow_opacity": 0,
+      "card_shadow_horizontal_offset": 0,
+      "card_shadow_vertical_offset": 4,
+      "card_shadow_blur": 5,
+      "collection_card_style": "standard",
+      "collection_card_image_padding": 0,
+      "collection_card_text_alignment": "left",
+      "collection_card_color_scheme": "background-2",
+      "collection_card_border_thickness": 0,
+      "collection_card_border_opacity": 10,
+      "collection_card_corner_radius": 0,
+      "collection_card_shadow_opacity": 0,
+      "collection_card_shadow_horizontal_offset": 0,
+      "collection_card_shadow_vertical_offset": 4,
+      "collection_card_shadow_blur": 5,
+      "blog_card_style": "standard",
+      "blog_card_image_padding": 0,
+      "blog_card_text_alignment": "left",
+      "blog_card_color_scheme": "background-2",
+      "blog_card_border_thickness": 0,
+      "blog_card_border_opacity": 10,
+      "blog_card_corner_radius": 0,
+      "blog_card_shadow_opacity": 0,
+      "blog_card_shadow_horizontal_offset": 0,
+      "blog_card_shadow_vertical_offset": 4,
+      "blog_card_shadow_blur": 5,
+      "text_boxes_border_thickness": 0,
+      "text_boxes_border_opacity": 10,
+      "text_boxes_radius": 0,
+      "text_boxes_shadow_opacity": 0,
+      "text_boxes_shadow_horizontal_offset": 0,
+      "text_boxes_shadow_vertical_offset": 4,
+      "text_boxes_shadow_blur": 5,
+      "media_border_thickness": 1,
+      "media_border_opacity": 5,
+      "media_radius": 0,
+      "media_shadow_opacity": 0,
+      "media_shadow_horizontal_offset": 0,
+      "media_shadow_vertical_offset": 4,
+      "media_shadow_blur": 5,
+      "popup_border_thickness": 1,
+      "popup_border_opacity": 10,
+      "popup_corner_radius": 0,
+      "popup_shadow_opacity": 0,
+      "popup_shadow_horizontal_offset": 0,
+      "popup_shadow_vertical_offset": 4,
+      "popup_shadow_blur": 5,
+      "drawer_border_thickness": 1,
+      "drawer_border_opacity": 10,
+      "drawer_shadow_opacity": 0,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 4,
+      "drawer_shadow_blur": 5,
+      "badge_position": "bottom left",
+      "badge_corner_radius": 40,
+      "sale_badge_color_scheme": "accent-2",
+      "sold_out_badge_color_scheme": "inverse",
+      "accent_icons": "text",
+      "brand_headline": "",
+      "brand_description": "<p></p>",
+      "brand_image_width": 100,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tiktok_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "predictive_search_enabled": true,
+      "predictive_search_show_vendor": false,
+      "predictive_search_show_price": false,
+      "currency_code_enabled": true,
+      "cart_type": "notification",
+      "show_vendor": false,
+      "show_cart_note": false,
+      "cart_drawer_collection": "",
+      "sections": {
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "color_scheme": "background-1"
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {
+            "color_scheme": "background-1"
+          }
+        }
+      }
+    }
+  }
+}

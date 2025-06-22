@@ -276,12 +276,16 @@
   transition: all 0.3s ease;
   display: inline-block;
   border: 1px solid {{ section.settings.button_bg }};
+  outline: none; /* Remove focus outline */
+  box-shadow: none; /* Remove any potential shadow */
 }
 
-.bloat-right a.button:hover {
+.bloat-right a.button:hover,
+.bloat-right a.button:focus {
   background: {{ section.settings.button_hover_bg }};
   color: {{ section.settings.button_hover_text }};
   border-color: {{ section.settings.button_hover_text }};
+  outline: none; /* Ensure no outline appears on hover/focus */
 }
 
 /* Media position swap */

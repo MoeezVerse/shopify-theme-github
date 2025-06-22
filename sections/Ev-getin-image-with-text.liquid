@@ -365,7 +365,11 @@
       </div>
     {% endif %}
     {% if section.settings.button_text != blank %}
-      <a class="button" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_text }}</a>
+      <a class="button" href="{{ section.settings.button_link | default: '#' }}">
+         <button class="button" type="button">
+            {{ section.settings.button_text }}
+          </button>
+      </a>
     {% endif %}
   </div>
 </section>

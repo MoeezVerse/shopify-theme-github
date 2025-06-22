@@ -344,7 +344,7 @@
         Your browser does not support the video tag.
       </video>
     {% elsif section.settings.left_image != blank %}
-      <img src="{{ section.settings.left_image | image_url:"master" }}" alt="Before and After">
+      <img src="{{ section.settings.left_image | img_url }}" alt="Before and After">
     {% endif %}
   </div>
   <div class="bloat-right">

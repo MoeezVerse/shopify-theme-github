@@ -1,0 +1,145 @@
+{% schema %}
+{
+  "name": "Image with Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Image"
+    },
+    {
+      "type": "url",
+      "id": "left_video_url",
+      "label": "Left Video URL (optional)"
+    },
+    {
+      "type": "text",
+      "id": "number_icon",
+      "label": "Number Icon",
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Most Comfortable Solution for a Bloat-Free Belly"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Bloating happens to the best of us, but with HeyShape Shapewear, you can smooth and flatten your midsection instantly without any discomfort and effort."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Buy 1, Get 1 FREE"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "image with text"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+.bloat-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  gap: 2rem;
+}
+
+.bloat-left, .bloat-right {
+  flex: 1 1 45%;
+}
+
+.bloat-left img,
+.bloat-left video {
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+.bloat-right .number-icon {
+  width: 40px;
+  height: 40px;
+  background: #D6B1F8;
+  color: #000;
+  font-weight: bold;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.bloat-right h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.bloat-right p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.bloat-right a.button {
+  background: #3b004b;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.bloat-right a.button:hover {
+  background: white;
+  color: #3b004b;
+  border: 1px solid #3b004b;
+}
+@media (max-width: 768px) {
+  .bloat-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .bloat-left, .bloat-right {
+    flex: 1 1 100%;
+  }
+}
+{% endstyle %}
+
+<section class="bloat-section">
+  <div class="bloat-left">
+    {% if section.settings.left_video_url != blank %}
+      <video controls muted playsinline>
+        <source src="{{ section.settings.left_video_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% elsif section.settings.left_image != blank %}
+      <img src="{{ section.settings.left_image | image_url: width: 800 }}" alt="Before and After">
+    {% endif %}
+  </div>
+  <div class="bloat-right">
+    <div class="number-icon">{{ section.settings.number_icon }}</div>
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.description }}</p>
+    {% if section.settings.button_link != blank %}
+      <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+</section>

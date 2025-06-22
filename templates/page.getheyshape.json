@@ -79,7 +79,7 @@
         "logo_background": "rgba(0,0,0,0)",
         "logo_radius": 0,
         "logo_alignment": "center",
-        "background_color": "rgba(0,0,0,0)",
+        "background_color": "#262626",
         "section_width": 1200,
         "padding_top": 30,
         "padding_bottom": 30,

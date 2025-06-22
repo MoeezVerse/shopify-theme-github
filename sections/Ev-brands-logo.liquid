@@ -34,9 +34,9 @@
   }
 
   .brand-logo__image {
-    max-width: 100%;
-    height: auto;
-    width: {{ section.settings.logo_width }}px;
+    max-width: 130px;
+    height: 26px;
+    width: auto;
     opacity: {{ section.settings.logo_opacity | divided_by: 100.0 }};
     transition: opacity 0.3s ease;
   }
@@ -175,16 +175,6 @@
       "step": 1,
       "label": "Logos per row (mobile)",
       "default": 2
-    },
-    {
-      "type": "range",
-      "id": "logo_width",
-      "min": 50,
-      "max": 300,
-      "step": 10,
-      "unit": "px",
-      "label": "Logo width",
-      "default": 120
     },
     {
       "type": "range",

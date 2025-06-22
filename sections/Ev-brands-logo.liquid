@@ -16,6 +16,8 @@
     justify-content: {{ section.settings.logo_alignment }};
     align-items: center;
     gap: {{ section.settings.logo_spacing }}px;
+    gap: 96px;
+    max-width: 100%;
     max-width: {{ section.settings.section_width }}px;
     margin: 0 auto;
     background-color: {{ section.settings.background_color }};
@@ -180,7 +182,7 @@
       "type": "range",
       "id": "logo_spacing",
       "min": 0,
-      "max": 50,
+      "max": 100,
       "step": 5,
       "unit": "px",
       "label": "Space between logos",

@@ -68,7 +68,7 @@
         "heading": "As Seen In",
         "heading_size": "h1",
         "heading_alignment": "center",
-        "heading_spacing": 30,
+        "heading_spacing": 0,
         "heading_color": "#000000",
         "logos_per_row": 5,
         "logos_per_row_mobile": 2,

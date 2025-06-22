@@ -267,7 +267,12 @@
   line-height: 1.5;
 }
 
-.bloat-right a.button {
+.bloat-right .button-wrapper {
+  display: inline-block; /* Ensures proper button sizing */
+}
+
+.bloat-right a.button,
+.bloat-right button.button {
   background: {{ section.settings.button_bg }};
   color: {{ section.settings.button_text_color }};
   padding: {{ section.settings.button_padding }}px calc({{ section.settings.button_padding }}px * 2);
@@ -276,16 +281,24 @@
   transition: all 0.3s ease;
   display: inline-block;
   border: 1px solid {{ section.settings.button_bg }};
-  outline: none; /* Remove focus outline */
-  box-shadow: none; /* Remove any potential shadow */
+  outline: none;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .bloat-right a.button:hover,
-.bloat-right a.button:focus {
+.bloat-right button.button:hover,
+.bloat-right a.button:focus,
+.bloat-right button.button:focus {
   background: {{ section.settings.button_hover_bg }};
   color: {{ section.settings.button_hover_text }};
   border-color: {{ section.settings.button_hover_text }};
-  outline: none; /* Ensure no outline appears on hover/focus */
+  outline: none;
+  text-decoration: none;
 }
 
 /* Media position swap */

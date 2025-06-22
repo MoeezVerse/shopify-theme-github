@@ -86,16 +86,13 @@
       "type": "Ev-getin-image-with-text",
       "name": "Ev image & text",
       "settings": {
-        "title": "Most Comfortable Solution for a",
-        "subtitle": "Bloat-Free Belly",
+        "left_image": "shopify://shop_images/Frame_8015_1.webp",
+        "left_video_url": "",
+        "number_icon": "1",
+        "heading": "Most Comfortable Solution for a Bloat-Free Belly",
         "description": "<p>Bloating happens to the best of us, but with HeyShape Shapewear, you can</p>",
-        "cta_text": "Get FREE",
-        "cta_link": "",
-        "text_color": "#000000",
-        "button_color": "#000000",
-        "button_text_color": "#ffffff",
-        "text_size": 16,
-        "title_size": 32
+        "button_text": "Buy 1, Get 1 FREE",
+        "button_link": ""
       }
     }
   },

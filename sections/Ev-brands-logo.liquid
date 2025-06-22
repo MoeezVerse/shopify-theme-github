@@ -27,11 +27,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: {{ section.settings.logo_padding }}px;
-    {% if section.settings.logo_background != 'rgba(0,0,0,0)' %}
-    background-color: {{ section.settings.logo_background }};
-    border-radius: {{ section.settings.logo_radius }}px;
-    {% endif %}
+    border-radius: 5px;
+    border: .62px solid #ffffff40;
+    padding: 10px 16px;
   }
 
   .brand-logo__image {
@@ -189,16 +187,6 @@
     },
     {
       "type": "range",
-      "id": "logo_padding",
-      "min": 0,
-      "max": 30,
-      "step": 1,
-      "unit": "px",
-      "label": "Logo padding",
-      "default": 10
-    },
-    {
-      "type": "range",
       "id": "logo_opacity",
       "min": 10,
       "max": 100,
@@ -206,22 +194,6 @@
       "unit": "%",
       "label": "Logo opacity",
       "default": 80
-    },
-    {
-      "type": "color",
-      "id": "logo_background",
-      "label": "Logo background",
-      "default": "rgba(0,0,0,0)"
-    },
-    {
-      "type": "range",
-      "id": "logo_radius",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "unit": "px",
-      "label": "Logo background radius",
-      "default": 0
     },
     {
       "type": "select",

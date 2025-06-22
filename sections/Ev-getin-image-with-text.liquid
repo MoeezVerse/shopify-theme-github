@@ -231,9 +231,10 @@
 
 .bloat-left img,
 .bloat-left video {
-  max-width: 100%;
+  max-width: 600px;
+  width: 100%;
   border-radius: {% if section.settings.enable_border_radius %}{{ section.settings.border_radius }}px{% else %}0{% endif %};
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 

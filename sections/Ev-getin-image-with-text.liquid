@@ -267,7 +267,7 @@
   line-height: 1.5;
 }
 
-.bloat-right a.button {
+.bloat-right a .button-text {
   background: {{ section.settings.button_bg }};
   color: {{ section.settings.button_text_color }};
   padding: {{ section.settings.button_padding }}px calc({{ section.settings.button_padding }}px * 2);
@@ -280,12 +280,12 @@
   box-shadow: none; /* Remove any potential shadow */
 }
 
-.bloat-right a.button:hover,
-.bloat-right a.button:focus {
+.bloat-right a .button-text:hover,
+.bloat-right a .button-text:focus {
   background: {{ section.settings.button_hover_bg }};
   color: {{ section.settings.button_hover_text }};
   border-color: {{ section.settings.button_hover_text }};
-  outline: none; /* Ensure no outline appears on hover/focus */
+  outline: none;
 }
 
 /* Media position swap */
@@ -365,7 +365,11 @@
       </div>
     {% endif %}
     {% if section.settings.button_text != blank %}
-      <a class="button" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_text }}</a>
+      <a class="ev-button" href="{{ section.settings.button_link | default: '#' }}">
+        <button class="button-text" type="button">
+            {{ section.settings.button_text }}
+          </button>
+      </a>
     {% endif %}
   </div>
 </section>

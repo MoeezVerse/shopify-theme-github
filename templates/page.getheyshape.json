@@ -88,11 +88,29 @@
       "settings": {
         "left_image": "shopify://shop_images/Frame_8015_1.webp",
         "left_video_url": "",
+        "media_position": "left",
         "number_icon": "1",
         "heading": "Most Comfortable Solution for a Bloat-Free Belly",
-        "description": "<p>Bloating happens to the best of us, but with HeyShape Shapewear, you can</p>",
+        "description": "Bloating happens to the best of us, but with HeyShape Shapewear, you can smooth and flatten your midsection instantly without any discomfort and effort.",
         "button_text": "Buy 1, Get 1 FREE",
-        "button_link": ""
+        "button_link": "",
+        "number_icon_bg": "#d6b1f8",
+        "number_icon_color": "#000000",
+        "number_icon_size": 40,
+        "heading_color": "#000000",
+        "heading_size": 28,
+        "text_color": "#555555",
+        "text_size": 16,
+        "button_bg": "#3b004b",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#ffffff",
+        "button_hover_text": "#3b004b",
+        "button_radius": 25,
+        "button_padding": 12,
+        "section_padding": 40,
+        "media_width": 45,
+        "enable_border_radius": true,
+        "border_radius": 10
       }
     }
   },

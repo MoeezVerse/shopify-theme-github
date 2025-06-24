@@ -18,6 +18,17 @@
     },
     {
       "type": "select",
+      "id": "video_aspect_ratio",
+      "label": "Video Aspect Ratio",
+      "options": [
+        { "value": "16/9", "label": "Landscape (16:9)" },
+        { "value": "9/16", "label": "Portrait (9:16)" },
+        { "value": "4/3", "label": "Classic (4:3)" }
+      ],
+      "default": "9/16"
+    },
+    {
+      "type": "select",
       "id": "media_position",
       "label": "Media Position",
       "options": [
@@ -229,13 +240,23 @@
   flex: 0 1 {{ section.settings.media_width }}%;
 }
 
-#shopify-section-{{ section.id }} .bloat-left img, #shopify-section-{{ section.id }} .bloat-left video {
+#shopify-section-{{ section.id }} .bloat-left img {
   max-width: 600px;
   width: 100%;
   border-radius: {% if section.settings.enable_border_radius %}{{ section.settings.border_radius }}px{% else %}0{% endif %};
   object-fit: contain;
   display: block;
 }
+#shopify-section-{{ section.id }} .bloat-left video {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  aspect-ratio: {{ section.settings.video_aspect_ratio }};
+  object-fit: cover;
+  border-radius: {% if section.settings.enable_border_radius %}{{ section.settings.border_radius }}px{% else %}0{% endif %};
+  display: block;
+}
+
 
 #shopify-section-{{ section.id }} .bloat-right .number-icon {
   width: {{ section.settings.number_icon_size }}px;

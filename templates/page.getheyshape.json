@@ -88,6 +88,7 @@
       "settings": {
         "left_image": "shopify://shop_images/Frame_8015_1.webp",
         "left_video_url": "",
+        "video_aspect_ratio": "9/16",
         "media_position": "left",
         "number_icon": "1",
         "heading": "Most Comfortable Solution for a Bloat-Free Belly",
@@ -119,6 +120,7 @@
       "settings": {
         "left_image": "shopify://shop_images/Reasons_Gif.webp",
         "left_video_url": "",
+        "video_aspect_ratio": "4/3",
         "media_position": "right",
         "number_icon": "1",
         "heading": "Most Comfortable Solution for a Bloat-Free Belly",

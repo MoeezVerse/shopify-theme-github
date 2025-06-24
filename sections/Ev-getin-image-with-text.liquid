@@ -241,11 +241,12 @@
 }
 
 #shopify-section-{{ section.id }} .bloat-left img {
-  max-width: 600px;
+  max-width: 100%;
+  height: auto;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  border-radius: {% if section.settings.enable_border_radius %}{{ section.settings.border_radius }}px{% else %}0{% endif %};
+  aspect-ratio: 3 / 4; /* or try 4/5 for more accuracy */
   object-fit: cover;
+  border-radius: {% if section.settings.enable_border_radius %}{{ section.settings.border_radius }}px{% else %}0{% endif %};
   display: block;
 }
 #shopify-section-{{ section.id }} .bloat-left video {

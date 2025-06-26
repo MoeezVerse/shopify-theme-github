@@ -7,7 +7,7 @@
     {
       "type": "image_picker",
       "id": "trust_image",
-      "label": "Trust Review Image"
+      "label": "Trust Icon Image"
     },
     {
       "type": "text",
@@ -18,13 +18,19 @@
     {
       "type": "image_picker",
       "id": "star_icon",
-      "label": "Star Icon Image"
+      "label": "Star Rating Image"
     },
     {
       "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "7 Reasons Why Over 1,000,000 Women Worldwide Are Choosing HeyShape"
+      "id": "heading_prefix",
+      "label": "Heading Highlighted Text",
+      "default": "7 Reasons"
+    },
+    {
+      "type": "text",
+      "id": "heading_main",
+      "label": "Main Heading Text",
+      "default": "Why Over 1,000,000 Women Worldwide Are Choosing HeyShape as Their Ultimate Confidence Secret."
     },
     {
       "type": "textarea",
@@ -35,36 +41,36 @@
     {
       "type": "text",
       "id": "offer_text_top",
-      "label": "Top Offer Text",
+      "label": "Offer Text Top",
       "default": "We've got a personalized limited-time offer for you."
     },
     {
       "type": "text",
       "id": "offer_text_bottom",
-      "label": "Bottom Offer Text",
+      "label": "Offer Text Bottom",
       "default": "Buy 1 & Get 1 Free"
     },
     {
       "type": "text",
       "id": "button_label",
-      "label": "Button Label",
+      "label": "Button Text",
       "default": "CLAIM SPECIAL DEAL"
     },
     {
       "type": "url",
       "id": "button_url",
-      "label": "Button URL"
+      "label": "Button Link"
     },
     {
       "type": "image_picker",
       "id": "right_image",
-      "label": "Right Side Image"
+      "label": "Right Side Model Image"
     }
   ],
   "blocks": [
     {
       "type": "feature",
-      "name": "Feature",
+      "name": "Feature Block",
       "settings": [
         {
           "type": "image_picker",
@@ -83,38 +89,13 @@
   "presets": [
     {
       "name": "Ev Confidence Promo",
-      "category": "Promotional",
+      "category": "Custom Sections",
       "blocks": [
-        {
-          "type": "feature",
-          "settings": {
-            "text": "360° Snatch"
-          }
-        },
-        {
-          "type": "feature",
-          "settings": {
-            "text": "Incredibly Soft"
-          }
-        },
-        {
-          "type": "feature",
-          "settings": {
-            "text": "Snap/hook Closure"
-          }
-        },
-        {
-          "type": "feature",
-          "settings": {
-            "text": "Breathable"
-          }
-        },
-        {
-          "type": "feature",
-          "settings": {
-            "text": "Keep it cooling"
-          }
-        }
+        { "type": "feature", "settings": { "text": "360° Snatch" } },
+        { "type": "feature", "settings": { "text": "Incredibly Soft" } },
+        { "type": "feature", "settings": { "text": "Snap/hook Closure" } },
+        { "type": "feature", "settings": { "text": "Breathable" } },
+        { "type": "feature", "settings": { "text": "Keep it cooling" } }
       ]
     }
   ]
@@ -123,39 +104,45 @@
 
 {% style %}
 .Ev-confidence-section {
-  padding: 40px 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 40px 20px;
 }
-.Ev-left,
-.Ev-right {
+.Ev-left, .Ev-right {
   flex: 1 1 100%;
-  max-width: 100%;
   padding: 20px;
 }
-@media (min-width: 768px) {
-  .Ev-left,
-  .Ev-right {
-    flex: 1 1 50%;
+@media(min-width: 768px) {
+  .Ev-left, .Ev-right {
+    flex: 0 0 50%;
     max-width: 50%;
   }
 }
-.Ev-trust {
+.Ev-trust-bar {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 16px;
 }
+.Ev-trust-bar img {
+  height: 24px;
+}
 .Ev-heading {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.3;
   margin-bottom: 12px;
+}
+.Ev-heading span {
+  color: #d299ff;
+  font-weight: 700;
 }
 .Ev-description {
   font-size: 16px;
-  margin-bottom: 20px;
+  color: #444;
+  margin-bottom: 24px;
 }
 .Ev-features {
   display: flex;
@@ -163,69 +150,75 @@
   gap: 12px;
   margin-bottom: 24px;
 }
-.Ev-feature-item {
+.Ev-feature-block {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #f3e1ff;
-  padding: 10px 14px;
-  border-radius: 16px;
+  background-color: #f3e1ff;
+  padding: 8px 14px;
+  border-radius: 20px;
   font-size: 14px;
 }
-.Ev-feature-item img {
-  height: 20px;
-  width: 20px;
+.Ev-feature-block img {
+  height: 16px;
+  width: 16px;
 }
 .Ev-offer {
-  background: #fbd5ff;
-  padding: 10px 16px;
+  background: #fcd6ff;
+  padding: 12px 20px;
   border-radius: 8px;
   margin-bottom: 20px;
-  font-size: 14px;
-}
-.Ev-offer p {
-  margin: 0;
   text-align: center;
 }
+.Ev-offer p {
+  margin: 4px 0;
+}
+.Ev-offer strong {
+  font-weight: 700;
+}
 .Ev-button {
-  display: inline-block;
-  background: #2b003b;
+  background-color: #2b003b;
   color: #fff;
   padding: 14px 32px;
   border-radius: 30px;
-  text-align: center;
-  font-weight: 600;
   font-size: 16px;
-  transition: 0.3s ease;
+  font-weight: 600;
+  display: inline-block;
+  transition: 0.3s;
+  text-align: center;
 }
 .Ev-button:hover {
-  background: #47085f;
+  background-color: #44005e;
 }
 .Ev-right img {
-  max-width: 100%;
-  border-radius: 8px;
+  width: 100%;
+  border-radius: 10px;
 }
 {% endstyle %}
 
 <div class="Ev-confidence-section">
   <div class="Ev-left">
-    <div class="Ev-trust">
+    <div class="Ev-trust-bar">
       {% if section.settings.trust_image %}
-        <img src="{{ section.settings.trust_image | image_url }}" alt="Trust">
+        <img src="{{ section.settings.trust_image | image_url }}" alt="Trust Icon">
       {% endif %}
       <span>{{ section.settings.review_text }}</span>
       {% if section.settings.star_icon %}
-        <img src="{{ section.settings.star_icon | image_url }}" alt="Stars" style="height: 20px;">
+        <img src="{{ section.settings.star_icon | image_url }}" alt="Stars">
       {% endif %}
     </div>
 
-    <h2 class="Ev-heading">{{ section.settings.heading }}</h2>
+    <h2 class="Ev-heading">
+      <span>{{ section.settings.heading_prefix }}</span>
+      {{ section.settings.heading_main }}
+    </h2>
+
     <p class="Ev-description">{{ section.settings.description }}</p>
 
     <div class="Ev-features">
       {% for block in section.blocks %}
         {% if block.type == 'feature' %}
-          <div class="Ev-feature-item">
+          <div class="Ev-feature-block">
             {% if block.settings.icon %}
               <img src="{{ block.settings.icon | image_url }}" alt="Icon">
             {% endif %}
@@ -241,13 +234,15 @@
     </div>
 
     {% if section.settings.button_url %}
-      <a href="{{ section.settings.button_url }}" class="Ev-button">{{ section.settings.button_label }}</a>
+      <a href="{{ section.settings.button_url }}" class="Ev-button">
+        {{ section.settings.button_label }}
+      </a>
     {% endif %}
   </div>
 
   <div class="Ev-right">
     {% if section.settings.right_image %}
-      <img src="{{ section.settings.right_image | image_url }}" alt="Main Visual">
+      <img src="{{ section.settings.right_image | image_url }}" alt="Model">
     {% endif %}
   </div>
 </div>

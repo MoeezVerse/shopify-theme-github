@@ -232,8 +232,9 @@
 #shopify-section-{{ section.id }} .bloat-left img, #shopify-section-{{ section.id }} .bloat-left video {
   max-width: 600px;
   width: 100%;
+  max-height: 300px;
   border-radius: {% if section.settings.enable_border_radius %}{{ section.settings.border_radius }}px{% else %}0{% endif %};
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 

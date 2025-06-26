@@ -256,30 +256,35 @@
         "feature_Lk7TYg": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/Frame_8003.png",
             "text": "360° Snatch"
           }
         },
         "feature_XEwhng": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/Frame_8002.png",
             "text": "Incredibly Soft"
           }
         },
         "feature_z7Y8jm": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/Frame_8002_1.png",
             "text": "Snap/hook Closure"
           }
         },
         "feature_xhqLn9": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/Group_2.png",
             "text": "Breathable"
           }
         },
         "feature_7yXV4q": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/Frame_8004.png",
             "text": "Keep it cooling"
           }
         }

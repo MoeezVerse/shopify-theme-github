@@ -293,6 +293,7 @@
       ],
       "name": "Ev Confidence Promo",
       "settings": {
+        "trust_image": "shopify://shop_images/Trustpilot_Stars_4-5.png",
         "review_text": "9507 Reviews",
         "heading": "7 Reasons Why Over 1,000,000 Women Worldwide Are Choosing HeyShape",
         "description": "Say goodbye to the stress of squeezing into your favorite jeans or dress. Boost your confidence, embrace your uniqueness, and enjoy feeling comfortable in your own skin.",

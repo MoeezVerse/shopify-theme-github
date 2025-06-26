@@ -1,6 +1,6 @@
 {% schema %}
 {
-  "name": "Image With Promo Text",
+  "name": "Ev - Viral Promo Section",
   "settings": [
     {
       "type": "image_picker",
@@ -44,108 +44,130 @@
   ],
   "presets": [
     {
-      "name": "Ev Image With Promo Text"
+      "name": "Ev - Viral Promo Section"
     }
   ]
 }
 {% endschema %}
 
 <style>
-  .Ev-promo-wrapper {
+  .Ev-wrapper {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     border-radius: 20px;
     overflow: hidden;
+    max-width: 100%;
+    margin: auto;
   }
 
   .Ev-left {
     flex: 1 1 50%;
-    min-width: 300px;
   }
 
   .Ev-left img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
     object-fit: cover;
+    display: block;
   }
 
   .Ev-right {
     flex: 1 1 50%;
-    background-color: #fcbefc;
-    padding: 40px;
+    background-color: #f9cafa;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
   }
 
   .Ev-logo {
+    max-width: 160px;
     margin-bottom: 20px;
-    max-width: 150px;
   }
 
   .Ev-heading {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 700;
-    margin: 10px 0;
+    margin: 10px 0 20px;
   }
 
   .Ev-subheading {
-    font-size: 16px;
-    margin-bottom: 30px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-bottom: 40px;
     color: #333;
   }
 
   .Ev-button {
-    background-color: #23002e;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 30px;
+    background-color: #2b0036;
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 9999px;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-    margin-bottom: 20px;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
   }
 
   .Ev-button:hover {
-    background-color: white;
-    color: #23002e;
-    border: 1px solid #23002e;
+    background-color: #fff;
+    color: #2b0036;
+    border: 1px solid #2b0036;
   }
 
   .Ev-warning {
-    color: #ff2d2d;
     font-size: 14px;
+    color: #ff3c3c;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
+    text-align: center;
   }
 
   .Ev-warning::before {
-    content: "🔴";
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 0 0 8px red;
     display: inline-block;
-    font-size: 16px;
   }
 
   @media screen and (max-width: 768px) {
-    .Ev-promo-wrapper {
+    .Ev-wrapper {
       flex-direction: column;
     }
 
+    .Ev-left,
     .Ev-right {
-      padding: 30px 20px;
+      flex: 1 1 100%;
+    }
+
+    .Ev-right {
+      padding: 40px 20px;
     }
 
     .Ev-heading {
       font-size: 28px;
     }
+
+    .Ev-subheading {
+      font-size: 16px;
+    }
+
+    .Ev-logo {
+      max-width: 130px;
+    }
   }
 </style>
 
-<div class="Ev-promo-wrapper">
+<div class="Ev-wrapper">
   <div class="Ev-left">
     {% if section.settings.left_image %}
       <img src="{{ section.settings.left_image | image_url: width: 800 }}" alt="Promo Image">
@@ -157,8 +179,8 @@
     {% endif %}
     <h2 class="Ev-heading">{{ section.settings.heading_title }}</h2>
     <p class="Ev-subheading">{{ section.settings.heading_text }}</p>
-    {% if section.settings.button_label %}
-      <a class="Ev-button" href="{{ section.settings.button_url }}">{{ section.settings.button_label }}</a>
+    {% if section.settings.button_url %}
+      <a href="{{ section.settings.button_url }}" class="Ev-button">{{ section.settings.button_label }}</a>
     {% endif %}
     <div class="Ev-warning">{{ section.settings.warning_text }}</div>
   </div>

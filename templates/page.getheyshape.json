@@ -249,6 +249,59 @@
         "button_url": "",
         "warning_text": "Sell out risk: HIGH | Already sold out 7 times last year"
       }
+    },
+    "ev_getin_main_mFrP9t": {
+      "type": "Ev-getin-main",
+      "blocks": {
+        "feature_Lk7TYg": {
+          "type": "feature",
+          "settings": {
+            "text": "360° Snatch"
+          }
+        },
+        "feature_XEwhng": {
+          "type": "feature",
+          "settings": {
+            "text": "Incredibly Soft"
+          }
+        },
+        "feature_z7Y8jm": {
+          "type": "feature",
+          "settings": {
+            "text": "Snap/hook Closure"
+          }
+        },
+        "feature_xhqLn9": {
+          "type": "feature",
+          "settings": {
+            "text": "Breathable"
+          }
+        },
+        "feature_7yXV4q": {
+          "type": "feature",
+          "settings": {
+            "text": "Keep it cooling"
+          }
+        }
+      },
+      "block_order": [
+        "feature_Lk7TYg",
+        "feature_XEwhng",
+        "feature_z7Y8jm",
+        "feature_xhqLn9",
+        "feature_7yXV4q"
+      ],
+      "name": "Ev Confidence Promo",
+      "settings": {
+        "review_text": "9507 Reviews",
+        "heading": "7 Reasons Why Over 1,000,000 Women Worldwide Are Choosing HeyShape",
+        "description": "Say goodbye to the stress of squeezing into your favorite jeans or dress. Boost your confidence, embrace your uniqueness, and enjoy feeling comfortable in your own skin.",
+        "offer_text_top": "We've got a personalized limited-time offer for you.",
+        "offer_text_bottom": "Buy 1 & Get 1 Free",
+        "button_label": "CLAIM SPECIAL DEAL",
+        "button_url": "",
+        "right_image": "shopify://shop_images/Hero_Section_Gif_-_2.webp"
+      }
     }
   },
   "order": [
@@ -259,6 +312,7 @@
     "ev_getin_image_with_text_GFnipk",
     "ev_getin_image_with_text_BjQkJB",
     "ev_getin_image_with_text_NJditb",
-    "ev_getin_image_text_2_b7Cndz"
+    "ev_getin_image_text_2_b7Cndz",
+    "ev_getin_main_mFrP9t"
   ]
 }

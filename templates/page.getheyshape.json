@@ -236,6 +236,19 @@
         "enable_border_radius": true,
         "border_radius": 10
       }
+    },
+    "ev_getin_image_text_2_b7Cndz": {
+      "type": "Ev-getin-image-text-2",
+      "name": "Ev Image With Promo Text",
+      "settings": {
+        "left_image": "shopify://shop_images/image00009_1.webp",
+        "logo_image": "shopify://shop_images/heyshape_logo.webp",
+        "heading_title": "Limited Offer",
+        "heading_text": "We're currently going viral on social media and have very limited stock remaining for our New Year Sale!",
+        "button_label": "Buy 1, Get 1 FREE",
+        "button_url": "",
+        "warning_text": "Sell out risk: HIGH | Already sold out 7 times last year"
+      }
     }
   },
   "order": [
@@ -245,6 +258,7 @@
     "ev_getin_image_with_text_Q9gUFB",
     "ev_getin_image_with_text_GFnipk",
     "ev_getin_image_with_text_BjQkJB",
-    "ev_getin_image_with_text_NJditb"
+    "ev_getin_image_with_text_NJditb",
+    "ev_getin_image_text_2_b7Cndz"
   ]
 }

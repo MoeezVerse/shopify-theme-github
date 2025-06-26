@@ -295,7 +295,9 @@
       "settings": {
         "trust_image": "shopify://shop_images/Trustpilot_Stars_4-5.png",
         "review_text": "9507 Reviews",
-        "heading": "7 Reasons Why Over 1,000,000 Women Worldwide Are Choosing HeyShape",
+        "star_icon": "shopify://shop_images/Trustpilot_Logo.webp",
+        "heading_prefix": "7 Reasons",
+        "heading_main": "Why Over 1,000,000 Women Worldwide Are Choosing HeyShape as Their Ultimate Confidence Secret.",
         "description": "Say goodbye to the stress of squeezing into your favorite jeans or dress. Boost your confidence, embrace your uniqueness, and enjoy feeling comfortable in your own skin.",
         "offer_text_top": "We've got a personalized limited-time offer for you.",
         "offer_text_bottom": "Buy 1 & Get 1 Free",

@@ -248,16 +248,15 @@
     margin: 0px;
 }
 
-/* ✅ Responsive fallback for mobile */
+
 @media (max-width: 780px) {
   .Ev-main-confidence-section {
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
   }
 
   .Ev-main-left, .Ev-main-right {
     max-width: 100%;
-    padding: 10px;
   }
 
   .Ev-main-heading {
@@ -266,6 +265,11 @@
 
   .Ev-main-description {
     font-size: 16px;
+  }
+}
+@media (max-width: 440px) {
+  .Ev-main-trust-bar img {
+    height: 20px;
   }
 }
 {% endstyle %}

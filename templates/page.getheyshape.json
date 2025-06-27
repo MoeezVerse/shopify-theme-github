@@ -17,6 +17,68 @@
         "padding_bottom": 28
       }
     },
+    "ev_getin_main_mFrP9t": {
+      "type": "Ev-getin-main",
+      "blocks": {
+        "feature_Lk7TYg": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_8003.png",
+            "text": "360° Snatch"
+          }
+        },
+        "feature_XEwhng": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_8002.png",
+            "text": "Incredibly Soft"
+          }
+        },
+        "feature_z7Y8jm": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_8002_1.png",
+            "text": "Snap/hook Closure"
+          }
+        },
+        "feature_xhqLn9": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Group_2.png",
+            "text": "Breathable"
+          }
+        },
+        "feature_7yXV4q": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_8004.png",
+            "text": "Keep it cooling"
+          }
+        }
+      },
+      "block_order": [
+        "feature_Lk7TYg",
+        "feature_XEwhng",
+        "feature_z7Y8jm",
+        "feature_xhqLn9",
+        "feature_7yXV4q"
+      ],
+      "name": "Ev Confidence Promo",
+      "settings": {
+        "trust_image": "shopify://shop_images/Trustpilot_Stars_4-5.png",
+        "review_text": "9507 Reviews",
+        "star_icon": "shopify://shop_images/Trustpilot_Logo.webp",
+        "heading_prefix": "7 Reasons",
+        "heading_main": "Why Over 1,000,000 Women Worldwide Are Choosing HeyShape as Their Ultimate Confidence Secret.",
+        "description": "Say goodbye to the stress of squeezing into your favorite jeans or dress. Boost your confidence, embrace your uniqueness, and enjoy feeling comfortable in your own skin.",
+        "offer_text_top_icon": "shopify://shop_images/hugeicons_gift.png",
+        "offer_text_top": "We've got a personalized limited-time offer for you.",
+        "offer_text_bottom": "Buy 1 & Get 1 Free",
+        "button_label": "CLAIM SPECIAL DEAL",
+        "button_url": "",
+        "right_image": "shopify://shop_images/Hero_Section_Gif_-_2.webp"
+      }
+    },
     "ev_brands_logo_WnEcwc": {
       "type": "Ev-brands-logo",
       "blocks": {
@@ -80,67 +142,6 @@
         "padding_bottom": 30,
         "padding_top_mobile": 20,
         "padding_bottom_mobile": 20
-      }
-    },
-    "ev_getin_main_mFrP9t": {
-      "type": "Ev-getin-main",
-      "blocks": {
-        "feature_Lk7TYg": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/Frame_8003.png",
-            "text": "360° Snatch"
-          }
-        },
-        "feature_XEwhng": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/Frame_8002.png",
-            "text": "Incredibly Soft"
-          }
-        },
-        "feature_z7Y8jm": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/Frame_8002_1.png",
-            "text": "Snap/hook Closure"
-          }
-        },
-        "feature_xhqLn9": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/Group_2.png",
-            "text": "Breathable"
-          }
-        },
-        "feature_7yXV4q": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/Frame_8004.png",
-            "text": "Keep it cooling"
-          }
-        }
-      },
-      "block_order": [
-        "feature_Lk7TYg",
-        "feature_XEwhng",
-        "feature_z7Y8jm",
-        "feature_xhqLn9",
-        "feature_7yXV4q"
-      ],
-      "name": "Ev Confidence Promo",
-      "settings": {
-        "trust_image": "shopify://shop_images/Trustpilot_Stars_4-5.png",
-        "review_text": "9507 Reviews",
-        "star_icon": "shopify://shop_images/Trustpilot_Logo.webp",
-        "heading_prefix": "7 Reasons",
-        "heading_main": "Why Over 1,000,000 Women Worldwide Are Choosing HeyShape as Their Ultimate Confidence Secret.",
-        "description": "Say goodbye to the stress of squeezing into your favorite jeans or dress. Boost your confidence, embrace your uniqueness, and enjoy feeling comfortable in your own skin.",
-        "offer_text_top": "We've got a personalized limited-time offer for you.",
-        "offer_text_bottom": "Buy 1 & Get 1 Free",
-        "button_label": "CLAIM SPECIAL DEAL",
-        "button_url": "",
-        "right_image": "shopify://shop_images/Hero_Section_Gif_-_2.webp"
       }
     },
     "ev_getin_image_with_text_V8ATdL": {

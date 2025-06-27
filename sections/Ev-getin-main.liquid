@@ -211,10 +211,22 @@
 .Ev-main-button:hover {
   background-color: #44005e;
 }
+
+/* ✅ Updated styling for image container */
+.Ev-main-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .Ev-main-right img {
-  width: 100%;
+  max-height: 650px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   border-radius: 10px;
 }
+
 .landing-hero__note-description {
     display: flex;
     align-items: center;
@@ -239,7 +251,29 @@
     font-size: 18px;
     margin: 0px;
 }
+
+/* ✅ Responsive fallback for mobile */
+@media (max-width: 767px) {
+  .Ev-main-confidence-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .Ev-main-left, .Ev-main-right {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .Ev-main-heading {
+    font-size: 28px;
+  }
+
+  .Ev-main-description {
+    font-size: 16px;
+  }
+}
 {% endstyle %}
+
 
 <div class="Ev-main-confidence-section">
   <div class="Ev-main-left">

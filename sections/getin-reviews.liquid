@@ -59,21 +59,24 @@
 
 <div class="review-section-{{ section.id }}">
   <div class="review-header">
-    {%- if section.settings.star_image != blank -%}
-      <img src="{{ section.settings.star_image | img_url: '300x' }}" alt="Star rating" class="review-stars">
-    {%- endif -%}
-    
-    {%- if section.settings.review_count != blank -%}
-      <p>{{ section.settings.review_count }}</p>
-    {%- endif -%}
-    
-    {%- if section.settings.trust_badge != blank -%}
-      <img src="{{ section.settings.trust_badge | img_url: '800x' }}" alt="Trust badge" class="trust-badge">
-    {%- endif -%}
-    
-    {%- if section.settings.heading != blank -%}
-      <h2>{{ section.settings.heading }}</h2>
-    {%- endif -%}
+    <div class="top-header">
+        {%- if section.settings.star_image != blank -%}
+          <img src="{{ section.settings.star_image | img_url: '300x' }}" alt="Star rating" class="review-stars">
+        {%- endif -%}
+        
+        {%- if section.settings.review_count != blank -%}
+          <p>{{ section.settings.review_count }}</p>
+        {%- endif -%}
+        
+        {%- if section.settings.trust_badge != blank -%}
+          <img src="{{ section.settings.trust_badge | img_url: '800x' }}" alt="Trust badge" class="trust-badge">
+        {%- endif -%}
+    </div>
+    <div class="review-title">
+      {%- if section.settings.heading != blank -%}
+        <h2>{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
   </div>
 
   <div class="review-container">

@@ -118,7 +118,6 @@
 }
 .Ev-main-left, .Ev-main-right {
   flex: 1 1 100%;
-  padding: 20px;
 }
 @media(min-width: 768px) {
   .Ev-main-left, .Ev-main-right {
@@ -212,19 +211,16 @@
   background-color: #44005e;
 }
 
-/* ✅ Updated styling for image container */
-.Ev-main-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .Ev-main-right img {
-  max-height: 650px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 10px;
+    max-height: 650px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    aspect-ratio: 0.8;
+    object-position: center;
+    vertical-align: bottom;
 }
 
 .landing-hero__note-description {

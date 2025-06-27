@@ -39,6 +39,11 @@
       "default": "Say goodbye to the stress of squeezing into your favorite jeans or dress. Boost your confidence, embrace your uniqueness, and enjoy feeling comfortable in your own skin."
     },
     {
+      "type": "image_picker",
+      "id": "offer_text_top_icon",
+      "label": "offer text top Icon"
+    },
+    {
       "type": "text",
       "id": "offer_text_top",
       "label": "Offer Text Top",
@@ -245,7 +250,11 @@
     </div>
 
     <div class="Ev-main-offer">
-      <p>{{ section.settings.offer_text_top }}</p>
+      <div class="landing-hero__note-description">
+        <img src="{{ block.settings.icon | image_url }}" alt="Icon">
+        <p>{{ section.settings.offer_text_top }}</p>
+      </div>
+      
       <p><strong>{{ section.settings.offer_text_bottom }}</strong></p>
     </div>
 

@@ -1,6 +1,476 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{%- style -%}
+  .review-section-{{ section.id }} {
+    padding: {{ section.settings.padding_top }}px {{ section.settings.padding_right }}px {{ section.settings.padding_bottom }}px {{ section.settings.padding_left }}px;
+    background-color: {{ section.settings.background_color }};
+    text-align: {{ section.settings.text_alignment }};
   }
+
+  .review-section-{{ section.id }} .review-header {
+    margin-bottom: {{ section.settings.header_spacing }}px;
+  }
+
+  .review-section-{{ section.id }} .trust-badge {
+    max-width: {{ section.settings.trust_badge_width }}px;
+    margin: 0 auto {{ section.settings.trust_badge_spacing }}px;
+  }
+
+  .review-section-{{ section.id }} .review-container {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.reviews_per_row }}, 1fr);
+    gap: {{ section.settings.review_spacing }}px;
+    margin-top: {{ section.settings.reviews_top_spacing }}px;
+  }
+
+  .review-section-{{ section.id }} .review-item {
+    background: {{ section.settings.review_background }};
+    padding: {{ section.settings.review_padding }}px;
+    border-radius: {{ section.settings.review_border_radius }}px;
+  }
+
+  .review-section-{{ section.id }} .review-image {
+    width: {{ section.settings.review_image_size }}px;
+    height: {{ section.settings.review_image_size }}px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto {{ section.settings.review_image_spacing }}px;
+  }
+
+  .review-section-{{ section.id }} .review-stars {
+    width: {{ section.settings.star_size }}px;
+    margin-bottom: {{ section.settings.star_spacing }}px;
+  }
+
+  .review-section-{{ section.id }} .review-subheading {
+    color: {{ section.settings.subheading_color }};
+    font-size: {{ section.settings.subheading_size }}px;
+    margin-bottom: {{ section.settings.subheading_spacing }}px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .review-section-{{ section.id }} .review-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .review-section-{{ section.id }} {
+      padding: {{ section.settings.mobile_padding_top }}px {{ section.settings.mobile_padding_right }}px {{ section.settings.mobile_padding_bottom }}px {{ section.settings.mobile_padding_left }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="review-section-{{ section.id }}">
+  <div class="review-header">
+    {%- if section.settings.star_image != blank -%}
+      <img src="{{ section.settings.star_image | img_url: '300x' }}" alt="Star rating" class="review-stars">
+    {%- endif -%}
+    
+    {%- if section.settings.review_count != blank -%}
+      <p>{{ section.settings.review_count }}</p>
+    {%- endif -%}
+    
+    {%- if section.settings.trust_badge != blank -%}
+      <img src="{{ section.settings.trust_badge | img_url: '800x' }}" alt="Trust badge" class="trust-badge">
+    {%- endif -%}
+    
+    {%- if section.settings.heading != blank -%}
+      <h2>{{ section.settings.heading }}</h2>
+    {%- endif -%}
+  </div>
+
+  <div class="review-container">
+    {%- for block in section.blocks -%}
+      <div class="review-item" {{ block.shopify_attributes }}>
+        {%- if block.settings.customer_image != blank -%}
+          <img src="{{ block.settings.customer_image | img_url: '300x300' }}" alt="{{ block.settings.customer_name }}" class="review-image">
+        {%- endif -%}
+        
+        <div class="review-content">
+          {%- if block.settings.customer_name != blank -%}
+            <h3>{{ block.settings.customer_name }}</h3>
+          {%- endif -%}
+          
+          {%- if section.settings.star_image != blank -%}
+            <img src="{{ section.settings.star_image | img_url: '300x' }}" alt="Star rating" class="review-stars">
+          {%- endif -%}
+          
+          {%- if block.settings.subheading != blank -%}
+            <h4 class="review-subheading">{{ block.settings.subheading }}</h4>
+          {%- endif -%}
+          
+          {%- if block.settings.review_text != blank -%}
+            <p>{{ block.settings.review_text }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Customer Reviews",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding right",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding left",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile padding top",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile padding right",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile padding bottom",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile padding left",
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Header Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "star_image",
+      "label": "Star rating image"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review count text",
+      "default": "1,000+ 5-Star Reviews"
+    },
+    {
+      "type": "image_picker",
+      "id": "trust_badge",
+      "label": "Trust badge image"
+    },
+    {
+      "type": "range",
+      "id": "trust_badge_width",
+      "min": 100,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "label": "Trust badge width",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "trust_badge_spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Trust badge spacing",
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join over 1 million women worldwide"
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Header bottom spacing",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Review Grid Settings"
+    },
+    {
+      "type": "range",
+      "id": "reviews_per_row",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Reviews per row",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "review_spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Spacing between reviews",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "reviews_top_spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Reviews top spacing",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Review Item Styling"
+    },
+    {
+      "type": "color",
+      "id": "review_background",
+      "label": "Review background",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "range",
+      "id": "review_padding",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Review padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "review_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Review border radius",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "review_image_size",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Customer image size",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "review_image_spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Image bottom spacing",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Star size in reviews",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "star_spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Star bottom spacing",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Subheading Styling"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subheading_spacing",
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Subheading bottom spacing",
+      "default": 10
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "customer_image",
+          "label": "Customer image"
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer name",
+          "default": "Customer name"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "Never Felt So Confident"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "I absolutely LOVE these products! The fit was amazing and very well made!!! Will be purchasing more from this shop!"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Get Customer Reviews",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "customer_name": "Daphne",
+            "subheading": "Never Felt So Confident",
+            "review_text": "Ovietni absolutely LOVE these jumpshell! The fit was amazing; the black and green and very well made!!! will be purchasing more from this particular shop!"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "customer_name": "Taylor",
+            "subheading": "Amazing!",
+            "review_text": "Orng! How, look, love this one piece back unkind to do yoga! I no more will have to worry about adjusting my pants when I go from a floor pose to a standing shoe. I'm not waiting so much one pieces are usually too long in the tone from me but think one isn't. Thanks again hey shape!"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "customer_name": "Gabriele",
+            "subheading": "My Booty Got Bigger",
+            "review_text": "Wow! Thanks so much for the love, purity. Know that your overall satisfaction comes everything to us. Thanks for sharing and stay beautiful."
+          }
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}

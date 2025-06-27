@@ -251,7 +251,9 @@
 
     <div class="Ev-main-offer">
       <div class="landing-hero__note-description">
-        <img src="{{ block.settings.offer_text_top_icon | img_url:"master" }}" alt="Icon">
+        {% if section.settings.offer_text_top_icon %}
+          <img src="{{ section.settings.offer_text_top_icon | img_url:"master" }}" alt="Icon">
+        {% endif %}
         <p>{{ section.settings.offer_text_top }}</p>
       </div>
       <p><strong>{{ section.settings.offer_text_bottom }}</strong></p>

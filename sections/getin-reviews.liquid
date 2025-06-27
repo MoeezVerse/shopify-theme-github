@@ -2,69 +2,48 @@
   .review-section-{{ section.id }} {
     padding: {{ section.settings.padding_top }}px {{ section.settings.padding_right }}px {{ section.settings.padding_bottom }}px {{ section.settings.padding_left }}px;
     background-color: {{ section.settings.background_color }};
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    text-align: {{ section.settings.text_alignment }};
   }
 
   .review-section-{{ section.id }} .review-header {
-    margin-bottom: 40px;
+    margin-bottom: {{ section.settings.header_spacing }}px;
   }
 
   .review-section-{{ section.id }} .trust-badge {
-    max-width: 200px;
-    margin: 20px auto;
+    max-width: {{ section.settings.trust_badge_width }}px;
+    margin: 0 auto {{ section.settings.trust_badge_spacing }}px;
   }
 
   .review-section-{{ section.id }} .review-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat({{ section.settings.reviews_per_row }}, 1fr);
+    gap: {{ section.settings.review_spacing }}px;
+    margin-top: {{ section.settings.reviews_top_spacing }}px;
   }
 
   .review-section-{{ section.id }} .review-item {
-    background: #f9f9f9;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: left;
+    background: {{ section.settings.review_background }};
+    padding: {{ section.settings.review_padding }}px;
+    border-radius: {{ section.settings.review_border_radius }}px;
   }
 
   .review-section-{{ section.id }} .review-image {
-    width: 60px;
-    height: 60px;
+    width: {{ section.settings.review_image_size }}px;
+    height: {{ section.settings.review_image_size }}px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
+    margin: 0 auto {{ section.settings.review_image_spacing }}px;
   }
 
   .review-section-{{ section.id }} .review-stars {
-    width: 100px;
-    margin-bottom: 10px;
+    width: {{ section.settings.star_size }}px;
+    margin-bottom: {{ section.settings.star_spacing }}px;
   }
 
   .review-section-{{ section.id }} .review-subheading {
-    color: #333;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 20px;
-  }
-
-  .review-section-{{ section.id }} .review-subheading:before {
-    content: "-";
-    position: absolute;
-    left: 0;
-  }
-
-  .review-section-{{ section.id }} h2 {
-    font-size: 28px;
-    margin: 20px 0;
-  }
-
-  .review-section-{{ section.id }} h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
+    color: {{ section.settings.subheading_color }};
+    font-size: {{ section.settings.subheading_size }}px;
+    margin-bottom: {{ section.settings.subheading_spacing }}px;
   }
 
   @media screen and (max-width: 768px) {
@@ -73,28 +52,31 @@
     }
     
     .review-section-{{ section.id }} {
-      padding: 30px 15px;
+      padding: {{ section.settings.mobile_padding_top }}px {{ section.settings.mobile_padding_right }}px {{ section.settings.mobile_padding_bottom }}px {{ section.settings.mobile_padding_left }}px;
     }
   }
 {%- endstyle -%}
 
 <div class="review-section-{{ section.id }}">
   <div class="review-header">
-    {%- if section.settings.star_image != blank -%}
-      <img src="{{ section.settings.star_image | img_url: '300x' }}" alt="Star rating" class="review-stars">
-    {%- endif -%}
-    
-    {%- if section.settings.review_count != blank -%}
-      <p>{{ section.settings.review_count }}</p>
-    {%- endif -%}
-    
-    {%- if section.settings.trust_badge != blank -%}
-      <img src="{{ section.settings.trust_badge | img_url: '800x' }}" alt="Trust badge" class="trust-badge">
-    {%- endif -%}
-    
-    {%- if section.settings.heading != blank -%}
-      <h2>{{ section.settings.heading }}</h2>
-    {%- endif -%}
+    <div class="top-header">
+        {%- if section.settings.star_image != blank -%}
+          <img src="{{ section.settings.star_image | img_url: '300x' }}" alt="Star rating" class="review-stars">
+        {%- endif -%}
+        
+        {%- if section.settings.review_count != blank -%}
+          <p>{{ section.settings.review_count }}</p>
+        {%- endif -%}
+        
+        {%- if section.settings.trust_badge != blank -%}
+          <img src="{{ section.settings.trust_badge | img_url: '800x' }}" alt="Trust badge" class="trust-badge">
+        {%- endif -%}
+    </div>
+    <div class="review-title">
+      {%- if section.settings.heading != blank -%}
+        <h2>{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
   </div>
 
   <div class="review-container">
@@ -181,6 +163,66 @@
       "default": 20
     },
     {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile padding top",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile padding right",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile padding bottom",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile padding left",
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
       "type": "header",
       "content": "Header Content"
     },
@@ -201,10 +243,173 @@
       "label": "Trust badge image"
     },
     {
+      "type": "range",
+      "id": "trust_badge_width",
+      "min": 100,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "label": "Trust badge width",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "trust_badge_spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Trust badge spacing",
+      "default": 20
+    },
+    {
       "type": "text",
       "id": "heading",
       "label": "Heading",
       "default": "Join over 1 million women worldwide"
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Header bottom spacing",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Review Grid Settings"
+    },
+    {
+      "type": "range",
+      "id": "reviews_per_row",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Reviews per row",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "review_spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Spacing between reviews",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "reviews_top_spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Reviews top spacing",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Review Item Styling"
+    },
+    {
+      "type": "color",
+      "id": "review_background",
+      "label": "Review background",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "range",
+      "id": "review_padding",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Review padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "review_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Review border radius",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "review_image_size",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Customer image size",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "review_image_spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Image bottom spacing",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Star size in reviews",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "star_spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Star bottom spacing",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Subheading Styling"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subheading_spacing",
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Subheading bottom spacing",
+      "default": 10
     }
   ],
   "blocks": [
@@ -242,10 +447,6 @@
     {
       "name": "Get Customer Reviews",
       "category": "Custom",
-      "settings": {
-        "heading": "Join over 1 million women worldwide",
-        "review_count": "1,000+ 5-Star Reviews"
-      },
       "blocks": [
         {
           "type": "review",

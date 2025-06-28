@@ -318,6 +318,7 @@
         "review_TJP9eE": {
           "type": "review",
           "settings": {
+            "customer_image": "shopify://shop_images/review_Daphne_1.webp",
             "customer_name": "Daphne",
             "subheading": "Never Felt So Confident",
             "review_text": "Ovietni absolutely LOVE these jumpshell! The fit was amazing; the black and green and very well made!!! will be purchasing more from this particular shop!"
@@ -326,6 +327,7 @@
         "review_tkaUE8": {
           "type": "review",
           "settings": {
+            "customer_image": "shopify://shop_images/reiveiw_Taylor_2.webp",
             "customer_name": "Taylor",
             "subheading": "Amazing!",
             "review_text": "Orng! How, look, love this one piece back unkind to do yoga! I no more will have to worry about adjusting my pants when I go from a floor pose to a standing shoe. I'm not waiting so much one pieces are usually too long in the tone from me but think one isn't. Thanks again hey shape!"

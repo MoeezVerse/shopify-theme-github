@@ -27,63 +27,60 @@
     border-radius: {{ section.settings.review_border_radius }}px;
   }
 
-  .review-section .review-image {
-    width: 100%;
-    height: auto;
+  .review-section-{{ section.id }} .review-image {
+    width: {{ section.settings.review_image_size }}px;
+    height: {{ section.settings.review_image_size }}px;
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto {{ section.settings.review_image_spacing }}px;
   }
 
-  .review-section .review-stars {
+  .review-section-{{ section.id }} .review-stars {
     width: {{ section.settings.star_size }}px;
     margin-bottom: {{ section.settings.star_spacing }}px;
   }
 
-  .review-section .review-subheading {
+  .review-section-{{ section.id }} .review-subheading {
     color: {{ section.settings.subheading_color }};
     font-size: {{ section.settings.subheading_size }}px;
     margin-bottom: {{ section.settings.subheading_spacing }}px;
   }
 
   @media screen and (max-width: 768px) {
-    .review-section .review-container {
+    .review-section-{{ section.id }} .review-container {
       grid-template-columns: 1fr;
     }
     
-    .review-section {
+    .review-section-{{ section.id }} {
       padding: {{ section.settings.mobile_padding_top }}px {{ section.settings.mobile_padding_right }}px {{ section.settings.mobile_padding_bottom }}px {{ section.settings.mobile_padding_left }}px;
     }
   }
 {%- endstyle -%}
 
-<div class="review-section">
+<div class="review-section-{{ section.id }}">
   <div class="review-header">
-    <div class="top-header">
-        {%- if section.settings.star_image != blank -%}
-          <img src="{{ section.settings.star_image | img_url: '300x' }}" alt="Star rating" class="review-stars">
-        {%- endif -%}
-        
-        {%- if section.settings.review_count != blank -%}
-          <p>{{ section.settings.review_count }}</p>
-        {%- endif -%}
-        
-        {%- if section.settings.trust_badge != blank -%}
-          <img src="{{ section.settings.trust_badge | img_url: '800x' }}" alt="Trust badge" class="trust-badge">
-        {%- endif -%}
-    </div>
-    <div class="review-title">
-      {%- if section.settings.heading != blank -%}
-        <h2>{{ section.settings.heading }}</h2>
-      {%- endif -%}
-    </div>
+    {%- if section.settings.star_image != blank -%}
+      <img src="{{ section.settings.star_image | img_url: '300x' }}" alt="Star rating" class="review-stars">
+    {%- endif -%}
+    
+    {%- if section.settings.review_count != blank -%}
+      <p>{{ section.settings.review_count }}</p>
+    {%- endif -%}
+    
+    {%- if section.settings.trust_badge != blank -%}
+      <img src="{{ section.settings.trust_badge | img_url: '800x' }}" alt="Trust badge" class="trust-badge">
+    {%- endif -%}
+    
+    {%- if section.settings.heading != blank -%}
+      <h2>{{ section.settings.heading }}</h2>
+    {%- endif -%}
   </div>
 
   <div class="review-container">
     {%- for block in section.blocks -%}
       <div class="review-item" {{ block.shopify_attributes }}>
         {%- if block.settings.customer_image != blank -%}
-          <img src="{{ block.settings.customer_image | img_url: 'master' }}" alt="{{ block.settings.customer_name }}" class="review-image">
+          <img src="{{ block.settings.customer_image | img_url: '300x300' }}" alt="{{ block.settings.customer_name }}" class="review-image">
         {%- endif -%}
         
         <div class="review-content">
@@ -445,7 +442,7 @@
   ],
   "presets": [
     {
-      "name": "Get Customer Reviews",
+      "name": "Customer Reviews",
       "category": "Custom",
       "blocks": [
         {

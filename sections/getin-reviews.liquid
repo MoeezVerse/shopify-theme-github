@@ -28,10 +28,9 @@
   }
 
   .review-section-{{ section.id }} .review-image {
-    width: {{ section.settings.review_image_size }}px;
-    height: {{ section.settings.review_image_size }}px;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     margin: 0 auto {{ section.settings.review_image_spacing }}px;
   }
 

@@ -1,54 +1,22 @@
-{% schema %}
-{
-  "name": "Ev - Viral Promo Section",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "left_image",
-      "label": "Left Side Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo_image",
-      "label": "Logo Image"
-    },
-    {
-      "type": "text",
-      "id": "heading_title",
-      "label": "Heading Title",
-      "default": "Limited Offer"
-    },
-    {
-      "type": "textarea",
-      "id": "heading_text",
-      "label": "Subheading Text",
-      "default": "We're currently going viral on social media and have very limited stock remaining for our New Year Sale!"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button Text",
-      "default": "Buy 1, Get 1 FREE"
-    },
-    {
-      "type": "url",
-      "id": "button_url",
-      "label": "Button Link"
-    },
-    {
-      "type": "text",
-      "id": "warning_text",
-      "label": "Warning Text",
-      "default": "Sell out risk: HIGH | Already sold out 7 times last year"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Ev - Viral Promo Section"
-    }
-  ]
-}
-{% endschema %}
+<div class="Ev-wrapper">
+  <div class="Ev-left">
+    {% if section.settings.left_image %}
+      <img src="{{ section.settings.left_image | image_url: width: 800 }}" alt="Promo Image">
+    {% endif %}
+  </div>
+  <div class="Ev-right">
+    {% if section.settings.logo_image %}
+      <img class="Ev-logo" src="{{ section.settings.logo_image | image_url: width: 200 }}" alt="Logo">
+    {% endif %}
+    <h2 class="Ev-heading">{{ section.settings.heading_title }}</h2>
+    <p class="Ev-subheading">{{ section.settings.heading_text }}</p>
+    {% if section.settings.button_label %}
+      <a href="{{ section.settings.button_url }}" class="Ev-button">{{ section.settings.button_label }}</a>
+    {% endif %}
+    <div class="Ev-warning">{{ section.settings.warning_text }}</div>
+  </div>
+</div>
+
 
 <style>
   .Ev-wrapper {
@@ -142,7 +110,7 @@
     display: inline-block;
   }
 
-   @media screen and (max-width: 92px) {
+   @media screen and (max-width: 920px) {
      .Ev-wrapper {
       flex-direction: column;
       border-radius: 0px;
@@ -179,22 +147,54 @@
     }
   }
 </style>
-
-<div class="Ev-wrapper">
-  <div class="Ev-left">
-    {% if section.settings.left_image %}
-      <img src="{{ section.settings.left_image | image_url: width: 800 }}" alt="Promo Image">
-    {% endif %}
-  </div>
-  <div class="Ev-right">
-    {% if section.settings.logo_image %}
-      <img class="Ev-logo" src="{{ section.settings.logo_image | image_url: width: 200 }}" alt="Logo">
-    {% endif %}
-    <h2 class="Ev-heading">{{ section.settings.heading_title }}</h2>
-    <p class="Ev-subheading">{{ section.settings.heading_text }}</p>
-    {% if section.settings.button_label %}
-      <a href="{{ section.settings.button_url }}" class="Ev-button">{{ section.settings.button_label }}</a>
-    {% endif %}
-    <div class="Ev-warning">{{ section.settings.warning_text }}</div>
-  </div>
-</div>
+{% schema %}
+{
+  "name": "Ev - Viral Promo Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Side Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_title",
+      "label": "Heading Title",
+      "default": "Limited Offer"
+    },
+    {
+      "type": "textarea",
+      "id": "heading_text",
+      "label": "Subheading Text",
+      "default": "We're currently going viral on social media and have very limited stock remaining for our New Year Sale!"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Text",
+      "default": "Buy 1, Get 1 FREE"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "warning_text",
+      "label": "Warning Text",
+      "default": "Sell out risk: HIGH | Already sold out 7 times last year"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ev - Viral Promo Section"
+    }
+  ]
+}
+{% endschema %}

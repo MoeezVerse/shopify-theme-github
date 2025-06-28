@@ -1,111 +1,59 @@
-{% schema %}
-{
-  "name": "Ev Confidence Promo",
-  "tag": "section",
-  "class": "Ev-main-confidence-section",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "trust_image",
-      "label": "Trust Icon Image"
-    },
-    {
-      "type": "text",
-      "id": "review_text",
-      "label": "Review Text",
-      "default": "9507 Reviews"
-    },
-    {
-      "type": "image_picker",
-      "id": "star_icon",
-      "label": "Star Rating Image"
-    },
-    {
-      "type": "text",
-      "id": "heading_prefix",
-      "label": "Heading Highlighted Text",
-      "default": "7 Reasons"
-    },
-    {
-      "type": "text",
-      "id": "heading_main",
-      "label": "Main Heading Text",
-      "default": "Why Over 1,000,000 Women Worldwide Are Choosing HeyShape as Their Ultimate Confidence Secret."
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Description",
-      "default": "Say goodbye to the stress of squeezing into your favorite jeans or dress. Boost your confidence, embrace your uniqueness, and enjoy feeling comfortable in your own skin."
-    },
-    {
-      "type": "image_picker",
-      "id": "offer_text_top_icon",
-      "label": "offer text top Icon"
-    },
-    {
-      "type": "text",
-      "id": "offer_text_top",
-      "label": "Offer Text Top",
-      "default": "We've got a personalized limited-time offer for you."
-    },
-    {
-      "type": "text",
-      "id": "offer_text_bottom",
-      "label": "Offer Text Bottom",
-      "default": "Buy 1 & Get 1 Free"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button Text",
-      "default": "CLAIM SPECIAL DEAL"
-    },
-    {
-      "type": "url",
-      "id": "button_url",
-      "label": "Button Link"
-    },
-    {
-      "type": "image_picker",
-      "id": "right_image",
-      "label": "Right Side Model Image"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "feature",
-      "name": "Feature Block",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon",
-          "label": "Feature Icon"
-        },
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Feature Text",
-          "default": "360° Snatch"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Ev Confidence Promo",
-      "category": "Custom Sections",
-      "blocks": [
-        { "type": "feature", "settings": { "text": "360° Snatch" } },
-        { "type": "feature", "settings": { "text": "Incredibly Soft" } },
-        { "type": "feature", "settings": { "text": "Snap/hook Closure" } },
-        { "type": "feature", "settings": { "text": "Breathable" } },
-        { "type": "feature", "settings": { "text": "Keep it cooling" } }
-      ]
-    }
-  ]
-}
-{% endschema %}
+
+<div class="Ev-main-confidence-section">
+  <div class="Ev-main-left">
+    <div class="Ev-main-trust-bar">
+      {% if section.settings.trust_image %}
+        <img src="{{ section.settings.trust_image | image_url }}" alt="Trust Icon">
+      {% endif %}
+      <span>{{ section.settings.review_text }}</span>
+      {% if section.settings.star_icon %}
+        <img src="{{ section.settings.star_icon | image_url }}" alt="Stars">
+      {% endif %}
+    </div>
+
+    <h2 class="Ev-main-heading">
+      <span>{{ section.settings.heading_prefix }}</span>
+      {{ section.settings.heading_main }}
+    </h2>
+
+    <p class="Ev-main-description">{{ section.settings.description }}</p>
+
+    <div class="Ev-main-features">
+      {% for block in section.blocks %}
+        {% if block.type == 'feature' %}
+          <div class="Ev-main-feature-block">
+            {% if block.settings.icon %}
+              <img src="{{ block.settings.icon | image_url }}" alt="Icon">
+            {% endif %}
+            <span>{{ block.settings.text }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="Ev-main-offer">
+      <div class="landing-hero__note-description">
+        {% if section.settings.offer_text_top_icon %}
+          <img src="{{ section.settings.offer_text_top_icon | img_url:"master" }}" alt="Icon">
+        {% endif %}
+        <p>{{ section.settings.offer_text_top }}</p>
+      </div>
+      <p class="landing-hero__note-main">{{ section.settings.offer_text_bottom }}</p>
+    </div>
+
+    {% if section.settings.button_label %}
+      <a href="{{ section.settings.button_url }}" class="Ev-main-button">
+        {{ section.settings.button_label }}
+      </a>
+    {% endif %}
+  </div>
+
+  <div class="Ev-main-right">
+    {% if section.settings.right_image %}
+      <img src="{{ section.settings.right_image | image_url }}" alt="Model">
+    {% endif %}
+  </div>
+</div>
 
 {% style %}
 .Ev-main-confidence-section {
@@ -280,60 +228,111 @@
   }
 }
 {% endstyle %}
-
-
-<div class="Ev-main-confidence-section">
-  <div class="Ev-main-left">
-    <div class="Ev-main-trust-bar">
-      {% if section.settings.trust_image %}
-        <img src="{{ section.settings.trust_image | image_url }}" alt="Trust Icon">
-      {% endif %}
-      <span>{{ section.settings.review_text }}</span>
-      {% if section.settings.star_icon %}
-        <img src="{{ section.settings.star_icon | image_url }}" alt="Stars">
-      {% endif %}
-    </div>
-
-    <h2 class="Ev-main-heading">
-      <span>{{ section.settings.heading_prefix }}</span>
-      {{ section.settings.heading_main }}
-    </h2>
-
-    <p class="Ev-main-description">{{ section.settings.description }}</p>
-
-    <div class="Ev-main-features">
-      {% for block in section.blocks %}
-        {% if block.type == 'feature' %}
-          <div class="Ev-main-feature-block">
-            {% if block.settings.icon %}
-              <img src="{{ block.settings.icon | image_url }}" alt="Icon">
-            {% endif %}
-            <span>{{ block.settings.text }}</span>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-
-    <div class="Ev-main-offer">
-      <div class="landing-hero__note-description">
-        {% if section.settings.offer_text_top_icon %}
-          <img src="{{ section.settings.offer_text_top_icon | img_url:"master" }}" alt="Icon">
-        {% endif %}
-        <p>{{ section.settings.offer_text_top }}</p>
-      </div>
-      <p class="landing-hero__note-main">{{ section.settings.offer_text_bottom }}</p>
-    </div>
-
-    {% if section.settings.button_label %}
-      <a href="{{ section.settings.button_url }}" class="Ev-main-button">
-        {{ section.settings.button_label }}
-      </a>
-    {% endif %}
-  </div>
-
-  <div class="Ev-main-right">
-    {% if section.settings.right_image %}
-      <img src="{{ section.settings.right_image | image_url }}" alt="Model">
-    {% endif %}
-  </div>
-</div>
+{% schema %}
+{
+  "name": "Ev Confidence Promo",
+  "tag": "section",
+  "class": "Ev-main-confidence-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "trust_image",
+      "label": "Trust Icon Image"
+    },
+    {
+      "type": "text",
+      "id": "review_text",
+      "label": "Review Text",
+      "default": "9507 Reviews"
+    },
+    {
+      "type": "image_picker",
+      "id": "star_icon",
+      "label": "Star Rating Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_prefix",
+      "label": "Heading Highlighted Text",
+      "default": "7 Reasons"
+    },
+    {
+      "type": "text",
+      "id": "heading_main",
+      "label": "Main Heading Text",
+      "default": "Why Over 1,000,000 Women Worldwide Are Choosing HeyShape as Their Ultimate Confidence Secret."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Say goodbye to the stress of squeezing into your favorite jeans or dress. Boost your confidence, embrace your uniqueness, and enjoy feeling comfortable in your own skin."
+    },
+    {
+      "type": "image_picker",
+      "id": "offer_text_top_icon",
+      "label": "offer text top Icon"
+    },
+    {
+      "type": "text",
+      "id": "offer_text_top",
+      "label": "Offer Text Top",
+      "default": "We've got a personalized limited-time offer for you."
+    },
+    {
+      "type": "text",
+      "id": "offer_text_bottom",
+      "label": "Offer Text Bottom",
+      "default": "Buy 1 & Get 1 Free"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Text",
+      "default": "CLAIM SPECIAL DEAL"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right Side Model Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Feature Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Feature Text",
+          "default": "360° Snatch"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ev Confidence Promo",
+      "category": "Custom Sections",
+      "blocks": [
+        { "type": "feature", "settings": { "text": "360° Snatch" } },
+        { "type": "feature", "settings": { "text": "Incredibly Soft" } },
+        { "type": "feature", "settings": { "text": "Snap/hook Closure" } },
+        { "type": "feature", "settings": { "text": "Breathable" } },
+        { "type": "feature", "settings": { "text": "Keep it cooling" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

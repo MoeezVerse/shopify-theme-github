@@ -27,37 +27,36 @@
     border-radius: {{ section.settings.review_border_radius }}px;
   }
 
-  .review-section-{{ section.id }} .review-image {
-    width: {{ section.settings.review_image_size }}px;
-    height: {{ section.settings.review_image_size }}px;
-    border-radius: 50%;
-    object-fit: cover;
+  .review-section .review-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     margin: 0 auto {{ section.settings.review_image_spacing }}px;
   }
 
-  .review-section-{{ section.id }} .review-stars {
+  .review-section .review-stars {
     width: {{ section.settings.star_size }}px;
     margin-bottom: {{ section.settings.star_spacing }}px;
   }
 
-  .review-section-{{ section.id }} .review-subheading {
+  .review-section .review-subheading {
     color: {{ section.settings.subheading_color }};
     font-size: {{ section.settings.subheading_size }}px;
     margin-bottom: {{ section.settings.subheading_spacing }}px;
   }
 
   @media screen and (max-width: 768px) {
-    .review-section-{{ section.id }} .review-container {
+    .review-section .review-container {
       grid-template-columns: 1fr;
     }
     
-    .review-section-{{ section.id }} {
+    .review-section {
       padding: {{ section.settings.mobile_padding_top }}px {{ section.settings.mobile_padding_right }}px {{ section.settings.mobile_padding_bottom }}px {{ section.settings.mobile_padding_left }}px;
     }
   }
 {%- endstyle -%}
 
-<div class="review-section-{{ section.id }}">
+<div class="review-section">
   <div class="review-header">
     <div class="top-header">
         {%- if section.settings.star_image != blank -%}
@@ -340,16 +339,6 @@
       "unit": "px",
       "label": "Review border radius",
       "default": 10
-    },
-    {
-      "type": "range",
-      "id": "review_image_size",
-      "min": 50,
-      "max": 200,
-      "step": 10,
-      "unit": "px",
-      "label": "Customer image size",
-      "default": 80
     },
     {
       "type": "range",

@@ -30,7 +30,8 @@
   .review-section .review-image {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    border-radius: 50%;
+    object-fit: cover;
     margin: 0 auto {{ section.settings.review_image_spacing }}px;
   }
 
@@ -339,6 +340,16 @@
       "unit": "px",
       "label": "Review border radius",
       "default": 10
+    },
+    {
+      "type": "range",
+      "id": "review_image_size",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Customer image size",
+      "default": 80
     },
     {
       "type": "range",

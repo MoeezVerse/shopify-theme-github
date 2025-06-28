@@ -1,3 +1,37 @@
+<div class="brand-logos-{{ section.id }}">
+  <div class="main-container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="brand-logos__heading {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    
+    <div class="brand-logos__container">
+      {%- for block in section.blocks -%}
+        <div class="brand-logo__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}" target="_blank">
+          {%- endif -%}
+          
+          {%- if block.settings.image != blank -%}
+            <img class="brand-logo__image"
+                 src="{{ block.settings.image | img_url: '300x' }}"
+                 alt="{{ block.settings.image.alt | escape }}"
+                 loading="lazy"
+                 width="{{ block.settings.image.width }}"
+                 height="{{ block.settings.image.height }}"
+            >
+          {%- else -%}
+            {{ 'logo' | placeholder_svg_tag: 'brand-logo__image' }}
+          {%- endif -%}
+          
+          {%- if block.settings.link != blank -%}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
 {%- style -%}
   .brand-logos-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
@@ -76,39 +110,6 @@
   }
 {%- endstyle -%}
 
-<div class="brand-logos-{{ section.id }}">
-  <div class="main-container">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="brand-logos__heading {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
-    {%- endif -%}
-    
-    <div class="brand-logos__container">
-      {%- for block in section.blocks -%}
-        <div class="brand-logo__item" {{ block.shopify_attributes }}>
-          {%- if block.settings.link != blank -%}
-            <a href="{{ block.settings.link }}" target="_blank">
-          {%- endif -%}
-          
-          {%- if block.settings.image != blank -%}
-            <img class="brand-logo__image"
-                 src="{{ block.settings.image | img_url: '300x' }}"
-                 alt="{{ block.settings.image.alt | escape }}"
-                 loading="lazy"
-                 width="{{ block.settings.image.width }}"
-                 height="{{ block.settings.image.height }}"
-            >
-          {%- else -%}
-            {{ 'logo' | placeholder_svg_tag: 'brand-logo__image' }}
-          {%- endif -%}
-          
-          {%- if block.settings.link != blank -%}
-            </a>
-          {%- endif -%}
-        </div>
-      {%- endfor -%}
-    </div>
-  </div>
-</div>
 {% schema %}
 {
   "name": "Ev Brand Logos",

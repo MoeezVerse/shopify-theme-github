@@ -312,73 +312,44 @@
         "warning_text": "Sell out risk: HIGH | Already sold out 7 times last year"
       }
     },
-    "getin_reviews_yX6hVD": {
+    "getin_reviews_i8CfFn": {
       "type": "getin-reviews",
       "blocks": {
-        "review_TJP9eE": {
-          "type": "review",
+        "testimonial_WdyQej": {
+          "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/review_Daphne_1.webp",
-            "customer_name": "Daphne",
-            "subheading": "Never Felt So Confident",
-            "review_text": "Ovietni absolutely LOVE these jumpshell! The fit was amazing; the black and green and very well made!!! will be purchasing more from this particular shop!"
+            "name": "Reviewer",
+            "title": "Amazing Product!",
+            "text": "This product changed my life. Highly recommend it!"
           }
         },
-        "review_tkaUE8": {
-          "type": "review",
+        "testimonial_VGyNgw": {
+          "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/reiveiw_Taylor_2.webp",
-            "customer_name": "Taylor",
-            "subheading": "Amazing!",
-            "review_text": "Orng! How, look, love this one piece back unkind to do yoga! I no more will have to worry about adjusting my pants when I go from a floor pose to a standing shoe. I'm not waiting so much one pieces are usually too long in the tone from me but think one isn't. Thanks again hey shape!"
+            "name": "Reviewer",
+            "title": "Amazing Product!",
+            "text": "This product changed my life. Highly recommend it!"
           }
         },
-        "review_6zytfj": {
-          "type": "review",
+        "testimonial_6CTtJg": {
+          "type": "testimonial",
           "settings": {
-            "customer_name": "Gabriele",
-            "subheading": "My Booty Got Bigger",
-            "review_text": "Wow! Thanks so much for the love, purity. Know that your overall satisfaction comes everything to us. Thanks for sharing and stay beautiful."
+            "name": "Reviewer",
+            "title": "Amazing Product!",
+            "text": "This product changed my life. Highly recommend it!"
           }
         }
       },
       "block_order": [
-        "review_TJP9eE",
-        "review_tkaUE8",
-        "review_6zytfj"
+        "testimonial_WdyQej",
+        "testimonial_VGyNgw",
+        "testimonial_6CTtJg"
       ],
-      "name": "Get Customer Reviews",
+      "name": "EV - Testimonials",
       "settings": {
-        "background_color": "#f3f3f3",
-        "padding_top": 50,
-        "padding_right": 20,
-        "padding_bottom": 50,
-        "padding_left": 20,
-        "mobile_padding_top": 30,
-        "mobile_padding_right": 15,
-        "mobile_padding_bottom": 30,
-        "mobile_padding_left": 15,
-        "text_alignment": "center",
-        "star_image": "shopify://shop_images/Trustpilot_Stars_4-5.png",
-        "review_count": "1,000+ 5-Star Reviews",
-        "trust_badge": "shopify://shop_images/Trustpilot_Logo.webp",
-        "trust_badge_width": 100,
-        "trust_badge_spacing": 20,
-        "heading": "Join over 1 million women worldwide",
-        "header_spacing": 40,
-        "reviews_per_row": 3,
-        "review_spacing": 20,
-        "reviews_top_spacing": 30,
-        "review_background": "#f9f9f9",
-        "review_padding": 20,
-        "review_border_radius": 10,
-        "review_image_size": 80,
-        "review_image_spacing": 15,
-        "star_size": 100,
-        "star_spacing": 10,
-        "subheading_color": "#333333",
-        "subheading_size": 16,
-        "subheading_spacing": 10
+        "trustpilot_logo": "shopify://shop_images/Trustpilot_Logo.webp",
+        "star_rating_image": "shopify://shop_images/Trustpilot_Stars_4-5.png",
+        "heading": "Join over 1 million women worldwide"
       }
     }
   },
@@ -392,6 +363,6 @@
     "ev_getin_image_with_text_BjQkJB",
     "ev_getin_image_with_text_NJditb",
     "ev_getin_image_text_2_b7Cndz",
-    "getin_reviews_yX6hVD"
+    "getin_reviews_i8CfFn"
   ]
 }

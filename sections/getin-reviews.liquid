@@ -138,10 +138,10 @@
 <div class="ev-testimonial-wrapper">
   <div class="ev-rating-wrapper">
     {% if settings.star_rating_image %}
-      <img src="{{ settings.star_rating_image | image_url }}" alt="Rating Stars" class="ev-star" />
+      <img src="{{ settings.star_rating_image | img_url:'master' }}" alt="Rating Stars" class="ev-star" />
     {% endif %}
     {% if settings.trustpilot_logo %}
-      <img src="{{ settings.trustpilot_logo | image_url }}" alt="Trustpilot Logo" height="20" />
+      <img src="{{ settings.trustpilot_logo | img_url:'master' }}" alt="Trustpilot Logo" height="20" />
     {% endif %}
   </div>
   <h2 class="ev-heading">{{ settings.heading }}</h2>

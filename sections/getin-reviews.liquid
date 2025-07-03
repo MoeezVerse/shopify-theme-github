@@ -164,17 +164,21 @@
   <div class="ev-testimonial-grid">
     {% for block in section.blocks %}
       <div class="ev-card">
-        {% if block.settings.image %}
-          <img class="ev-image" src="{{ block.settings.image | image_url }}" alt="{{ block.settings.name }}">
-        {% endif %}
-        <div class="ev-name">
-          {{ block.settings.name }}
-          {% if block.settings.star_image_inline %}
-            <img class="ev-inline-star" src="{{ block.settings.star_image_inline | image_url }}" alt="Star Rating">
+        <div class="ev-card-image">
+          {% if block.settings.image %}
+            <img class="ev-image" src="{{ block.settings.image | image_url }}" alt="{{ block.settings.name }}">
           {% endif %}
         </div>
-        <div class="ev-title">{{ block.settings.title }}</div>
-        <div class="ev-review">{{ block.settings.review }}</div>
+        <div class="ev-card-content">
+          <div class="ev-name">
+            {{ block.settings.name }}
+            {% if block.settings.star_image_inline %}
+              <img class="ev-inline-star" src="{{ block.settings.star_image_inline | image_url }}" alt="Star Rating">
+            {% endif %}
+          </div>
+          <div class="ev-title">{{ block.settings.title }}</div>
+          <div class="ev-review">{{ block.settings.review }}</div>
+        </div>
       </div>
     {% endfor %}
   </div>

@@ -1,171 +1,18 @@
-{%- style -%}
-  .ev-review-section {
-    padding: {{ section.settings.padding }}px 20px;
-    background-color: {{ section.settings.background_color }};
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .ev-review-header {
-    margin-bottom: 40px;
-  }
-
-  .ev-trust-badge {
-    max-width: 200px;
-    margin: 20px auto;
-  }
-
-  .ev-review-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-  }
-
-  .ev-review-item {
-    background: #f9f9f9;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: left;
-    flex: 1 1 300px;
-    max-width: 350px;
-  }
-
-  .ev-review-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-  }
-
-  .ev-review-stars {
-    width: 100px;
-    margin-bottom: 10px;
-  }
-
-  .ev-review-subheading {
-    color: #333;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 20px;
-  }
-
-  .ev-review-subheading:before {
-    content: "-";
-    position: absolute;
-    left: 0;
-  }
-
-  .ev-review-section h2 {
-    font-size: 28px;
-    margin: 20px 0;
-  }
-
-  .ev-review-section h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .ev-review-item {
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
-    
-    .ev-review-section {
-      padding: 30px 15px;
-    }
-  }
-{%- endstyle -%}
-
-<div class="ev-review-section">
-  <div class="ev-review-header">
-    {%- if section.settings.star_image != blank -%}
-      <img src="{{ section.settings.star_image | img_url: '300x' }}" alt="Star rating" class="ev-review-stars">
-    {%- endif -%}
-    
-    {%- if section.settings.review_count != blank -%}
-      <p>{{ section.settings.review_count }}</p>
-    {%- endif -%}
-    
-    {%- if section.settings.trust_badge != blank -%}
-      <img src="{{ section.settings.trust_badge | img_url: '800x' }}" alt="Trust badge" class="ev-trust-badge">
-    {%- endif -%}
-    
-    {%- if section.settings.heading != blank -%}
-      <h2>{{ section.settings.heading }}</h2>
-    {%- endif -%}
-  </div>
-
-  <div class="ev-review-container">
-    {%- for block in section.blocks -%}
-      <div class="ev-review-item" {{ block.shopify_attributes }}>
-        {%- if block.settings.customer_image != blank -%}
-          <img src="{{ block.settings.customer_image | img_url: '300x300' }}" alt="{{ block.settings.customer_name }}" class="ev-review-image">
-        {%- endif -%}
-        
-        <div class="ev-review-content">
-          {%- if block.settings.customer_name != blank -%}
-            <h3>{{ block.settings.customer_name }}</h3>
-          {%- endif -%}
-          
-          {%- if section.settings.star_image != blank -%}
-            <img src="{{ section.settings.star_image | img_url: '300x' }}" alt="Star rating" class="ev-review-stars">
-          {%- endif -%}
-          
-          {%- if block.settings.subheading != blank -%}
-            <h4 class="ev-review-subheading">{{ block.settings.subheading }}</h4>
-          {%- endif -%}
-          
-          {%- if block.settings.review_text != blank -%}
-            <p>{{ block.settings.review_text }}</p>
-          {%- endif -%}
-        </div>
-      </div>
-    {%- endfor -%}
-  </div>
-</div>
-
 {% schema %}
 {
-  "name": "Get-in Customer Reviews",
+  "name": "EV - Testimonials Section",
+  "tag": "section",
+  "class": "ev-testimonial-wrapper",
   "settings": [
     {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "padding",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "unit": "px",
-      "label": "Section padding",
-      "default": 50
+      "type": "image_picker",
+      "id": "trustpilot_logo",
+      "label": "Trustpilot Logo"
     },
     {
       "type": "image_picker",
-      "id": "star_image",
-      "label": "Star rating image"
-    },
-    {
-      "type": "text",
-      "id": "review_count",
-      "label": "Review count text",
-      "default": "1,000+ 5-Star Reviews"
-    },
-    {
-      "type": "image_picker",
-      "id": "trust_badge",
-      "label": "Trust badge image"
+      "id": "star_rating_image",
+      "label": "Star Rating Image"
     },
     {
       "type": "text",
@@ -176,66 +23,144 @@
   ],
   "blocks": [
     {
-      "type": "review",
-      "name": "Review",
+      "type": "testimonial",
+      "name": "Testimonial",
       "settings": [
         {
           "type": "image_picker",
-          "id": "customer_image",
-          "label": "Customer image"
+          "id": "reviewer_image",
+          "label": "Reviewer Image"
         },
         {
           "type": "text",
-          "id": "customer_name",
-          "label": "Customer name",
-          "default": "Customer name"
+          "id": "name",
+          "label": "Reviewer Name",
+          "default": "Reviewer"
         },
         {
           "type": "text",
-          "id": "subheading",
-          "label": "Subheading",
-          "default": "Never Felt So Confident"
+          "id": "title",
+          "label": "Review Title",
+          "default": "Amazing Product!"
         },
         {
           "type": "textarea",
-          "id": "review_text",
-          "label": "Review text",
-          "default": "I absolutely LOVE these products! The fit was amazing and very well made!!! Will be purchasing more from this shop!"
+          "id": "text",
+          "label": "Review Text",
+          "default": "This product changed my life. Highly recommend it!"
         }
       ]
     }
   ],
+  "max_blocks": 6,
   "presets": [
     {
-      "name": "Get-in Customer Reviews",
-      "category": "Custom",
+      "name": "EV - Testimonials",
+      "category": "Testimonials",
       "blocks": [
         {
-          "type": "review",
-          "settings": {
-            "customer_name": "Daphne",
-            "subheading": "Never Felt So Confident",
-            "review_text": "Ovietni absolutely LOVE these jumpshell! The fit was amazing; the black and green and very well made!!! will be purchasing more from this particular shop!"
-          }
+          "type": "testimonial"
         },
         {
-          "type": "review",
-          "settings": {
-            "customer_name": "Taylor",
-            "subheading": "Amazing!",
-            "review_text": "Orng! How, look, love this one piece back unkind to do yoga! I no more will have to worry about adjusting my pants when I go from a floor pose to a standing shoe. I'm not waiting so much one pieces are usually too long in the tone from me but think one isn't. Thanks again hey shape!"
-          }
+          "type": "testimonial"
         },
         {
-          "type": "review",
-          "settings": {
-            "customer_name": "Gabriele",
-            "subheading": "My Booty Got Bigger",
-            "review_text": "Wow! Thanks so much for the love, purity. Know that your overall satisfaction comes everything to us. Thanks for sharing and stay beautiful."
-          }
+          "type": "testimonial"
         }
       ]
     }
   ]
 }
 {% endschema %}
+
+{% style %}
+.ev-testimonial-wrapper {
+  background-color: #f6f6f6;
+  padding: 40px 20px;
+  text-align: center;
+}
+.ev-testimonial-wrapper .ev-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.ev-rating-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.ev-testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  .ev-testimonial-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.ev-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.ev-card img.ev-reviewer-img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.ev-card .ev-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.ev-card .ev-star {
+  height: 18px;
+  margin-bottom: 10px;
+}
+.ev-card .ev-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.ev-card .ev-text {
+  font-size: 15px;
+  color: #444;
+}
+{% endstyle %}
+
+<div class="ev-testimonial-wrapper">
+  <div class="ev-rating-wrapper">
+    {% if settings.star_rating_image %}
+      <img src="{{ settings.star_rating_image | image_url }}" alt="Rating Stars" class="ev-star" />
+    {% endif %}
+    {% if settings.trustpilot_logo %}
+      <img src="{{ settings.trustpilot_logo | image_url }}" alt="Trustpilot Logo" height="20" />
+    {% endif %}
+  </div>
+  <h2 class="ev-heading">{{ settings.heading }}</h2>
+
+  <div class="ev-testimonial-grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'testimonial' %}
+        <div class="ev-card">
+          {% if block.settings.reviewer_image %}
+            <img src="{{ block.settings.reviewer_image | image_url }}" class="ev-reviewer-img" alt="{{ block.settings.name }}">
+          {% endif %}
+          <div class="ev-name">{{ block.settings.name }}</div>
+          {% if settings.star_rating_image %}
+            <img src="{{ settings.star_rating_image | image_url }}" class="ev-star" alt="Star Rating" />
+          {% endif %}
+          <div class="ev-title">{{ block.settings.title }}</div>
+          <div class="ev-text">{{ block.settings.text }}</div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

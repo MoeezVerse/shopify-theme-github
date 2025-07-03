@@ -318,28 +318,31 @@
         "testimonial_WdyQej": {
           "type": "testimonial",
           "settings": {
-            "reviewer_image": "shopify://shop_images/review_Daphne_1.webp",
+            "image": "shopify://shop_images/review_Daphne_1.webp",
             "name": "Reviewer",
+            "star_image_inline": "shopify://shop_images/Trustpilot_Stars_4-5.png",
             "title": "Amazing Product!",
-            "text": "This product changed my life. Highly recommend it!"
+            "review": "This product changed everything for me."
           }
         },
         "testimonial_VGyNgw": {
           "type": "testimonial",
           "settings": {
-            "reviewer_image": "shopify://shop_images/reiveiw_Taylor_2.webp",
+            "image": "shopify://shop_images/reiveiw_Taylor_2.webp",
             "name": "Reviewer",
+            "star_image_inline": "shopify://shop_images/Trustpilot_Stars_4-5.png",
             "title": "Amazing Product!",
-            "text": "This product changed my life. Highly recommend it!"
+            "review": "This product changed everything for me."
           }
         },
         "testimonial_6CTtJg": {
           "type": "testimonial",
           "settings": {
-            "reviewer_image": "shopify://shop_images/review_Gabriela_3.webp",
+            "image": "shopify://shop_images/review_Gabriela_3.webp",
             "name": "Reviewer",
+            "star_image_inline": "shopify://shop_images/Trustpilot_Stars_4-5.png",
             "title": "Amazing Product!",
-            "text": "This product changed my life. Highly recommend it!"
+            "review": "This product changed everything for me."
           }
         }
       },
@@ -350,8 +353,9 @@
       ],
       "name": "EV - Testimonials",
       "settings": {
+        "star_image": "shopify://shop_images/Trustpilot_Stars_4-5.png",
+        "review_count": "9507 Reviews",
         "trustpilot_logo": "shopify://shop_images/Trustpilot_Logo.webp",
-        "star_rating_image": "shopify://shop_images/Trustpilot_Stars_4-5.png",
         "heading": "Join over 1 million women worldwide"
       }
     }

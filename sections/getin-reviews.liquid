@@ -140,7 +140,7 @@
     {% if section.settings.star_rating_image %}
       <img src="{{ section.settings.star_rating_image | img_url:'master' }}" alt="Rating Stars" class="ev-star" />
     {% endif %}
-    {% if settings.trustpilot_logo %}
+    {% if section.settings.trustpilot_logo %}
       <img src="{{ section.settings.trustpilot_logo | img_url:'master' }}" alt="Trustpilot Logo" height="20" />
     {% endif %}
   </div>

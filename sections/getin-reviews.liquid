@@ -1,4 +1,4 @@
-{% schema %}
+ {% schema %}
 {
   "name": "EV - Testimonials Section",
   "tag": "section",
@@ -137,14 +137,14 @@
 
 <div class="ev-testimonial-wrapper">
   <div class="ev-rating-wrapper">
-    {% if settings.star_rating_image %}
-      <img src="{{ settings.star_rating_image | img_url:'master' }}" alt="Rating Stars" class="ev-star" />
+    {% if section.settings.star_rating_image %}
+      <img src="{{ section.settings.star_rating_image | img_url:'master' }}" alt="Rating Stars" class="ev-star" />
     {% endif %}
     {% if settings.trustpilot_logo %}
-      <img src="{{ settings.trustpilot_logo | img_url:'master' }}" alt="Trustpilot Logo" height="20" />
+      <img src="{{ section.settings.trustpilot_logo | img_url:'master' }}" alt="Trustpilot Logo" height="20" />
     {% endif %}
   </div>
-  <h2 class="ev-heading">{{ settings.heading }}</h2>
+  <h2 class="ev-heading">{{ section.settings.heading }}</h2>
 
   <div class="ev-testimonial-grid">
     {% for block in section.blocks %}

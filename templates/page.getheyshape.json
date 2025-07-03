@@ -318,6 +318,7 @@
         "testimonial_WdyQej": {
           "type": "testimonial",
           "settings": {
+            "reviewer_image": "shopify://shop_images/review_Daphne_1.webp",
             "name": "Reviewer",
             "title": "Amazing Product!",
             "text": "This product changed my life. Highly recommend it!"
@@ -326,6 +327,7 @@
         "testimonial_VGyNgw": {
           "type": "testimonial",
           "settings": {
+            "reviewer_image": "shopify://shop_images/reiveiw_Taylor_2.webp",
             "name": "Reviewer",
             "title": "Amazing Product!",
             "text": "This product changed my life. Highly recommend it!"
@@ -334,6 +336,7 @@
         "testimonial_6CTtJg": {
           "type": "testimonial",
           "settings": {
+            "reviewer_image": "shopify://shop_images/review_Gabriela_3.webp",
             "name": "Reviewer",
             "title": "Amazing Product!",
             "text": "This product changed my life. Highly recommend it!"

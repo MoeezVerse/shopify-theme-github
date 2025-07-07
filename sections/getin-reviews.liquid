@@ -173,7 +173,7 @@
         </div>
         <div class="ev-card-content">
           <div class="ev-name">
-            {{ block.settings.name }}
+            <p class="ev-reviewer">{{ block.settings.name }}</p>
             {% if block.settings.star_image_inline %}
               <img class="ev-inline-star" src="{{ block.settings.star_image_inline | image_url }}" alt="Star Rating">
             {% endif %}

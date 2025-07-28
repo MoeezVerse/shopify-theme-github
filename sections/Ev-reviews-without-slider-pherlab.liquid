@@ -1,0 +1,310 @@
+<div class="testimonial-slider-section" id="testimonial-slider-{{ section.id }}" style="background:#f7f9f9; padding: 60px 0;">
+  <div class="container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+    {% if section.settings.title != blank %}
+      <h2 class="testimonial-title" style="text-align:center; font-size:38px; font-weight:700; color:#222; margin-bottom:40px;">{{ section.settings.title }}</h2>
+    {% endif %}
+    <div class="testimonial-slider-outer" style="position:relative;">
+      <div class="testimonial-slider ">
+        {% for block in section.blocks %}
+          <div class="testimonial-slide" {{ block.shopify_attributes }}>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                {% assign stars = block.settings.stars | default: 5 %}
+                {% for i in (1..stars) %}
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFB800" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                {% endfor %}
+              </div>
+              <div class="testimonial-text">{{ block.settings.text }}</div>
+              <div class="testimonial-name">{{ block.settings.name }}</div>
+              <div class="testimonial-verified">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="#1976D2"/><path d="M6 10.5L9 13.5L14 8.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Verified Purchase</span>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .testimonial-slider-section {
+    background: #f7f9f9;
+    padding: 60px 0;
+    margin: 50px 0px;
+  }
+  .testimonial-title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 40px;
+  }
+  .testimonial-slider-outer {
+    position: relative;
+    width: 100%;
+  }
+  .testimonial-slider {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+  }
+  .testimonial-slide {
+    width: 370px;
+    margin: 0 10px;
+    display: flex !important;
+    justify-content: center;
+    align-items: stretch;
+    padding: 10px 0;
+  }
+  .testimonial-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 36px 28px 28px 28px;
+    max-width: 370px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .testimonial-stars {
+    margin-bottom: 18px;
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+  }
+  .testimonial-text {
+    font-size: 19px;
+    color: #222;
+    margin-bottom: 28px;
+    min-height: 70px;
+    line-height: 1.5;
+  }
+  .testimonial-name {
+    font-weight: 700;
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 8px;
+  }
+  .testimonial-verified {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 16px;
+    color: #222;
+    font-weight: 400;
+  }
+  .testimonial-verified svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /* Flickity dots and arrows */
+  .flickity-page-dots {
+    bottom: -30px;
+  }
+  .flickity-page-dots .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+    background: #222;
+    opacity: 0.3;
+    border-radius: 50%;
+    transition: opacity 0.2s;
+  }
+  .flickity-page-dots .dot.is-selected {
+    opacity: 1;
+  }
+  .flickity-prev-next-button {
+    background: #fff !important;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #222;
+  }
+  .flickity-prev-next-button.previous {
+    left: -60px;
+  }
+  .flickity-prev-next-button.next {
+    right: -60px;
+  }
+  @media (max-width: 1200px) {
+    .flickity-prev-next-button.previous {
+      left: -30px;
+    }
+    .flickity-prev-next-button.next {
+      right: -30px;
+    }
+  }
+  @media (max-width: 991px) {
+    .testimonial-title {
+      font-size: 30px;
+    }
+    .testimonial-card {
+      max-width: 320px;
+      padding: 28px 16px 20px 16px;
+      min-height: 260px;
+    }
+    .testimonial-text {
+      font-size: 17px;
+      min-height: 60px;
+    }
+    .testimonial-name {
+      font-size: 18px;
+    }
+    .testimonial-verified {
+      font-size: 15px;
+    }
+    .flickity-prev-next-button {
+      width: 38px;
+      height: 38px;
+    }
+  }
+  @media (max-width: 769px) {
+    .testimonial-title {
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+    .testimonial-card {
+      max-width: 95vw;
+      min-height: 200px;
+      padding: 18px 6vw 18px 6vw;
+    }
+    .flickity-prev-next-button {
+      width: 32px;
+      height: 32px;
+      left: 0;
+      right: 0;
+    }
+    .testimonial-slider {
+      flex-wrap: wrap;
+    }
+    .flickity-prev-next-button.previous {
+      left: -10px;
+    }
+    .flickity-prev-next-button.next {
+      right: -10px;
+    }
+    .flickity-page-dots {
+      bottom: -24px;
+    }
+  }
+  @media (max-width: 600px) {
+    .testimonial-slider-section {
+      padding: 32px 0;
+    }
+    .testimonial-title {
+      font-size: 18px;
+    }
+    .testimonial-card {
+      padding: 12vw 2vw 12vw 2vw;
+      min-height: 120px;
+    }
+    .testimonial-text {
+      font-size: 15px;
+      min-height: 40px;
+    }
+    .testimonial-name {
+      font-size: 16px;
+    }
+    .testimonial-verified {
+      font-size: 13px;
+    }
+    .flickity-prev-next-button {
+      width: 28px;
+      height: 28px;
+      left: 0;
+      right: 0;
+    }
+    .flickity-prev-next-button.previous {
+      left: -6px;
+    }
+    .flickity-prev-next-button.next {
+      right: -6px;
+    }
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": "Ev Testimonial",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Over +206k Customers"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "label": "Number of Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Testimonial Text",
+          "default": "This is a sample testimonial."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer Name",
+          "default": "John Doe"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ev Testimonial",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "It worked! Happy wife\nI have always snored and disturbed my wife's sleep. I tried everything but nothing worked. QuietLab did. Happy wife 😊",
+            "name": "Ben T."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "Comfortable and effective\nI tried various mouthpieces but could never get used to them. A colleague gifted me QuietLab, and it's amazing! Comfortable and effective. Highly recommended.",
+            "name": "Adam S."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "...you barely feel it...\nComfort was my biggest fear. I thought I couldn't sleep with something in my mouth, turns out you barely feel it and it works.",
+            "name": "Chris H."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %} 

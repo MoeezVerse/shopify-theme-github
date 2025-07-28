@@ -1,6 +1,649 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+<div class="review-section">
+  <div class="section-header">
+    <h2>{{ section.settings.heading_text }}</h2>
+    <div class="Ev-review-count">
+      <span class="Ev-rating-stars">
+        {% assign rating = section.settings.average_rating | floor %}
+        {% assign remainder = section.settings.average_rating | minus: rating %}
+        {% assign next_star = rating | plus: 1 %}
+        {% for i in (1..5) %}
+          {% if i <= rating %}
+            ★
+          {% elsif i == next_star and remainder >= 0.5 %}
+            ★
+          {% else %}
+            ☆
+          {% endif %}
+        {% endfor %}
+      </span>
+      {{ section.settings.review_count }} reviews
+    </div>
+  </div>
+
+  <div class="reviews-container">
+    {% for block in section.blocks limit: section.settings.visible_reviews %}
+      <div class="review-card">
+        <div class="reviewer-info">
+          {% if block.settings.reviewer_image != blank %}
+            <img class="reviewer-image" src="{{ block.settings.reviewer_image | img_url: 'master' }}" alt="{{ block.settings.reviewer_name }}">
+          {% else %}
+            <div class="reviewer-image" style="background: #eee; display: flex; align-items: center; justify-content: center;">
+              {{ block.settings.reviewer_name | slice: 0 | upcase }}
+            </div>
+          {% endif %}
+        </div>
+      <div class="inside-padding">
+        <div class="reviewer-details">
+            <div class="reviewer-name">
+              {{ block.settings.reviewer_name }}
+              {% if block.settings.verified %}
+                <span class="verified-badge"><img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/verified-account--v2.png" alt="verified-account--v2"/></span>
+              {% endif %}
+            </div>
+            {% if block.settings.reviewer_status != blank %}
+              <div class="reviewer-status">{{ block.settings.reviewer_status }}</div>
+            {% endif %}
+          </div>
+        
+        <div class="review-stars">
+          {% for i in (1..5) %}
+            {% if i <= block.settings.star_rating %}
+              {{ section.settings.filled_star }}
+            {% else %}
+              {{ section.settings.empty_star }}
+            {% endif %}
+          {% endfor %}
+        </div>
+        
+        <div class="review-content">{{ block.settings.review_content }}</div>
+        
+        {% if block.settings.review_tag != blank %}
+          <div class="review-tag">{{ block.settings.review_tag }}</div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+    
+    <div id="hiddenReviews" class="hidden-reviews">
+      {% for block in section.blocks offset: section.settings.visible_reviews %}
+        <div class="review-card">
+          <div class="reviewer-info">
+            {% if block.settings.reviewer_image != blank %}
+              <img class="reviewer-image" src="{{ block.settings.reviewer_image | img_url: 'master' }}" alt="{{ block.settings.reviewer_name }}" loading="lazy">
+            {% else %}
+              <div class="reviewer-image" style="background: #eee; display: flex; align-items: center; justify-content: center;">
+                {{ block.settings.reviewer_name | slice: 0 | upcase }}
+              </div>
+            {% endif %}
+          </div>
+          <div class="inside-padding">
+            <div class="reviewer-details">
+              <div class="reviewer-name">
+                {{ block.settings.reviewer_name }}
+                {% if block.settings.verified %}
+                  <span class="verified-badge">✓</span>
+                {% endif %}
+              </div>
+              {% if block.settings.reviewer_status != blank %}
+                <div class="reviewer-status">{{ block.settings.reviewer_status }}</div>
+              {% endif %}
+            </div>
+            
+            <div class="review-stars">
+              {% for i in (1..5) %}
+                {% if i <= block.settings.star_rating %}
+                  {{ section.settings.filled_star }}
+                {% else %}
+                  {{ section.settings.empty_star }}
+                {% endif %}
+              {% endfor %}
+            </div>
+            
+            <div class="review-content">{{ block.settings.review_content }}</div>
+            
+            {% if block.settings.review_tag != blank %}
+              <div class="review-tag">{{ block.settings.review_tag }}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  {% if section.blocks.size > section.settings.visible_reviews %}
+    <button class="show-more-btn" onclick="toggleReviews()">{{ section.settings.show_more_text }}</button>
+  {% endif %}
+</div>
+
+{%- style -%}
+  .review-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: {{ section.settings.font_family }};
   }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .review-count {
+    display: inline-block;
+    background: {{ section.settings.count_bg }};
+    color: {{ section.settings.count_text }};
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .section-header h2 {
+    font-size: {{ section.settings.heading_size }}px;
+    color: {{ section.settings.heading_color }};
+    margin-bottom: 10px;
+  }
+
+  .reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: flex-start; 
+  }
+
+  .review-card {
+    background: {{ section.settings.card_bg }};
+    border-radius: {{ section.settings.card_radius }}px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    position: relative;
+    flex: 0 1 auto; 
+    width: auto; 
+    min-width: 250px;
+    max-width: 350px;
+  }
+  .review-card .inside-padding {
+    padding: 10px 25px 20px 25px;
+  }
+
+  .review-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .reviewer-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .reviewer-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 0px {{ section.settings.image_border }};
+  }
+
+  .reviewer-details {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .reviewer-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: {{ section.settings.name_color }};
+    display: flex;
+    align-items: center;
+  }
+
+  .verified-badge {
+    margin-left: 10px;
+    /* color: {{ section.settings.verified_color }}; */
+    font-size: 0px;
+  }
+
+  .reviewer-status {
+    font-size: 14px;
+    color: {{ section.settings.status_color }};
+    opacity: 0.8;
+  }
+
+  .review-stars {
+    color: {{ section.settings.star_color }};
+    margin-bottom: 5px;
+    font-size: {{ section.settings.star_size }}px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  .review-content {
+    color: {{ section.settings.text_color }};
+    line-height: 1.6;
+  }
+
+  .review-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    background: {{ section.settings.tag_bg }};
+    color: {{ section.settings.tag_text }};
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .show-more-btn {
+    display: block;
+    margin: 40px auto 0;
+    padding: 12px 30px;
+    background: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_text }};
+    border: 1px solid #333333;
+    border-radius: {{ section.settings.button_radius }}px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  /* .show-more-btn:hover {
+    background: {{ section.settings.button_hover_bg }};
+    transform: translateY(-2px);
+  } */
+  .Ev-rating-stars {
+    color: {{ section.settings.star_color }};
+    font-size: {{ section.settings.rating_size }}px;
+    letter-spacing: 1px;
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .Ev-review-count {
+    display: inline-flex;
+    align-items: center;
+    color: {{ section.settings.count_text }};
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    gap: 8px;
+  }
+  .hidden-reviews {
+    display: none;
+    gap: 15px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    .reviews-container {
+      gap: 20px;
+    }
+   .hidden-reviews {
+      gap: 30px;
+      justify-content: center;
+    }
+    .review-card {
+      flex: 1 1 calc(50% - 20px);
+    }
+    
+    .section-header h2 {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .review-card {
+      flex: 1 1 100%;
+    }
+    .review-card .inside-padding {
+      padding: 10px 15px 20px 15px;
+    }
+  }
+{%- endstyle -%}
+
+<script>
+  function toggleReviews() {
+    const hiddenReviews = document.getElementById('hiddenReviews');
+    const button = document.querySelector('.show-more-btn');
+    
+    if (hiddenReviews.style.display === 'none' || !hiddenReviews.style.display) {
+      hiddenReviews.style.display = 'flex';
+      hiddenReviews.style.flexWrap = 'wrap';
+      button.textContent = '{{ section.settings.show_less_text }}';
+    } else {
+      hiddenReviews.style.display = 'none';
+      button.textContent = '{{ section.settings.show_more_text }}';
+    }
+  }
+</script>
+{% schema %}
+{
+  "name": "Customer Reviews",
+  "max_blocks": 50,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading Text",
+      "default": "What our customers say about us"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review Count Text",
+      "default": "206,000+"
+    },
+    {
+      "type": "range",
+      "id": "average_rating",
+      "label": "Average Star Rating",
+      "min": 1,
+      "max": 5,
+      "step": 0.1,
+      "default": 4.5
+    },
+    {
+      "type": "range",
+      "id": "rating_size",
+      "label": "Rating Stars Size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "count_bg",
+      "label": "Count Badge Background",
+      "default": "#f3f4f6"
+    },
+    {
+      "type": "color",
+      "id": "count_text",
+      "label": "Count Badge Text",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading Size (Desktop)",
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading Size (Mobile)",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "font_family",
+      "label": "Font Family",
+      "options": [
+        {
+          "value": "Arial, sans-serif",
+          "label": "Arial"
+        },
+        {
+          "value": "'Helvetica Neue', sans-serif",
+          "label": "Helvetica"
+        },
+        {
+          "value": "Georgia, serif",
+          "label": "Georgia"
+        },
+        {
+          "value": "'Times New Roman', serif",
+          "label": "Times New Roman"
+        },
+        {
+          "value": "'Courier New', monospace",
+          "label": "Courier New"
+        }
+      ],
+      "default": "Arial, sans-serif"
+    },
+    {
+      "type": "range",
+      "id": "visible_reviews",
+      "label": "Number of Visible Reviews",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card Corner Radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "image_border",
+      "label": "Profile Image Border Color",
+      "default": "#e5e7eb"
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Reviewer Name Color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "verified_color",
+      "label": "Verified Badge Color",
+      "default": "#10B981"
+    },
+    {
+      "type": "color",
+      "id": "status_color",
+      "label": "Status Color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star Rating Color",
+      "default": "#FFD700"
+    },
+    {
+      "type": "text",
+      "id": "filled_star",
+      "label": "Filled Star Symbol",
+      "default": "★"
+    },
+    {
+      "type": "text",
+      "id": "empty_star",
+      "label": "Empty Star Symbol",
+      "default": "☆"
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "label": "Star Size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Review Text Color",
+      "default": "#444444"
+    },
+    {
+      "type": "color",
+      "id": "tag_bg",
+      "label": "Tag Background",
+      "default": "#f3f4f6"
+    },
+    {
+      "type": "color",
+      "id": "tag_text",
+      "label": "Tag Text Color",
+      "default": "#666666"
+    },
+    {
+      "type": "text",
+      "id": "show_more_text",
+      "label": "Show More Button Text",
+      "default": "Show more reviews"
+    },
+    {
+      "type": "text",
+      "id": "show_less_text",
+      "label": "Show Less Button Text",
+      "default": "Show less"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button Background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Button Hover Background",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Button Corner Radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "reviewer_image",
+          "label": "Reviewer Image"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name",
+          "default": "Customer"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Verified Buyer",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "reviewer_status",
+          "label": "Reviewer Status (Optional)",
+          "default": "@ service"
+        },
+        {
+          "type": "range",
+          "id": "star_rating",
+          "label": "Star Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "textarea",
+          "id": "review_content",
+          "label": "Review Content",
+          "default": "Make a huge difference from right now. I wish I had found this product year ago."
+        },
+        {
+          "type": "text",
+          "id": "review_tag",
+          "label": "Review Tag (Optional)",
+          "default": "soldout"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer Reviews",
+      "category": "Content",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Sitcase",
+            "reviewer_status": "contact",
+            "star_rating": 4,
+            "review_content": "My wife, don't think it would work. But she was wrong if I wanted to run the first evening vacation!",
+            "review_tag": "soldout"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Jason",
+            "star_rating": 4,
+            "review_content": "It worked",
+            "verified": true
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Alex",
+            "reviewer_status": "contact",
+            "star_rating": 4,
+            "review_content": "Make a huge difference from right now. I wish I had lunch this product year ago."
+          }
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}

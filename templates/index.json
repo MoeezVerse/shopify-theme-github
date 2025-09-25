@@ -97,6 +97,7 @@
           "type": "slide",
           "settings": {
             "desktop_image": "shopify://shop_images/Desktop_HPSlider_LondonDelivery_1_1480x_802e70a8-80fc-4dc1-9a1c-27d0bfda9259.webp",
+            "mobile_image": "shopify://shop_images/Mobile_HPSlider_A1_LondonDelivery_767x_b5ac637a-fb25-44d6-8f74-220ecd34c06f.webp",
             "alt_text": "",
             "link": ""
           }
@@ -105,6 +106,7 @@
           "type": "slide",
           "settings": {
             "desktop_image": "shopify://shop_images/Desktop_HPSlider_SuperSale_1_1480x_aa39f596-62d3-455e-ae23-12e7c7f199f0.webp",
+            "mobile_image": "shopify://shop_images/Mobile_HPSlider_SuperSale_767x_5d14c8d2-1e68-4bb4-8331-c975394bcc9f.webp",
             "alt_text": "",
             "link": ""
           }

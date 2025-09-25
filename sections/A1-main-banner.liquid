@@ -19,10 +19,14 @@
     display: block;
     width: 100%;
     height: auto;
+    -webkit-user-select: none;
+    user-select: none;
   }
   .a1-main-banner__link {
     display: block;
+    -webkit-tap-highlight-color: transparent;
   }
+  .a1-main-banner :focus { outline: none; box-shadow: none; }
   /* arrows */
   .a1-flickity .flickity-button {
     background: #ffffff;
@@ -33,6 +37,7 @@
     opacity: 0.9;
   }
   .a1-flickity .flickity-button:hover { opacity: 1; }
+  .a1-flickity .flickity-button:focus { outline: none; box-shadow: none; }
   .a1-flickity .flickity-prev-next-button.previous { left: 16px; }
   .a1-flickity .flickity-prev-next-button.next { right: 16px; }
   .a1-flickity .flickity-button:disabled { opacity: 0.4; }
@@ -78,18 +83,16 @@
     {% for block in section.blocks %}
       {% liquid
         assign desktop = block.settings.desktop_image
-        assign mobile = block.settings.mobile_image | default: desktop
+        assign mobile = block.settings.mobile_image
         assign link = block.settings.link
         assign alt_text = block.settings.alt_text | default: desktop.alt | default: shop.name
       %}
 
       <div class="a1-main-banner__cell" {{ block.shopify_attributes }}>
-        {% if link != blank %}<a class="a1-main-banner__link" href="{{ link }}">{% endif %}
-          <picture>
-            {% if mobile != blank %}
-              <source media="(max-width: 749px)" srcset="{{ mobile | image_url: width: 800 }} 800w, {{ mobile | image_url: width: 1200 }} 1200w" sizes="100vw">
-            {% endif %}
-            {% if desktop != blank %}
+        {% if mobile != blank and desktop != blank %}
+          {% if link != blank %}<a class="a1-main-banner__link" href="{{ link }}">{% endif %}
+            <picture>
+              <source media="(max-width: 767px)" srcset="{{ mobile | image_url: width: 800 }} 800w, {{ mobile | image_url: width: 1200 }} 1200w" sizes="100vw">
               <img
                 class="a1-main-banner__image"
                 src="{{ desktop | image_url: width: 1920 }}"
@@ -100,11 +103,15 @@
                 height="{{ desktop.height }}"
                 loading="lazy"
               >
-            {% else %}
-              {{ 'image' | placeholder_svg_tag: 'a1-main-banner__image' }}
-            {% endif %}
-          </picture>
-        {% if link != blank %}</a>{% endif %}
+            </picture>
+          {% if link != blank %}</a>{% endif %}
+        {% else %}
+          {% if request.design_mode %}
+            <div style="padding:24px; text-align:center; background:#fff4f4; border:1px solid #ffc7c7; color:#c00;">
+              Missing required images: please set both Desktop and Mobile images for this slide.
+            </div>
+          {% endif %}
+        {% endif %}
       </div>
     {% endfor %}
   </div>

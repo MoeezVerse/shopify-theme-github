@@ -14,8 +14,6 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    display: flex;
-    justify-content: center;
   }
   .a1-main-banner__image {
     display: block;
@@ -33,8 +31,8 @@
   .a1-flickity .flickity-button {
     background: #ffffff;
     color: #111111;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     border-radius: 999px;
     opacity: 0.9;
   }
@@ -61,8 +59,9 @@
     }
   }
 
+  /* Desktop: allow full-bleed */
   @media (min-width: 750px) {
-    .a1-main-banner__image { max-width: 1480px; }
+    .a1-main-banner__image { max-width: none; width: 100%; }
   }
 </style>
 
@@ -105,8 +104,8 @@
               <img
                 class="a1-main-banner__image"
                 src="{{ desktop | image_url: width: 1920 }}"
-                srcset="{{ desktop | image_url: width: 1200 }} 1200w, {{ desktop | image_url: width: 1480 }} 1480w, {{ desktop | image_url: width: 1920 }} 1920w, {{ desktop | image_url: width: 2560 }} 2560w"
-                sizes="(min-width: 750px) 1480px, 100vw"
+                srcset="{{ desktop | image_url: width: 1200 }} 1200w, {{ desktop | image_url: width: 1600 }} 1600w, {{ desktop | image_url: width: 1920 }} 1920w, {{ desktop | image_url: width: 2560 }} 2560w, {{ desktop | image_url: width: 3000 }} 3000w"
+                sizes="(min-width: 750px) 100vw, 100vw"
                 alt="{{ alt_text | escape }}"
                 width="{{ desktop.width }}"
                 height="{{ desktop.height }}"

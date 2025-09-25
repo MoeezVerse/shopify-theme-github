@@ -14,6 +14,8 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    display: flex;
+    justify-content: center;
   }
   .a1-main-banner__image {
     display: block;
@@ -53,7 +55,14 @@
 
   /* Maintain banner aspect on mobile when tall images are used */
   @media (max-width: 749px) {
-    .a1-main-banner__image { object-fit: cover; }
+    .a1-main-banner__image {
+      object-fit: cover;
+      max-width: 767px;
+    }
+  }
+
+  @media (min-width: 750px) {
+    .a1-main-banner__image { max-width: 1480px; }
   }
 </style>
 
@@ -167,5 +176,4 @@
   ]
 }
 {% endschema %}
-
 

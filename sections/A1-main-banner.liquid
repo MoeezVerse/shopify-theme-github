@@ -101,12 +101,12 @@
         {% if mobile != blank and desktop != blank %}
           {% if link != blank %}<a class="a1-main-banner__link" href="{{ link }}">{% endif %}
             <picture>
-              <source media="(max-width: 767px)" srcset="{{ mobile | image_url: width: 800 }} 800w, {{ mobile | image_url: width: 1200 }} 1200w" sizes="100vw">
+              <source media="(max-width: 767px)" srcset="{{ mobile | image_url: width: 600 }} 600w, {{ mobile | image_url: width: 767 }} 767w" sizes="(max-width: 767px) 100vw, 767px">
               <img
                 class="a1-main-banner__image"
                 src="{{ desktop | image_url: width: 1920 }}"
-                srcset="{{ desktop | image_url: width: 1200 }} 1200w, {{ desktop | image_url: width: 1600 }} 1600w, {{ desktop | image_url: width: 1920 }} 1920w, {{ desktop | image_url: width: 2560 }} 2560w"
-                sizes="100vw"
+                srcset="{{ desktop | image_url: width: 1200 }} 1200w, {{ desktop | image_url: width: 1480 }} 1480w, {{ desktop | image_url: width: 1920 }} 1920w, {{ desktop | image_url: width: 2560 }} 2560w"
+                sizes="(min-width: 750px) 1480px, 100vw"
                 alt="{{ alt_text | escape }}"
                 width="{{ desktop.width }}"
                 height="{{ desktop.height }}"
@@ -176,4 +176,5 @@
   ]
 }
 {% endschema %}
+
 

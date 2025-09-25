@@ -1,0 +1,164 @@
+{% comment %}
+  Section: A1 Main Banner
+  Responsive hero slider using Flickity with per-slide desktop/mobile images and optional links.
+{% endcomment %}
+
+<style>
+  .a1-main-banner {
+    position: relative;
+  }
+  .a1-main-banner__carousel {
+    width: 100%;
+  }
+  .a1-main-banner__cell {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .a1-main-banner__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .a1-main-banner__link {
+    display: block;
+  }
+  /* arrows */
+  .a1-flickity .flickity-button {
+    background: #ffffff;
+    color: #111111;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    opacity: 0.9;
+  }
+  .a1-flickity .flickity-button:hover { opacity: 1; }
+  .a1-flickity .flickity-prev-next-button.previous { left: 16px; }
+  .a1-flickity .flickity-prev-next-button.next { right: 16px; }
+  .a1-flickity .flickity-button:disabled { opacity: 0.4; }
+  /* dots */
+  .a1-flickity .flickity-page-dots { bottom: 14px; }
+  .a1-flickity .flickity-page-dots .dot {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    background: #cfcfcf;
+  }
+  .a1-flickity .flickity-page-dots .dot.is-selected { background: #333333; }
+
+  /* Maintain banner aspect on mobile when tall images are used */
+  @media (max-width: 749px) {
+    .a1-main-banner__image { object-fit: cover; }
+  }
+</style>
+
+{% liquid
+  assign enable_arrows = section.settings.enable_arrows
+  assign enable_dots = section.settings.enable_dots
+  assign wrap_around = section.settings.wrap_around
+  assign auto_play = section.settings.auto_play
+  assign auto_play_ms = section.settings.auto_play_ms
+%}
+
+<div class="a1-main-banner">
+  <div
+    class="a1-main-banner__carousel a1-flickity"
+    data-flickity='{
+      "cellAlign": "left",
+      "contain": true,
+      "wrapAround": {{ wrap_around }},
+      "autoPlay": {% if auto_play %}{{ auto_play_ms | default: 5000 }}{% else %}false{% endif %},
+      "prevNextButtons": {{ enable_arrows }},
+      "pageDots": {{ enable_dots }},
+      "imagesLoaded": true,
+      "lazyLoad": 2,
+      "draggable": true
+    }'
+  >
+    {% for block in section.blocks %}
+      {% liquid
+        assign desktop = block.settings.desktop_image
+        assign mobile = block.settings.mobile_image | default: desktop
+        assign link = block.settings.link
+        assign alt_text = block.settings.alt_text | default: desktop.alt | default: shop.name
+      %}
+
+      <div class="a1-main-banner__cell" {{ block.shopify_attributes }}>
+        {% if link != blank %}<a class="a1-main-banner__link" href="{{ link }}">{% endif %}
+          <picture>
+            {% if mobile != blank %}
+              <source media="(max-width: 749px)" srcset="{{ mobile | image_url: width: 800 }} 800w, {{ mobile | image_url: width: 1200 }} 1200w" sizes="100vw">
+            {% endif %}
+            {% if desktop != blank %}
+              <img
+                class="a1-main-banner__image"
+                src="{{ desktop | image_url: width: 1920 }}"
+                srcset="{{ desktop | image_url: width: 1200 }} 1200w, {{ desktop | image_url: width: 1600 }} 1600w, {{ desktop | image_url: width: 1920 }} 1920w, {{ desktop | image_url: width: 2560 }} 2560w"
+                sizes="100vw"
+                alt="{{ alt_text | escape }}"
+                width="{{ desktop.width }}"
+                height="{{ desktop.height }}"
+                loading="lazy"
+              >
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'a1-main-banner__image' }}
+            {% endif %}
+          </picture>
+        {% if link != blank %}</a>{% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  (function() {
+    if (window.A1_FlickityLoaded) return;
+    function loadScript(src, onload) {
+      var s = document.createElement('script');
+      s.src = src; s.async = true; s.onload = onload; document.head.appendChild(s);
+    }
+    function loadStyle(href) {
+      var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = href; document.head.appendChild(l);
+    }
+    if (!window.Flickity) {
+      loadStyle('https://unpkg.com/flickity@2/dist/flickity.min.css');
+      loadScript('https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', function(){ window.A1_FlickityLoaded = true; });
+    } else {
+      window.A1_FlickityLoaded = true;
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "A1 Main Banner",
+  "tag": "section",
+  "class": "section-a1-main-banner",
+  "settings": [
+    { "type": "checkbox", "id": "enable_arrows", "label": "Show arrows", "default": true },
+    { "type": "checkbox", "id": "enable_dots", "label": "Show dots", "default": true },
+    { "type": "checkbox", "id": "wrap_around", "label": "Wrap around", "default": true },
+    { "type": "checkbox", "id": "auto_play", "label": "Autoplay", "default": true },
+    { "type": "range", "id": "auto_play_ms", "label": "Autoplay interval (ms)", "min": 2000, "max": 9000, "step": 500, "default": 5000 }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "image_picker", "id": "desktop_image", "label": "Desktop image" },
+        { "type": "image_picker", "id": "mobile_image", "label": "Mobile image (optional)" },
+        { "type": "text", "id": "alt_text", "label": "Alt text" },
+        { "type": "url", "id": "link", "label": "Link (optional)" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "enabled_on": { "templates": ["*"] },
+  "presets": [
+    { "name": "A1 Main Banner", "category": "Banner", "blocks": [ { "type": "slide" }, { "type": "slide" } ] }
+  ]
+}
+{% endschema %}
+
+
